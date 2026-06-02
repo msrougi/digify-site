@@ -72,14 +72,12 @@ ul{list-style:none;}
 
 /* ── NAV ── */
 .site-nav{
-  position:fixed;top:0;left:0;right:0;z-index:100;
-  padding:0 32px;mix-blend-mode:normal;
+  position:relative;
+  background:rgba(13,13,13,0.97);
+  padding:0 32px;
   transition:var(--tr);
 }
-.site-nav.scrolled{
-  background:rgba(13,13,13,0.96);
-  backdrop-filter:blur(16px);
-}
+
 .nav-inner{
   max-width:var(--max-w);margin:0 auto;
   display:flex;align-items:center;justify-content:space-between;
@@ -108,8 +106,7 @@ ul{list-style:none;}
 .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:none;padding:4px;}
 .nav-hamburger span{display:block;width:24px;height:1.5px;background:var(--white);transition:var(--tr);}
 .mobile-menu{
-  display:none;position:fixed;
-  top:72px;left:0;right:0;
+  display:none;position:relative;
   background:var(--black);padding:32px;
   z-index:99;flex-direction:column;gap:24px;
   border-top:1px solid rgba(255,255,255,0.08);
@@ -120,7 +117,7 @@ ul{list-style:none;}
 /* ── HERO ── */
 .hero{
   background:var(--black);
-  padding:120px 0 0;position:relative;overflow:hidden;
+  padding:60px 0 0;position:relative;overflow:hidden;
 }
 .hero-noise{
   position:absolute;inset:0;
