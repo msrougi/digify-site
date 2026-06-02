@@ -16,8 +16,6 @@
 </head>
 <body>
 
-<div class="cursor"></div>
-<div class="cursor-ring"></div>
 
 <!-- NAV -->
 <nav class="site-nav" id="nav">
@@ -329,31 +327,6 @@
       <a href="/blog/" class="btn btn-outline"><span>Ver todos →</span></a>
     </div>
     <div class="blog-grid" id="blog-preview"></div>
-    <script>
-    const emojis = {'SEO':'🔍','Criação de Sites':'🖥️','Desenvolvimento de Apps':'📱','Marketing Digital':'📣','E-commerce':'🛒','Sistemas':'⚙️'};
-    fetch('/blog/index.json?v=' + Date.now())
-      .then(r => r.json())
-      .then(posts => {
-        const grid = document.getElementById('blog-preview');
-        if (!posts || !posts.length) { grid.style.display='none'; return; }
-        grid.innerHTML = posts.slice(0, 3).map(p => `
-          <div class="blog-card reveal">
-            <div class="blog-thumb-placeholder">${emojis[p.category] || '📝'}</div>
-            <div class="blog-card-body">
-              <span class="blog-cat">${p.category}</span>
-              <h3>${p.title}</h3>
-              <p>${p.excerpt}</p>
-              <div class="blog-meta-row">
-                <span>${p.date}</span>
-                <a href="/blog/${p.slug}/" class="blog-arrow">Ler →</a>
-              </div>
-            </div>
-          </div>`).join('');
-      })
-      .catch(() => {
-        document.getElementById('blog-preview').style.display = 'none';
-      });
-    </script>
   </div>
 </section>
 
@@ -421,5 +394,31 @@
 </a>
 
 <script src="/js/main.js"></script>
+<script>
+(function() {
+  var emojis = {'SEO':'🔍','Criação de Sites':'🖥️','Desenvolvimento de Apps':'📱','Marketing Digital':'📣','E-commerce':'🛒','Sistemas':'⚙️'};
+  fetch('/blog/index.json?v=' + Date.now())
+    .then(function(r) { return r.json(); })
+    .then(function(posts) {
+      var grid = document.getElementById('blog-preview');
+      if (!grid || !posts || !posts.length) return;
+      grid.innerHTML = posts.slice(0, 3).map(function(p) {
+        return '<div class="blog-card reveal">' +
+          '<div class="blog-thumb-placeholder">' + (emojis[p.category] || '📝') + '</div>' +
+          '<div class="blog-card-body">' +
+            '<span class="blog-cat">' + p.category + '</span>' +
+            '<h3>' + p.title + '</h3>' +
+            '<p>' + p.excerpt + '</p>' +
+            '<div class="blog-meta-row">' +
+              '<span>' + p.date + '</span>' +
+              '<a href="/blog/' + p.slug + '/" class="blog-arrow">Ler →</a>' +
+            '</div>' +
+          '</div>' +
+        '</div>';
+      }).join('');
+    })
+    .catch(function() {});
+})();
+</script>
 </body>
 </html>
