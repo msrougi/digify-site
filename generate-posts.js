@@ -15,8 +15,9 @@ const path = require('path');
 const BLOG_DIR   = path.join(__dirname, 'blog');
 const INDEX_FILE = path.join(BLOG_DIR, 'index.json');
 const TEMPLATE   = fs.readFileSync(path.join(BLOG_DIR, 'post-template.html'), 'utf8');
-const API_KEY    = process.env.GEMINI_API_KEY;
-const API_URL    = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
+const API_KEY         = process.env.GEMINI_API_KEY;
+const UNSPLASH_KEY    = process.env.UNSPLASH_ACCESS_KEY;
+const API_URL         = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
 
 if (!API_KEY) {
   console.error('❌  Defina GEMINI_API_KEY antes de rodar.');
@@ -228,22 +229,82 @@ async function generateArticle(topic, category) {
   return { title, excerpt, content };
 }
 
-function savePost(article, category, slug, dateISO) {
+// ── Busca imagem no Unsplash ──────────────────────────────────────────────────
+async function fetchUnsplashImage(topic, category) {
+  if (!UNSPLASH_KEY) return null;
+
+  const catKeywords = {
+    'SEO':                     'seo digital marketing computer',
+    'Criação de Sites':        'web design website laptop',
+    'Desenvolvimento de Apps': 'mobile app smartphone development',
+    'Marketing Digital':       'digital marketing social media',
+    'E-commerce':              'ecommerce online shopping',
+    'Sistemas':                'software technology server',
+  };
+
+  const base    = catKeywords[category] || 'technology digital business';
+  const query   = encodeURIComponent(base);
+  const url     = `https://api.unsplash.com/photos/random?query=${query}&orientation=landscape&client_id=${UNSPLASH_KEY}`;
+
+  try {
+    const resp = await fetch(url);
+    if (!resp.ok) return null;
+    const data = await resp.json();
+    return {
+      url:      data.urls?.regular || null,
+      alt:      data.alt_description || topic,
+      author:   data.user?.name || 'Unsplash',
+      authorUrl:data.user?.links?.html || 'https://unsplash.com',
+    };
+  } catch {
+    return null;
+  }
+}
+
+// ── Salva post como HTML ──────────────────────────────────────────────────────
+function savePost(article, category, slug, dateISO, image) {
   const postDir = path.join(BLOG_DIR, slug);
   fs.mkdirSync(postDir, { recursive: true });
 
+  const thumbMap = {
+    'SEO':                    ['seo',       '🔍'],
+    'Criação de Sites':       ['sites',     '🖥️'],
+    'Desenvolvimento de Apps':['apps',      '📱'],
+    'Marketing Digital':      ['marketing', '📣'],
+    'E-commerce':             ['ecommerce', '🛒'],
+  };
+  const [thumbClass, thumbIcon] = thumbMap[category] || ['seo', '📝'];
+
+  const imageBlock = image && image.url
+    ? `<div class="post-thumb-hero">
+        <div class="post-thumb-img" style="background:#0D0D0D;">
+          <img src="${image.url}" alt="${image.alt}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.75;">
+          <div class="thumb-lines"></div>
+          <span class="post-photo-credit">Foto: <a href="${image.authorUrl}?utm_source=digify&utm_medium=referral" target="_blank" rel="noopener">${image.author}</a> / Unsplash</span>
+        </div>
+      </div>`
+    : `<div class="post-thumb-hero">
+        <div class="post-thumb-img post-thumb-${thumbClass}">
+          <div class="thumb-lines"></div>
+          <span class="thumb-big-icon">${thumbIcon}</span>
+        </div>
+      </div>`;
+
   const html = TEMPLATE
-    .replace(/\{\{POST_TITLE\}\}/g,     article.title)
-    .replace(/\{\{POST_EXCERPT\}\}/g,   article.excerpt)
-    .replace(/\{\{POST_CATEGORY\}\}/g,  category)
-    .replace(/\{\{POST_SLUG\}\}/g,      slug)
-    .replace(/\{\{POST_DATE_ISO\}\}/g,  dateISO)
-    .replace(/\{\{POST_DATE\}\}/g,      readableDate(dateISO))
-    .replace(/\{\{POST_READ_TIME\}\}/g, estimateReadTime(article.content))
-    .replace(/\{\{POST_CONTENT\}\}/g,   article.content);
+    .replace(/\{\{POST_TITLE\}\}/g,       article.title)
+    .replace(/\{\{POST_EXCERPT\}\}/g,     article.excerpt)
+    .replace(/\{\{POST_CATEGORY\}\}/g,    category)
+    .replace(/\{\{POST_SLUG\}\}/g,        slug)
+    .replace(/\{\{POST_DATE_ISO\}\}/g,    dateISO)
+    .replace(/\{\{POST_DATE\}\}/g,        readableDate(dateISO))
+    .replace(/\{\{POST_READ_TIME\}\}/g,   estimateReadTime(article.content))
+    .replace(/\{\{POST_IMAGE_BLOCK\}\}/g, imageBlock)
+    .replace(/\{\{POST_THUMB_CLASS\}\}/g, thumbClass)
+    .replace(/\{\{POST_THUMB_ICON\}\}/g,  thumbIcon)
+    .replace(/\{\{POST_CONTENT\}\}/g,     article.content);
 
   fs.writeFileSync(path.join(postDir, 'index.html'), html, 'utf8');
-  console.log(`✅  Salvo: /blog/${slug}/index.html`);
+  console.log(`✅  Salvo: /blog/${slug}/index.html${image ? ' 📸 (Unsplash)' : ' (CSS thumb)'}`);
 }
 
 async function main() {
@@ -277,7 +338,13 @@ async function main() {
       const dateISO = new Date().toISOString();
       const finalSlug = slugify(article.title) || slug;
 
-      savePost(article, topicGroup.category, finalSlug, dateISO);
+      // Busca imagem no Unsplash (não bloqueia se falhar)
+      console.log('🖼️  Buscando imagem no Unsplash...');
+      const image = await fetchUnsplashImage(subject, topicGroup.category);
+      if (image) console.log(`   ✅ Imagem: ${image.author}`);
+      else console.log('   ⚠️  Sem imagem, usando thumb CSS');
+
+      savePost(article, topicGroup.category, finalSlug, dateISO, image);
 
       index.unshift({
         slug:     finalSlug,
