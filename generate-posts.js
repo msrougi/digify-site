@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 /**
- * DIGIFY BLOG AUTO-GENERATOR — Gemini Flash (100% gratuito)
- * ──────────────────────────────────────────────────────────
+ * DIGIFY BLOG AUTO-GENERATOR — Gemini 2.5 Flash (100% gratuito)
  * USO:
  *   node generate-posts.js            # gera 1 artigo
  *   node generate-posts.js --count 3  # gera 3 artigos
  *
  * CONFIGURAÇÃO:
- *   export GEMINI_API_KEY="AIza..."
+ *   export GEMINI_API_KEY="AQ..."
  */
 
 const fs   = require('fs');
@@ -21,11 +20,9 @@ const API_URL    = `https://generativelanguage.googleapis.com/v1beta/models/gemi
 
 if (!API_KEY) {
   console.error('❌  Defina GEMINI_API_KEY antes de rodar.');
-  console.error('    export GEMINI_API_KEY="AIza..."');
   process.exit(1);
 }
 
-// ── Tópicos por categoria ─────────────────────────────────────────────────────
 const TOPICS = [
   {
     category: 'SEO',
@@ -91,15 +88,11 @@ const TOPICS = [
   },
 ];
 
-// ── Utilitários ───────────────────────────────────────────────────────────────
 function slugify(str) {
-  return str
-    .toLowerCase()
+  return str.toLowerCase()
     .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
-    .replace(/[^a-z0-9\s-]/g, '')
-    .trim()
-    .replace(/\s+/g, '-')
-    .substring(0, 80);
+    .replace(/[^a-z0-9\s-]/g, '').trim()
+    .replace(/\s+/g, '-').substring(0, 80);
 }
 
 function readableDate(iso) {
@@ -126,40 +119,14 @@ function saveIndex(posts) {
   fs.writeFileSync(INDEX_FILE, JSON.stringify(posts, null, 2), 'utf8');
 }
 
-// ── Chamada à API Gemini ──────────────────────────────────────────────────────
-async function generateArticle(topic, category) {
-  console.log(`\n🤖  Gerando: "${topic}" (${category})`);
-
-  const prompt = `Você é um especialista em marketing digital, SEO e tecnologia web com mais de 10 anos de experiência. Escreve artigos para o blog da Digify, uma agência web brasileira especializada em criação de sites, desenvolvimento de apps e SEO.
-
-Escreva um artigo completo sobre: "${topic}"
-Categoria: ${category}
-
-REGRAS OBRIGATÓRIAS:
-- Retorne APENAS um objeto JSON válido, sem markdown, sem \`\`\`json, sem nada antes ou depois
-- Use português brasileiro natural e acessível
-- Tom profissional mas direto, com exemplos práticos
-- Mencione a Digify sutilmente no final como especialista no assunto
-
-O JSON deve ter exatamente esta estrutura:
-{
-  "title": "título SEO-otimizado com até 60 caracteres",
-  "excerpt": "meta description persuasiva de 150 a 160 caracteres com a palavra-chave principal",
-  "content": "HTML completo do artigo com h2, h3, p, ul, ol, strong. Sem h1. Mínimo 1200 palavras. Pelo menos 5 seções com h2. Inclua introdução, desenvolvimento detalhado e conclusão com CTA sutil para a Digify."
-}`;
-
+// Chama a API Gemini com um prompt simples e retorna o texto puro
+async function callGemini(prompt) {
   const body = {
     contents: [{ parts: [{ text: prompt }] }],
     generationConfig: {
       temperature: 0.7,
-      maxOutputTokens: 4096,
+      maxOutputTokens: 8192,
     },
-    safetySettings: [
-      { category: 'HARM_CATEGORY_HARASSMENT',        threshold: 'BLOCK_NONE' },
-      { category: 'HARM_CATEGORY_HATE_SPEECH',       threshold: 'BLOCK_NONE' },
-      { category: 'HARM_CATEGORY_SEXUALLY_EXPLICIT', threshold: 'BLOCK_NONE' },
-      { category: 'HARM_CATEGORY_DANGEROUS_CONTENT', threshold: 'BLOCK_NONE' },
-    ]
   };
 
   const resp = await fetch(API_URL, {
@@ -176,22 +143,40 @@ O JSON deve ter exatamente esta estrutura:
   const data = await resp.json();
 
   if (!data.candidates?.[0]?.content?.parts?.[0]?.text) {
-    throw new Error('Resposta inesperada da API: ' + JSON.stringify(data).substring(0, 200));
+    throw new Error('Resposta inesperada: ' + JSON.stringify(data).substring(0, 200));
   }
 
-  let raw = data.candidates[0].content.parts[0].text.trim();
-
-  // Remove blocos de código markdown se existirem
-  raw = raw.replace(/^```json\s*/i, '').replace(/^```\s*/i, '').replace(/```$/i, '').trim();
-
-  // Extrai JSON mesmo que venha com texto em volta
-  const match = raw.match(/\{[\s\S]*\}/);
-  if (!match) throw new Error('Resposta não contém JSON válido:\n' + raw.substring(0, 300));
-
-  return JSON.parse(match[0]);
+  return data.candidates[0].content.parts[0].text.trim();
 }
 
-// ── Salva post como HTML ──────────────────────────────────────────────────────
+// Gera cada campo separadamente para evitar JSON truncado
+async function generateArticle(topic, category) {
+  console.log(`\n🤖  Gerando: "${topic}" (${category})`);
+
+  const context = `Você é especialista em marketing digital, SEO e tecnologia web com mais de 10 anos de experiência. Escreve conteúdo para o blog da Digify, agência web brasileira especializada em criação de sites, desenvolvimento de apps e SEO. Use português brasileiro natural, tom profissional mas acessível.`;
+
+  // Passo 1: título e excerpt
+  const metaRaw = await callGemini(
+    `${context}\n\nPara o tema "${topic}" (categoria: ${category}), responda APENAS com duas linhas, sem explicação:\nLINHA1: [título SEO com até 60 caracteres]\nLINHA2: [meta description de 150-160 caracteres com a palavra-chave principal]`
+  );
+
+  const metaLines = metaRaw.split('\n').map(l => l.replace(/^LINHA\d:\s*/i, '').replace(/^\[|\]$/g, '').trim()).filter(Boolean);
+  const title   = metaLines[0] || topic;
+  const excerpt = metaLines[1] || `Aprenda tudo sobre ${topic} neste guia completo da Digify.`;
+
+  console.log(`   📝 Título: ${title}`);
+
+  // Pausa entre chamadas
+  await new Promise(r => setTimeout(r, 2000));
+
+  // Passo 2: conteúdo HTML completo
+  const content = await callGemini(
+    `${context}\n\nEscreva um artigo completo em HTML sobre: "${title}"\nCategoria: ${category}\n\nREGRAS:\n- Retorne APENAS o HTML do corpo do artigo (sem <!DOCTYPE>, sem <html>, sem <head>, sem <body>)\n- Use h2, h3, p, ul, ol, strong\n- NÃO inclua h1\n- Mínimo 1200 palavras\n- Pelo menos 5 seções com h2\n- Inclua introdução, desenvolvimento detalhado e conclusão\n- No final, mencione sutilmente que a Digify pode ajudar com ${category.toLowerCase()}`
+  );
+
+  return { title, excerpt, content };
+}
+
 function savePost(article, category, slug, dateISO) {
   const postDir = path.join(BLOG_DIR, slug);
   fs.mkdirSync(postDir, { recursive: true });
@@ -210,12 +195,11 @@ function savePost(article, category, slug, dateISO) {
   console.log(`✅  Salvo: /blog/${slug}/index.html`);
 }
 
-// ── Main ──────────────────────────────────────────────────────────────────────
 async function main() {
   const args  = process.argv.slice(2);
   const count = parseInt(args[args.indexOf('--count') + 1] || '1', 10) || 1;
 
-  console.log(`\n🚀  Digify Blog Generator (Gemini Flash) — ${count} artigo(s)`);
+  console.log(`\n🚀  Digify Blog Generator (Gemini 2.5 Flash) — ${count} artigo(s)`);
   console.log(`📅  ${new Date().toLocaleDateString('pt-BR')}\n`);
 
   const index = loadIndex();
@@ -257,12 +241,12 @@ async function main() {
       generated++;
 
       if (generated < count) {
-        console.log('⏳  Aguardando 2s...');
-        await new Promise(r => setTimeout(r, 2000));
+        console.log('⏳  Aguardando 4s...');
+        await new Promise(r => setTimeout(r, 4000));
       }
 
     } catch (err) {
-      console.error(`❌  Erro ao gerar "${subject}":`, err.message);
+      console.error(`❌  Erro: ${err.message}`);
     }
   }
 
@@ -270,7 +254,7 @@ async function main() {
   console.log(`\n✨  Pronto! ${generated} artigo(s) gerado(s).`);
 
   if (generated === 0) {
-    console.error('⚠️  Nenhum artigo gerado. Verifique a API key.');
+    console.error('⚠️  Nenhum artigo gerado.');
     process.exit(1);
   }
 }
