@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Digify — Criação de Sites, SEO e Marketing Digital</title>
+  <meta name="description" content="Dicas e estratégias sobre criação de sites, desenvolvimento de apps, SEO e marketing digital. Conteúdo prático para crescer na internet.">
+  <link rel="canonical" href="https://digify.live/blog/">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<nav class="site-nav scrolled" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">digi<span>fy</span></a>
+    <div class="nav-links">
+      <a href="/#servicos">Serviços</a>
+      <a href="/#processo">Como funciona</a>
+      <a href="/blog/">Blog</a>
+      <a href="/sobre/">Sobre</a>
+    </div>
+    <div class="nav-cta">
+      <a href="https://wa.me/5511990002065" target="_blank" class="btn btn-primary" rel="noopener">WhatsApp</a>
+    </div>
+    <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/#servicos">Serviços</a>
+  <a href="/blog/">Blog</a>
+  <a href="/sobre/">Sobre</a>
+  <a href="https://wa.me/5511990002065" target="_blank" rel="noopener">WhatsApp</a>
+</div>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a> › Blog</div>
+    <h1>Blog da Digify</h1>
+    <p>Dicas práticas sobre criação de sites, SEO, apps e marketing digital</p>
+  </div>
+</div>
+
+<!-- FILTROS -->
+<section style="padding:40px 0 0;">
+  <div class="container">
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:40px;" id="filters">
+      <button class="blog-filter-btn active" data-cat="todos" onclick="filterPosts('todos',this)">Todos</button>
+      <button class="blog-filter-btn" data-cat="SEO" onclick="filterPosts('SEO',this)">SEO</button>
+      <button class="blog-filter-btn" data-cat="Criação de Sites" onclick="filterPosts('Criação de Sites',this)">Criação de Sites</button>
+      <button class="blog-filter-btn" data-cat="Desenvolvimento de Apps" onclick="filterPosts('Desenvolvimento de Apps',this)">Apps</button>
+      <button class="blog-filter-btn" data-cat="Marketing Digital" onclick="filterPosts('Marketing Digital',this)">Marketing</button>
+    </div>
+    <div class="blog-grid" id="blog-list">
+      <div style="grid-column:1/-1;text-align:center;padding:60px;color:var(--text-muted);">
+        Carregando artigos...
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:48px;display:none" id="load-more-wrap">
+      <button class="btn btn-dark" onclick="loadMore()">Carregar mais artigos</button>
+    </div>
+  </div>
+</section>
+
+<div class="cta-banner" style="margin-top:96px;">
+  <div class="container">
+    <h2>Quer crescer na internet?</h2>
+    <p>Fale com nossos especialistas em criação de sites e SEO.</p>
+    <div class="cta-actions">
+      <a href="https://wa.me/5511990002065" target="_blank" class="btn btn-primary" rel="noopener">💬 Falar no WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© 2025 Digify Marketing Digital</span>
+      <a href="/">← Voltar ao site</a>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/5511990002065" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a13 13 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.122 1.526 5.858L.057 23.617a.5.5 0 0 0 .61.61l5.759-1.469A11.954 11.954 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.017-1.378l-.36-.214-3.727.951.968-3.638-.234-.374A9.818 9.818 0 1 1 12 21.818z"/></svg>
+</a>
+
+<style>
+.blog-filter-btn {
+  padding: 8px 20px;
+  border-radius: 50px;
+  border: 2px solid var(--gray-100);
+  background: var(--white);
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Inter', sans-serif;
+}
+.blog-filter-btn:hover, .blog-filter-btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+</style>
+
+<script src="/js/main.js"></script>
+<script>
+let allPosts = [];
+let showing = 9;
+const emojis = {'SEO':'🔍','Criação de Sites':'🖥️','Desenvolvimento de Apps':'📱','Marketing Digital':'📣','E-commerce':'🛒','Sistemas':'⚙️'};
+
+fetch('/blog/index.json')
+  .then(r => r.json())
+  .then(posts => {
+    allPosts = posts;
+    renderPosts(posts.slice(0, showing));
+  })
+  .catch(() => {
+    document.getElementById('blog-list').innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:60px;color:var(--text-muted);">Nenhum artigo encontrado ainda. Volte em breve!</div>';
+  });
+
+function renderPosts(posts) {
+  const grid = document.getElementById('blog-list');
+  if (!posts.length) {
+    grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:60px;color:var(--text-muted);">Nenhum artigo nesta categoria ainda.</div>';
+    return;
+  }
+  grid.innerHTML = posts.map(p => `
+    <div class="blog-card">
+      <div class="blog-card-thumb">${emojis[p.category] || '📝'}</div>
+      <div class="blog-card-body">
+        <span class="blog-tag">${p.category || 'Geral'}</span>
+        <h3>${p.title}</h3>
+        <p>${p.excerpt}</p>
+        <div class="blog-meta">
+          <span>${p.date}</span>
+          <a href="/blog/${p.slug}/" class="blog-read-more">Ler →</a>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+function filterPosts(cat, btn) {
+  document.querySelectorAll('.blog-filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  showing = 9;
+  const filtered = cat === 'todos' ? allPosts : allPosts.filter(p => p.category === cat);
+  renderPosts(filtered.slice(0, showing));
+  document.getElementById('load-more-wrap').style.display = filtered.length > showing ? 'block' : 'none';
+}
+
+function loadMore() {
+  showing += 9;
+  renderPosts(allPosts.slice(0, showing));
+  if (allPosts.length <= showing) document.getElementById('load-more-wrap').style.display = 'none';
+}
+</script>
+</body>
+</html>
