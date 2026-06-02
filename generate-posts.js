@@ -17,7 +17,7 @@ const BLOG_DIR   = path.join(__dirname, 'blog');
 const INDEX_FILE = path.join(BLOG_DIR, 'index.json');
 const TEMPLATE   = fs.readFileSync(path.join(BLOG_DIR, 'post-template.html'), 'utf8');
 const API_KEY    = process.env.GEMINI_API_KEY;
-const API_URL    = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`;
+const API_URL    = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-8b:generateContent?key=${API_KEY}`;
 
 if (!API_KEY) {
   console.error('❌  Defina GEMINI_API_KEY antes de rodar.');
