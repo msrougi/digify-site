@@ -326,7 +326,22 @@
       <h2>BLOG &<br>CONTEÚDO</h2>
       <a href="/blog/" class="btn btn-outline"><span>Ver todos →</span></a>
     </div>
-    <div class="blog-grid" id="blog-preview"></div>
+    <!-- BLOG_POSTS_START -->
+    <div class="blog-grid">
+      <div class="blog-card reveal">
+        <div class="blog-thumb-placeholder">🔍</div>
+        <div class="blog-card-body">
+          <span class="blog-cat">SEO</span>
+          <h3>Como Conquistar a Posição Zero do Google (Featured Snippets)</h3>
+          <p>Desvende os segredos dos featured snippets e aprenda como aparecer na posição zero do Google. Aumente a visibilidade do seu site e atraia mais tráfego qualificado.</p>
+          <div class="blog-meta-row">
+            <span>02 de junho de 2026</span>
+            <a href="/blog/como-conquistar-a-posicao-zero-do-google-featured-snippets/" class="blog-arrow">Ler →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- BLOG_POSTS_END -->
   </div>
 </section>
 
@@ -394,31 +409,5 @@
 </a>
 
 <script src="/js/main.js"></script>
-<script>
-(function() {
-  var emojis = {'SEO':'🔍','Criação de Sites':'🖥️','Desenvolvimento de Apps':'📱','Marketing Digital':'📣','E-commerce':'🛒','Sistemas':'⚙️'};
-  fetch('/blog/index.json?v=' + Date.now())
-    .then(function(r) { return r.json(); })
-    .then(function(posts) {
-      var grid = document.getElementById('blog-preview');
-      if (!grid || !posts || !posts.length) return;
-      grid.innerHTML = posts.slice(0, 3).map(function(p) {
-        return '<div class="blog-card reveal">' +
-          '<div class="blog-thumb-placeholder">' + (emojis[p.category] || '📝') + '</div>' +
-          '<div class="blog-card-body">' +
-            '<span class="blog-cat">' + p.category + '</span>' +
-            '<h3>' + p.title + '</h3>' +
-            '<p>' + p.excerpt + '</p>' +
-            '<div class="blog-meta-row">' +
-              '<span>' + p.date + '</span>' +
-              '<a href="/blog/' + p.slug + '/" class="blog-arrow">Ler →</a>' +
-            '</div>' +
-          '</div>' +
-        '</div>';
-      }).join('');
-    })
-    .catch(function() {});
-})();
-</script>
 </body>
 </html>

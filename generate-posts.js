@@ -119,6 +119,57 @@ function saveIndex(posts) {
   fs.writeFileSync(INDEX_FILE, JSON.stringify(posts, null, 2), 'utf8');
 }
 
+// ── Injeta os 3 posts mais recentes direto no index.html ─────────────────────
+function injectPostsIntoHome(posts) {
+  const homeFile = path.join(__dirname, 'index.html');
+  if (!fs.existsSync(homeFile)) return;
+
+  const emojis = {
+    'SEO': '🔍',
+    'Criação de Sites': '🖥️',
+    'Desenvolvimento de Apps': '📱',
+    'Marketing Digital': '📣',
+    'E-commerce': '🛒',
+    'Sistemas': '⚙️',
+  };
+
+  const recent = posts.slice(0, 3);
+  const cards = recent.map(p => `      <div class="blog-card reveal">
+        <div class="blog-thumb-placeholder">${emojis[p.category] || '📝'}</div>
+        <div class="blog-card-body">
+          <span class="blog-cat">${p.category}</span>
+          <h3>${p.title}</h3>
+          <p>${p.excerpt}</p>
+          <div class="blog-meta-row">
+            <span>${p.date}</span>
+            <a href="/blog/${p.slug}/" class="blog-arrow">Ler →</a>
+          </div>
+        </div>
+      </div>`).join('\n');
+
+  let home = fs.readFileSync(homeFile, 'utf8');
+  const start = '<!-- BLOG_POSTS_START -->';
+  const end   = '<!-- BLOG_POSTS_END -->';
+  const before = home.indexOf(start);
+  const after  = home.indexOf(end);
+
+  if (before === -1 || after === -1) {
+    console.log('⚠️  Marcadores BLOG_POSTS não encontrados no index.html');
+    return;
+  }
+
+  home = home.substring(0, before) +
+    start + '\n' +
+    '    <div class="blog-grid">\n' +
+    cards + '\n' +
+    '    </div>\n    ' +
+    end +
+    home.substring(after + end.length);
+
+  fs.writeFileSync(homeFile, home, 'utf8');
+  console.log('🏠  Home atualizada com os 3 posts mais recentes.');
+}
+
 // Chama a API Gemini com um prompt simples e retorna o texto puro
 async function callGemini(prompt) {
   const body = {
@@ -251,6 +302,7 @@ async function main() {
   }
 
   saveIndex(index);
+  injectPostsIntoHome(index);
   console.log(`\n✨  Pronto! ${generated} artigo(s) gerado(s).`);
 
   if (generated === 0) {
