@@ -33,6 +33,7 @@ jobs:
         run: |
           git config --local user.email "bot@digify.live"
           git config --local user.name "Digify Blog Bot"
-          git add blog/
+          git add blog/ index.html
           git diff --staged --quiet || git commit -m "✍️ Blog: novo artigo [$(date '+%d/%m/%Y')]"
+          git pull --rebase origin main
           git push
