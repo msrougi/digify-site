@@ -1,0 +1,13 @@
+[[headers]]
+  for = "/*.json"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Content-Type = "application/json; charset=utf-8"
+    Cache-Control = "no-cache"
+
+[[headers]]
+  for = "/blog/index.json"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Content-Type = "application/json; charset=utf-8"
+    Cache-Control = "no-store"
