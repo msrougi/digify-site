@@ -1,0 +1,38 @@
+name: 🤖 Gerar Artigo no Blog
+
+on:
+  schedule:
+    - cron: '0 12 * * *'
+  workflow_dispatch:
+    inputs:
+      count:
+        description: 'Quantos artigos gerar?'
+        required: false
+        default: '1'
+
+jobs:
+  generate-post:
+    name: Gerar e publicar artigo
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Gerar artigo via Gemini
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          COUNT="${{ github.event.inputs.count || '1' }}"
+          node generate-posts.js --count $COUNT
+      - name: Commit e push
+        run: |
+          git config --local user.email "bot@digify.live"
+          git config --local user.name "Digify Blog Bot"
+          git add blog/
+          git diff --staged --quiet || git commit -m "✍️ Blog: novo artigo [$(date '+%d/%m/%Y')]"
+          git push
