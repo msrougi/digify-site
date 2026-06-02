@@ -328,35 +328,32 @@
       <h2>BLOG &<br>CONTEÚDO</h2>
       <a href="/blog/" class="btn btn-outline"><span>Ver todos →</span></a>
     </div>
-    <div class="blog-grid" id="blog-preview">
-      <div class="blog-card reveal">
-        <div class="blog-thumb-placeholder">🔍</div>
-        <div class="blog-card-body">
-          <span class="blog-cat">SEO</span>
-          <h3>Como criar um site que rankeia no Google em 2025</h3>
-          <p>Descubra as melhores práticas de SEO on-page para levar seu site à primeira página sem pagar por anúncio.</p>
-          <div class="blog-meta-row"><span>2 jun 2025</span><span class="blog-arrow">Ler →</span></div>
-        </div>
-      </div>
-      <div class="blog-card reveal">
-        <div class="blog-thumb-placeholder">📱</div>
-        <div class="blog-card-body">
-          <span class="blog-cat">Apps</span>
-          <h3>MVP de aplicativo: valide antes de investir</h3>
-          <p>Como testar sua ideia de app com o mínimo de recursos e máximo de aprendizado real.</p>
-          <div class="blog-meta-row"><span>1 jun 2025</span><span class="blog-arrow">Ler →</span></div>
-        </div>
-      </div>
-      <div class="blog-card reveal">
-        <div class="blog-thumb-placeholder">🖥️</div>
-        <div class="blog-card-body">
-          <span class="blog-cat">Sites</span>
-          <h3>Quanto custa criar um site profissional?</h3>
-          <p>Guia completo com faixas de preço, comparativos e o que considerar antes de contratar uma agência.</p>
-          <div class="blog-meta-row"><span>31 mai 2025</span><span class="blog-arrow">Ler →</span></div>
-        </div>
-      </div>
-    </div>
+    <div class="blog-grid" id="blog-preview"></div>
+    <script>
+    const emojis = {'SEO':'🔍','Criação de Sites':'🖥️','Desenvolvimento de Apps':'📱','Marketing Digital':'📣','E-commerce':'🛒','Sistemas':'⚙️'};
+    fetch('/blog/index.json?v=' + Date.now())
+      .then(r => r.json())
+      .then(posts => {
+        const grid = document.getElementById('blog-preview');
+        if (!posts || !posts.length) { grid.style.display='none'; return; }
+        grid.innerHTML = posts.slice(0, 3).map(p => `
+          <div class="blog-card reveal">
+            <div class="blog-thumb-placeholder">${emojis[p.category] || '📝'}</div>
+            <div class="blog-card-body">
+              <span class="blog-cat">${p.category}</span>
+              <h3>${p.title}</h3>
+              <p>${p.excerpt}</p>
+              <div class="blog-meta-row">
+                <span>${p.date}</span>
+                <a href="/blog/${p.slug}/" class="blog-arrow">Ler →</a>
+              </div>
+            </div>
+          </div>`).join('');
+      })
+      .catch(() => {
+        document.getElementById('blog-preview').style.display = 'none';
+      });
+    </script>
   </div>
 </section>
 
