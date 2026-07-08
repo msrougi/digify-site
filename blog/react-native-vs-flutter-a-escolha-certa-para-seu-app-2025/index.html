@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React Native vs Flutter: A Escolha Certa para Seu App 2025 | Blog Digify</title>
+  <meta name="description" content="React Native vs Flutter: qual a melhor opção para seu app em 2025? Compare tecnologias, desempenho e custos para tomar a decisão ideal para o seu projeto mobile com a Digify.">
+  <link rel="canonical" href="https://digify.live/blog/react-native-vs-flutter-a-escolha-certa-para-seu-app-2025/">
+  <meta property="og:title" content="React Native vs Flutter: A Escolha Certa para Seu App 2025">
+  <meta property="og:description" content="React Native vs Flutter: qual a melhor opção para seu app em 2025? Compare tecnologias, desempenho e custos para tomar a decisão ideal para o seu projeto mobile com a Digify.">
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2026-07-08T12:38:43.603Z">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "React Native vs Flutter: A Escolha Certa para Seu App 2025",
+    "description": "React Native vs Flutter: qual a melhor opção para seu app em 2025? Compare tecnologias, desempenho e custos para tomar a decisão ideal para o seu projeto mobile com a Digify.",
+    "datePublished": "2026-07-08T12:38:43.603Z",
+    "author": {"@type": "Organization", "name": "Digify Marketing Digital"},
+    "publisher": {"@type": "Organization", "name": "Digify Marketing Digital", "url": "https://digify.live"},
+    "mainEntityOfPage": "https://digify.live/blog/react-native-vs-flutter-a-escolha-certa-para-seu-app-2025/"
+  }
+  </script>
+  <style>
+    .post-nav{
+      background:var(--black);
+      padding:0 32px;
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .post-nav-inner{
+      max-width:1240px;margin:0 auto;
+      display:flex;align-items:center;justify-content:space-between;height:64px;
+    }
+    .post-nav-logo{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:#fff;letter-spacing:2px;}
+    .post-nav-logo span{color:#00FF87;}
+    .post-nav-links{display:flex;align-items:center;gap:32px;}
+    .post-nav-links a{color:rgba(255,255,255,.5);font-size:0.78rem;font-weight:500;text-transform:uppercase;letter-spacing:1px;}
+    .post-nav-btn{background:#00FF87;color:#0D0D0D;padding:8px 18px;font-family:'DM Sans',sans-serif;font-weight:700;font-size:0.75rem;text-transform:uppercase;letter-spacing:.5px;}
+
+    /* HERO DO POST */
+    .post-hero{
+      background:var(--black);
+      padding:56px 0 0;
+    }
+    .post-hero-inner{max-width:860px;margin:0 auto;padding:0 32px;}
+    .post-breadcrumb{
+      display:flex;align-items:center;gap:8px;
+      font-size:0.7rem;color:rgba(255,255,255,.3);margin-bottom:20px;
+    }
+    .post-breadcrumb a{color:#00FF87;}
+    .post-cat-badge{
+      display:inline-flex;align-items:center;gap:8px;
+      font-size:0.68rem;font-weight:700;text-transform:uppercase;
+      letter-spacing:2px;color:#00FF87;margin-bottom:16px;
+    }
+    .post-cat-badge::before{content:'';display:block;width:24px;height:1px;background:#00FF87;}
+    .post-hero h1{
+      font-family:'Bebas Neue',sans-serif;
+      font-size:clamp(2.2rem,5vw,3.8rem);
+      color:#fff;line-height:.95;margin-bottom:20px;
+    }
+    .post-hero-meta{
+      display:flex;align-items:center;gap:20px;flex-wrap:wrap;
+      font-size:0.78rem;color:rgba(255,255,255,.35);
+      padding-bottom:0;
+    }
+    .post-hero-meta span{display:flex;align-items:center;gap:6px;}
+
+    /* IMAGEM HERO CSS */
+    .post-thumb-hero{
+      max-width:860px;margin:32px auto 0;padding:0 32px;
+    }
+    .post-thumb-img{
+      height:320px;position:relative;overflow:hidden;
+      display:flex;align-items:center;justify-content:center;
+    }
+    .post-thumb-seo{background:linear-gradient(135deg,#0D0D0D 0%,#0a0a1f 50%,#0d1a0d 100%);}
+    .post-thumb-sites{background:linear-gradient(135deg,#0D0D0D 0%,#0a1f0a 50%,#0a0f1f 100%);}
+    .post-thumb-apps{background:linear-gradient(135deg,#0D0D0D 0%,#1f0a0a 50%,#0a0a1f 100%);}
+    .post-thumb-marketing{background:linear-gradient(135deg,#0D0D0D 0%,#1f1a0a 50%,#0a1f1a 100%);}
+    .post-thumb-ecommerce{background:linear-gradient(135deg,#0D0D0D 0%,#0a1a1f 50%,#1f0a1a 100%);}
+    .post-thumb-img::before{
+      content:'';position:absolute;inset:0;
+      background:radial-gradient(ellipse 50% 70% at 60% 40%,rgba(0,255,135,.12) 0%,transparent 65%);
+    }
+    .post-thumb-img::after{
+      content:'';position:absolute;
+      bottom:0;left:0;right:0;height:80px;
+      background:linear-gradient(to top,var(--cream) 0%,transparent 100%);
+    }
+    .thumb-big-icon{font-size:5rem;opacity:.25;position:relative;z-index:1;}
+    .thumb-lines{
+      position:absolute;inset:0;z-index:1;
+      background-image:repeating-linear-gradient(
+        0deg,rgba(0,255,135,.04) 0px,rgba(0,255,135,.04) 1px,transparent 1px,transparent 40px
+      ),repeating-linear-gradient(
+        90deg,rgba(0,255,135,.04) 0px,rgba(0,255,135,.04) 1px,transparent 1px,transparent 40px
+      );
+    }
+
+    /* CONTEÚDO DO POST */
+    .post-content-wrap{
+      max-width:760px;margin:0 auto;
+      padding:48px 32px 64px;
+    }
+    .post-content-wrap h2{
+      font-family:'Bebas Neue',sans-serif;
+      font-size:1.9rem;color:var(--black);
+      margin:40px 0 14px;line-height:1;
+    }
+    .post-content-wrap h3{
+      font-family:'Bebas Neue',sans-serif;
+      font-size:1.4rem;color:var(--black);
+      margin:28px 0 10px;
+    }
+    .post-content-wrap p{
+      font-size:1rem;color:#444;
+      line-height:1.82;margin-bottom:20px;
+    }
+    .post-content-wrap ul,.post-content-wrap ol{
+      padding-left:20px;margin-bottom:20px;
+    }
+    .post-content-wrap li{
+      font-size:0.95rem;color:#444;
+      line-height:1.75;margin-bottom:8px;
+    }
+    .post-content-wrap strong{color:var(--black);font-weight:700;}
+    .post-content-wrap a{color:var(--black);border-bottom:1px solid #00FF87;transition:.2s;}
+    .post-content-wrap a:hover{color:#00CC6A;}
+
+    /* CTA INLINE */
+    .post-cta{
+      background:var(--black);
+      padding:40px;margin:0 32px 0;
+      max-width:760px;margin:0 auto 64px;
+      border-left:3px solid #00FF87;
+    }
+    .post-cta h3{
+      font-family:'Bebas Neue',sans-serif;
+      font-size:1.8rem;color:#fff;margin-bottom:8px;
+    }
+    .post-cta p{color:rgba(255,255,255,.5);font-size:0.88rem;margin-bottom:20px;}
+    .post-cta a{
+      background:#00FF87;color:#0D0D0D;
+      padding:12px 28px;font-family:'DM Sans',sans-serif;
+      font-weight:700;font-size:0.8rem;text-transform:uppercase;
+      letter-spacing:.5px;display:inline-block;transition:.2s;
+    }
+    .post-cta a:hover{background:#00CC6A;border:none;}
+
+    /* RELACIONADOS */
+    .related-sec{background:var(--cream-dark);padding:64px 0;}
+    .related-sec h2{
+      font-family:'Bebas Neue',sans-serif;
+      font-size:2.2rem;color:var(--black);margin-bottom:32px;
+    }
+    .related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:2px;}
+    .rel-card{background:var(--cream);border:1px solid transparent;transition:.22s;display:block;}
+    .rel-card:hover{border-color:var(--black);}
+    .rel-thumb{
+      height:140px;display:flex;align-items:center;justify-content:center;
+      font-size:2.2rem;position:relative;overflow:hidden;
+    }
+    .rel-body{padding:18px 16px;}
+    .rel-body h4{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:var(--black);margin-bottom:6px;line-height:1.1;}
+    .rel-body p{font-size:0.75rem;color:var(--gray);line-height:1.55;margin-bottom:10px;}
+    .rel-arrow{font-size:0.72rem;font-weight:700;color:var(--black);}
+    .rel-card:hover .rel-arrow{color:#00FF87;}
+
+    .post-photo-credit{
+      position:absolute;bottom:8px;right:10px;
+      font-size:0.6rem;color:rgba(255,255,255,.4);
+      z-index:2;
+    }
+    .post-photo-credit a{color:rgba(255,255,255,.5);border-bottom:none;}
+
+    @media(max-width:640px){
+      .post-nav-links,.post-nav-btn{display:none;}
+      .post-thumb-img{height:200px;}
+      .post-content-wrap{padding:32px 20px 48px;}
+      .post-cta{margin:0 20px 48px;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="post-nav">
+  <div class="post-nav-inner">
+    <a href="/" class="post-nav-logo">DIGIFY<span>.</span></a>
+    <div class="post-nav-links">
+      <a href="/#servicos">Serviços</a>
+      <a href="/blog/">Blog</a>
+      <a href="/sobre/">Sobre</a>
+    </div>
+    <a href="https://wa.me/5511990002065" target="_blank" rel="noopener" class="post-nav-btn">WhatsApp →</a>
+  </div>
+</nav>
+
+<!-- HERO DO POST -->
+<div class="post-hero">
+  <div class="post-hero-inner">
+    <div class="post-breadcrumb">
+      <a href="/">Home</a> › <a href="/blog/">Blog</a> › <span>Desenvolvimento de Apps</span>
+    </div>
+    <div class="post-cat-badge">Desenvolvimento de Apps</div>
+    <h1>React Native vs Flutter: A Escolha Certa para Seu App 2025</h1>
+    <div class="post-hero-meta">
+      <span>📅 08 de julho de 2026</span>
+      <span>⏱️ 7 min de leitura</span>
+      <span>✍️ Digify</span>
+    </div>
+  </div>
+<div class="post-thumb-hero">
+        <div class="post-thumb-img" style="background:#0D0D0D;">
+          <img src="https://images.unsplash.com/photo-1504203700686-f21e703e5f1c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5Njc2ODF8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODM1MTQzMjR8&ixlib=rb-4.1.0&q=80&w=1080" alt="person holding iPhone" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.75;">
+          <div class="thumb-lines"></div>
+          <span class="post-photo-credit">Foto: <a href="https://unsplash.com/@heyquilia?utm_source=digify&utm_medium=referral" target="_blank" rel="noopener">Quilia</a> / Unsplash</span>
+        </div>
+      </div>
+</div>
+
+<!-- CONTEÚDO -->
+<div class="post-content-wrap" style="background:var(--cream);">
+  <p>No universo do desenvolvimento de aplicativos, a escolha da tecnologia certa é um dos pilares para o sucesso de um projeto. Em um mercado cada vez mais dinâmico e competitivo, onde a experiência do usuário e a performance são cruciais, as plataformas cross-platform surgiram como uma alternativa poderosa para otimizar tempo e recursos. Entre elas, duas se destacam como gigantes incontestáveis: React Native e Flutter.</p>
+
+<p>À medida que nos aproximamos de 2025, ambas as tecnologias continuam a evoluir a passos largos, incorporando novas funcionalidades, melhorias de performance e expandindo seus ecossistemas. Mas, qual delas é a "escolha certa" para o seu próximo aplicativo? Não existe uma resposta única, e a decisão ideal depende de uma série de fatores estratégicos alinhados aos seus objetivos de negócio, recursos da equipe e visão de longo prazo.</p>
+
+<p>Neste artigo, como especialistas em marketing digital, SEO e tecnologia web com mais de uma década de experiência, vamos mergulhar fundo no mundo de React Native e Flutter. Analisaremos seus pontos fortes, desafios, cenários ideais e faremos um comparativo detalhado para ajudar você a tomar a decisão mais informada e estratégica para o seu projeto de aplicativo em 2025 e além.</p>
+
+<h2>React Native: Pontos Fortes e Oportunidades em 2025</h2>
+
+<p>Lançado pelo Facebook (agora Meta) em 2015, o React Native rapidamente se estabeleceu como uma das estruturas mais populares para o desenvolvimento de aplicativos móveis cross-platform. Sua filosofia de "aprender uma vez, escrever em qualquer lugar" (<em>learn once, write anywhere</em>) ressoou profundamente com a comunidade de desenvolvedores web, permitindo que utilizassem seus conhecimentos em JavaScript e React para construir aplicativos nativos.</p>
+
+<h3>O Poder do JavaScript e do Ecossistema Web</h3>
+<ul>
+    <li><strong>Familiaridade para Desenvolvedores Web:</strong> Para equipes que já trabalham com React.js no desenvolvimento web, a transição para React Native é significativamente mais suave. Isso reduz a curva de aprendizado e acelera o tempo de desenvolvimento, um fator crucial em 2025, onde a agilidade é palavra de ordem.</li>
+    <li><strong>Vasto Ecossistema de Bibliotecas e Ferramentas:</strong> O React Native se beneficia do gigantesco ecossistema JavaScript. Isso significa acesso a uma infinidade de bibliotecas, pacotes NPM e ferramentas de desenvolvimento que podem ser reutilizadas ou adaptadas para o contexto mobile. Essa riqueza de recursos acelera o desenvolvimento e oferece soluções prontas para muitos desafios comuns.</li>
+    <li><strong>Comunidade Robusta e Ativa:</strong> A comunidade de React Native é uma das maiores e mais ativas do mundo. Isso se traduz em um suporte abundante, documentação extensa, fóruns de discussão e uma constante evolução da plataforma, com contribuições de desenvolvedores ao redor do globo.</li>
+</ul>
+
+<h3>Performance e Experiência do Usuário</h3>
+<p>A performance do React Native é frequentemente comparada à de aplicativos nativos. Ele não renderiza uma WebView, mas sim componentes nativos da interface do usuário (UI) através de uma "ponte" JavaScript. Em 2025, com as contínuas otimizações, essa ponte tem se tornado cada vez mais eficiente.</p>
+<ul>
+    <li><strong>Experiência Próxima ao Nativo:</strong> Para a maioria dos aplicativos que não exigem gráficos intensivos ou cálculos complexos em tempo real, a performance do React Native é indistinguível de um aplicativo nativo para o usuário final.</li>
+    <li><strong>Hot Reloading e Fast Refresh:</strong> Essas funcionalidades permitem que os desenvolvedores vejam as alterações no código refletidas instantaneamente no aplicativo em execução, sem a necessidade de recompilar. Isso aumenta exponencialmente a produtividade e a velocidade de iteração, tornando o processo de desenvolvimento mais fluido e agradável.</li>
+</ul>
+
+<h3>Flexibilidade e Integração</h3>
+<p>Uma das grandes vantagens do React Native é sua flexibilidade. Ele permite que os desenvolvedores escrevam módulos nativos em Swift/Objective-C para iOS ou Java/Kotlin para Android e os integrem perfeitamente no código JavaScript. Essa capacidade é vital para cenários onde recursos muito específicos do hardware ou do sistema operacional precisam ser acessados, ou quando se deseja otimizar partes críticas do aplicativo com código nativo puro.</p>
+<p><strong>Cenários Ideais para React Native em 2025:</strong></p>
+<ul>
+    <li>Projetos que precisam de um <strong>MVP rápido</strong> para validação de mercado, aproveitando a agilidade do desenvolvimento.</li>
+    <li>Equipes com forte expertise em <strong>JavaScript e React.js</strong>, buscando maximizar a reutilização de conhecimento.</li>
+    <li>Aplicativos com <strong>interfaces de usuário complexas</strong>, mas que não dependem de gráficos 3D ou computação intensiva.</li>
+    <li>Empresas que desejam <strong>manter uma base de código unificada</strong> para web e mobile, otimizando a manutenção.</li>
+    <li>Projetos que exigem <strong>integração com sistemas legados</strong> ou APIs existentes baseadas em JavaScript.</li>
+</ul>
+<p>No entanto, é importante notar que, em alguns casos, o uso da "ponte" pode introduzir pequenos gargalos de performance, e a depuração de problemas relacionados a módulos nativos pode exigir conhecimento específico das plataformas iOS e Android.</p>
+
+<h2>Flutter: Potencial e Cenários Ideais em 2025</h2>
+
+<p>Desenvolvido pelo Google e lançado em 2017, o Flutter rapidamente conquistou seu espaço no cenário de desenvolvimento mobile. Diferente do React Native, que se baseia em componentes nativos, o Flutter utiliza sua própria engine de renderização (Skia) para desenhar a interface do usuário pixel a pixel, diretamente na GPU. Isso oferece um controle sem precedentes sobre a UI e a performance.</p>
+
+<h3>A Força do Dart e da Renderização Própria</h3>
+<ul>
+    <li><strong>Linguagem Dart Otimizada para UI:</strong> O Flutter utiliza a linguagem Dart, também desenvolvida pelo Google. Dart é uma linguagem orientada a objetos, com tipagem forte, que oferece excelente performance e é otimizada para a construção de interfaces de usuário. Sua curva de aprendizado é considerada suave para desenvolvedores com experiência em outras linguagens orientadas a objetos como Java, C# ou JavaScript.</li>
+    <li><strong>Performance Excepcional e Consistência Visual:</strong> A abordagem de renderização própria do Flutter elimina a necessidade de pontes JavaScript para acessar componentes nativos de UI. Isso resulta em uma performance que é frequentemente superior à do React Native em cenários de UI complexa e animações. Além disso, garante uma consistência visual perfeita em todas as plataformas, independentemente das diferenças de design entre iOS e Android (Material Design e Cupertino são implementados como widgets).</li>
+    <li><strong>"Tudo é um Widget":</strong> A filosofia do Flutter é que "tudo é um widget". Desde a menor parte de texto até o layout completo da tela, tudo é construído com widgets. Essa abordagem declarativa e composable torna a criação de interfaces de usuário altamente flexíveis e complexas surpreendentemente intuitiva e eficiente.</li>
+</ul>
+
+<h3>Produtividade e Ecossistema em Crescimento</h3>
+<p>O Flutter é conhecido por sua notável produtividade no desenvolvimento.</p>
+<ul>
+    <li><strong>Hot Reload e Hot Restart:</strong> Assim como o React Native, o Flutter oferece Hot Reload, que permite ver as alterações de código quase instantaneamente. O Hot Restart, por sua vez, reinicia o estado do aplicativo sem a necessidade de uma recompilação completa, sendo útil para alterações maiores.</li>
+    <li><strong>Rápido Crescimento do Ecossistema:</strong> Embora mais jovem que o React Native, o ecossistema do Flutter tem crescido exponencialmente. O site <a href="https://pub.dev" target="_blank" rel="noopener noreferrer">pub.dev</a> hospeda milhares de pacotes e plugins, e a comunidade, embora menor, é extremamente engajada e ativa, com forte apoio do Google.</li>
+    <li><strong>Suporte Multiplataforma Abrangente:</strong> Além de iOS e Android, o Flutter oferece suporte robusto para desenvolvimento web, desktop (Windows, macOS, Linux) e até mesmo embarcado, tudo a partir de uma única base de código. Em 2025, essa capacidade de direcionar múltiplas plataformas se torna um diferencial ainda maior para a estratégia de produto.</li>
+</ul>
+<p><strong>Cenários Ideais para Flutter em 2025:</strong></p>
+<ul>
+    <li>Projetos que exigem <strong>alta performance de UI e animações complexas</strong>, como jogos simples, aplicativos com gráficos intensivos ou interfaces altamente personalizadas.</li>
+    <li>Desenvolvimento de <strong>MVPs e startups</strong> que precisam de um tempo de mercado extremamente rápido e uma experiência de usuário impecável.</li>
+    <li>Equipes que buscam uma <strong>consistência visual perfeita</strong> em todas as plataformas, sem se preocupar com as idiossincrasias de cada sistema operacional.</li>
+    <li>Empresas que planejam expandir seu aplicativo para <strong>web e desktop</strong> no futuro, aproveitando a mesma base de código.</li>
+    <li>Projetos onde a <strong>curva de aprendizado de uma nova linguagem (Dart)</strong> não é um impedimento, ou onde já existe familiaridade com linguagens orientadas a objetos.</li>
+</ul>
+<p>Um ponto a considerar é que, por renderizar tudo por conta própria, os aplicativos Flutter podem ter um tamanho de pacote ligeiramente maior em comparação com React Native e, em alguns casos, a depuração de problemas específicos da engine pode ser mais desafiadora sem um conhecimento aprofundado do Flutter interno.</p>
+
+<h2>Comparativo Detalhado: Frente a Frente em 2025</h2>
+
+<p>Para ajudar na sua decisão, vamos analisar React Native e Flutter em algumas categorias cruciais, considerando o cenário de desenvolvimento de aplicativos para 2025.</p>
+
+<h3>1.
+</div>
+
+<!-- CTA -->
+<div style="max-width:760px;margin:0 auto;padding:0 32px 64px;background:var(--cream);">
+  <div class="post-cta">
+    <h3>Precisa de ajuda com Desenvolvimento de Apps?</h3>
+    <p>Fale com nossos especialistas e receba uma análise gratuita do seu projeto digital.</p>
+    <a href="https://wa.me/5511990002065" target="_blank" rel="noopener">💬 Falar no WhatsApp</a>
+  </div>
+</div>
+
+<!-- RELACIONADOS -->
+<div class="related-sec">
+  <div class="container">
+    <h2>Artigos Relacionados</h2>
+    <div class="related-grid" id="related"></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer style="background:var(--black);padding:36px 0;">
+  <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+    <span style="font-family:'Bebas Neue',sans-serif;font-size:1.2rem;color:#fff;letter-spacing:2px;">DIGIFY<span style="color:#00FF87">.</span></span>
+    <span style="font-size:0.78rem;color:rgba(255,255,255,.25);">© 2026 Digify Marketing Digital</span>
+    <a href="/blog/" style="font-size:0.78rem;color:rgba(255,255,255,.35);">← Voltar ao Blog</a>
+  </div>
+</footer>
+
+<a href="https://wa.me/5511990002065" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a13 13 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.122 1.526 5.858L.057 23.617a.5.5 0 0 0 .61.61l5.759-1.469A11.954 11.954 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.017-1.378l-.36-.214-3.727.951.968-3.638-.234-.374A9.818 9.818 0 1 1 12 21.818z"/></svg>
+</a>
+
+<script>
+var thumbMap = {
+  'SEO':['post-thumb-seo','🔍'],
+  'Criação de Sites':['post-thumb-sites','🖥️'],
+  'Desenvolvimento de Apps':['post-thumb-apps','📱'],
+  'Marketing Digital':['post-thumb-marketing','📣'],
+  'E-commerce':['post-thumb-ecommerce','🛒'],
+};
+fetch('/blog/index.json')
+  .then(function(r){ return r.json(); })
+  .then(function(posts){
+    var currentSlug = window.location.pathname.replace(/\//g,'').replace('blog','');
+    var cat = 'Desenvolvimento de Apps';
+    var related = posts.filter(function(p){ return p.slug !== currentSlug && p.category === cat; }).slice(0,3);
+    var el = document.getElementById('related');
+    if(!related.length){ el.closest('.related-sec').style.display='none'; return; }
+    el.innerHTML = related.map(function(p){
+      var t = thumbMap[p.category]||['post-thumb-seo','📝'];
+      return '<a href="/blog/'+p.slug+'/" class="rel-card">' +
+        '<div class="rel-thumb '+t[0]+'" style="background:linear-gradient(135deg,#0D0D0D,#1a1a2e)">'+t[1]+'</div>' +
+        '<div class="rel-body">' +
+          '<h4>'+p.title+'</h4>' +
+          '<p>'+p.excerpt+'</p>' +
+          '<span class="rel-arrow">Ler →</span>' +
+        '</div></a>';
+    }).join('');
+  });
+</script>
+</body>
+</html>
