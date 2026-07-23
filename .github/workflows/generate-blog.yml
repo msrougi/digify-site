@@ -2,10 +2,8 @@ name: 🤖 Gerar Artigo no Blog
 
 on:
   schedule:
-    # Todo dia às 09:00 horário de Brasília (12:00 UTC)
+    # Todo dia às 09:00 de Brasília (12:00 UTC)
     - cron: '0 12 * * *'
-
-  # Permite rodar manualmente
   workflow_dispatch:
     inputs:
       count:
@@ -13,9 +11,13 @@ on:
         required: false
         default: '1'
 
+concurrency:
+  group: blog-generation
+  cancel-in-progress: false
+
 jobs:
   generate-post:
-    name: Gerar e publicar artigo
+    name: Gerar, renderizar e publicar
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -29,18 +31,28 @@ jobs:
         with:
           node-version: '20'
 
+      # NOVO — o build.py é quem renderiza o site inteiro
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
       - name: Gerar artigo via Gemini
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
-        run: |
-          node generate-posts.js --count 1
+        run: node generate-posts.js --count "${{ github.event.inputs.count || '1' }}"
+
+      # NOVO — regenera as 14 páginas, todos os artigos, o sitemap e o RSS
+      - name: Renderizar o site
+        run: python3 _build/build.py
 
       - name: Commit e push
         run: |
           git config --local user.email "bot@digify.live"
           git config --local user.name "Digify Blog Bot"
-          git add blog/ index.html
-          git diff --staged --quiet || git commit -m "✍️ Blog: novo artigo [$(date '+%d/%m/%Y')]"
+          git add -A
+          git diff --staged --quiet && echo "Nada a publicar." && exit 0
+          git commit -m "✍️ Blog: novo artigo [$(date '+%d/%m/%Y')]"
           git pull --rebase origin main
           git push
