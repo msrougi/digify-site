@@ -1,0 +1,30 @@
+CAPTURAS DOS PROJETOS
+=====================
+
+Coloque aqui a captura de cada projeto, nomeada com o slug exato:
+
+  serlaw.jpg
+  voe-vento-norte.jpg
+  sindico-fmf.jpg
+  reforma-expressa.jpg
+  digify-scraper.jpg
+  plugins-digify.jpg
+
+Aceita .jpg, .png ou .webp — o gerador procura nessa ordem.
+Enquanto o arquivo não existir, o card mostra um bloco tipográfico
+com o nome do cliente. Nada quebra e nada fica com imagem vazia.
+
+COMO CAPTURAR NO FIREFOX
+------------------------
+1. Abra o site do projeto
+2. Botão direito em qualquer área vazia da página
+3. "Fazer captura de tela"
+4. "Salvar página inteira"  (ou selecione só o topo, que é o que aparece no card)
+
+TAMANHO IDEAL
+-------------
+Proporção 16:10, algo em torno de 1600x1000 px.
+O card corta pelo topo, então o hero do site é o que aparece.
+Comprima em https://squoosh.app antes de subir — mire abaixo de 200 KB por imagem.
+
+Depois de colocar as imagens, rode:  python3 _build/build.py

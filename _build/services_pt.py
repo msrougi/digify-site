@@ -1,0 +1,223 @@
+# -*- coding: utf-8 -*-
+"""Digify — páginas de serviço (PT-BR). URLs idênticas às do site atual."""
+
+SERVICES = [
+
+{
+ "slug":"servicos/criacao-de-sites/", "c":"flame",
+ "title":"Criação de Sites Profissionais | Agência Web | Digify",
+ "desc":"Criação de sites institucionais, landing pages e e-commerce. Sites rápidos, responsivos e otimizados para SEO. Mais de 300 projetos entregues.",
+ "eyebrow":"Criação de sites",
+ "h1":"Um site não é folheto. É o seu melhor vendedor.",
+ "lede":"Sites institucionais, landing pages e lojas virtuais desenhados do zero, rápidos o suficiente para não perder visita e estruturados para o Google entender do que você trata.",
+ "problem_h":"O problema quase nunca é o visual.",
+ "problem":[
+   "A maioria dos sites que refazemos não era feio. Era **lento, mal estruturado e invisível para o Google**. Três segundos a mais de carregamento derrubam a conversão pela metade, e nenhum design salva uma página que o cliente abandona antes de ver.",
+   "O outro padrão que encontramos é o site montado sobre um tema pronto: dezenas de recursos que ninguém usa, carregando em toda visita, e uma estrutura de títulos que não diz nada sobre o negócio. Funciona no dia da entrega e apodrece em seis meses.",
+   "Por isso começamos pela pergunta que interessa: **o que precisa acontecer para essa visita virar cliente?** O design vem depois — e vem melhor, porque tem um trabalho a fazer."],
+ "deliver_h":"O que entra em todo projeto.",
+ "deliver":[
+   ("Design","Interface sob medida","Layout desenhado a partir da sua marca e do seu público, não adaptado de um tema comprado. Você aprova o design antes de uma linha de código existir."),
+   ("Performance","Carregamento abaixo de 2s","Imagens em formatos modernos, CSS crítico, fontes otimizadas e zero peso inútil. A média dos sites que entregamos é 98/100 no PageSpeed."),
+   ("SEO","Estrutura pronta para rankear","Hierarquia de títulos correta, dados estruturados, sitemap, meta tags e URLs limpas desde o primeiro dia — não como serviço vendido depois."),
+   ("Responsivo","Certo em qualquer tela","Testado em celular, tablet e desktop de verdade, não só no redimensionamento do navegador. A maior parte do seu tráfego vem do celular."),
+   ("Conversão","Caminho claro até o contato","Formulários curtos, chamadas para ação em pontos de decisão e integração com WhatsApp, e-mail ou CRM."),
+   ("Autonomia","Você edita sem depender de nós","Quando o projeto pede, entregamos com painel de conteúdo para você publicar e ajustar textos sozinho.")],
+ "how_h":"Como um site sai do papel.",
+ "how":[
+   ("Diagnóstico","Entendemos o negócio, olhamos os concorrentes e definimos o que a página precisa provar. Uma reunião, sem custo."),
+   ("Arquitetura","Definimos as páginas, a hierarquia e o caminho até a conversão antes de desenhar qualquer coisa."),
+   ("Design","Você recebe o layout para aprovar. Ajustes fazem parte — mudar pixel é barato, mudar código pronto não."),
+   ("Desenvolvimento","Codificamos, otimizamos e testamos. Você acompanha em ambiente de homologação, com atualizações semanais."),
+   ("Publicação","Colocamos no ar, configuramos analytics e Search Console, e acompanhamos as primeiras semanas.")],
+ "tech":["HTML/CSS/JS","WordPress","WooCommerce","Elementor","PHP","Netlify","Cloudways","Schema.org","Core Web Vitals"],
+ "faq":[
+  ("Quanto tempo leva para criar um site?","Uma landing page fica pronta em cerca de 10 dias úteis. Um site institucional completo costuma levar de 3 a 5 semanas, e um e-commerce, de 6 a 10 semanas. O prazo exato sai depois do diagnóstico e vira compromisso, com cronograma que você acompanha."),
+  ("Vocês usam tema pronto ou fazem do zero?","Fazemos do zero. Quando o projeto pede WordPress, montamos a estrutura sob medida em vez de comprar um tema e trocar as cores. É a diferença entre um site que carrega o que precisa e um que carrega tudo o que o tema traz."),
+  ("Eu consigo editar o conteúdo depois?","Sim, quando o projeto pede. Sites com atualização frequente saem com painel de conteúdo e treinamento. Sites institucionais estáveis costumam sair como HTML estático, que é mais rápido e mais seguro — nesses casos as alterações passam por nós."),
+  ("O site já vem com SEO?","Vem com a base técnica: estrutura de títulos, dados estruturados, sitemap, meta tags, URLs limpas e performance. Isso é o mínimo, não um extra. O trabalho contínuo de conteúdo e autoridade é um serviço separado.")],
+ "related":["servicos/ecommerce/","servicos/seo/","servicos/sistemas/"],
+},
+
+{
+ "slug":"servicos/desenvolvimento-de-apps/", "c":"ultra",
+ "title":"Desenvolvimento de Aplicativos iOS e Android | Digify",
+ "desc":"Desenvolvimento de apps para iOS e Android com design intuitivo, integração com APIs e entregas semanais. Do MVP ao produto final.",
+ "eyebrow":"Desenvolvimento de apps",
+ "h1":"Um app só vale o ícone que ocupa na tela.",
+ "lede":"Aplicativos iOS e Android construídos a partir de um problema real do usuário, com entregas semanais para você validar antes de investir no que talvez ninguém use.",
+ "problem_h":"A maioria dos apps morre por excesso.",
+ "problem":[
+   "O caminho mais comum para queimar orçamento em aplicativo é este: listar tudo o que o app *poderia* fazer, construir tudo, lançar depois de oito meses e descobrir que os usuários queriam só duas dessas funções — e que uma delas não funciona bem.",
+   "Trabalhamos ao contrário. **Primeiro a versão menor que já resolve o problema**, no ar e nas mãos de gente de verdade. O que sobrevive ao uso real vira prioridade; o resto some da lista sem ter custado nada.",
+   "Isso não é fazer menos. É descobrir mais cedo o que merece ser feito."],
+ "deliver_h":"O que você recebe.",
+ "deliver":[
+   ("Produto","MVP funcionando primeiro","A menor versão que entrega valor real, publicada e testável. Em média seis semanas até algo instalável."),
+   ("Design","Interface que dispensa manual","Fluxos desenhados para o usuário chegar ao objetivo em menos toques, seguindo os padrões que iOS e Android já ensinaram a ele."),
+   ("Integração","Conversa com o que você já usa","APIs, meios de pagamento, notificações, login social e integração com o seu sistema ou ERP."),
+   ("Ritmo","Entrega toda semana","Build novo semanalmente para você instalar e opinar. Nada de sumir por dois meses e reaparecer com surpresas."),
+   ("Publicação","Lojas resolvidas por nós","Cuidamos do envio à App Store e ao Google Play, das políticas de privacidade exigidas e das revisões até a aprovação."),
+   ("Propriedade","O código é seu","Repositório no seu nome, documentado. Você pode trocar de fornecedor sem começar do zero.")],
+ "how_h":"Do briefing à loja.",
+ "how":[
+   ("Descoberta","Mapeamos quem usa, para quê e qual o momento de uso. Sai daqui a lista do que entra no MVP e do que espera."),
+   ("Protótipo","Telas navegáveis antes do código, para corrigir fluxo enquanto ainda é barato."),
+   ("Construção","Ciclos semanais, cada um terminando em algo que você instala e testa."),
+   ("Testes","Dispositivos reais, cenários de erro, conexão ruim e telas pequenas."),
+   ("Loja e evolução","Publicação, acompanhamento das primeiras semanas e priorização do que vem depois com base em uso real.")],
+ "tech":["React Native","Flutter","Swift","Kotlin","REST","Firebase","Push","App Store","Google Play"],
+ "faq":[
+  ("Quanto custa desenvolver um aplicativo?","Depende do escopo, e a faixa é larga porque um app de catálogo e um app com pagamento, chat e integração fiscal não têm nada em comum. Fazemos o diagnóstico e enviamos proposta com escopo fechado. Se o orçamento não fecha, dizemos antes de você gastar tempo."),
+  ("Preciso de dois apps, um para iOS e outro para Android?","Na maioria dos casos, não. Usamos tecnologias que geram os dois a partir de uma base só, o que corta custo e mantém as versões sincronizadas. Desenvolvimento nativo separado só quando o projeto exige recursos específicos de plataforma."),
+  ("Em quanto tempo tenho algo funcionando?","Em média seis semanas até o primeiro MVP instalável. Não é o produto final — é a versão que já resolve o problema central e permite decidir o resto com informação em vez de palpite."),
+  ("Vocês publicam nas lojas para mim?","Sim. Cuidamos do envio, dos requisitos de privacidade que Apple e Google exigem e das rodadas de revisão até a aprovação. As contas de desenvolvedor ficam no seu nome, não no nosso.")],
+ "related":["servicos/sistemas/","servicos/criacao-de-sites/","servicos/ecommerce/"],
+},
+
+{
+ "slug":"servicos/seo/", "c":"jade",
+ "title":"Agência de SEO | Consultoria e Otimização para Google | Digify",
+ "desc":"Agência de SEO com auditoria técnica, conteúdo, link building e monitoramento de posições. Clientes entre #1 e #3 nos primeiros 6 meses.",
+ "eyebrow":"Agência de SEO",
+ "h1":"Aparecer primeiro não é sorte. É método.",
+ "lede":"Auditoria técnica, conteúdo e autoridade trabalhando juntos para colocar seu site na frente de quem já está procurando o que você vende — todo dia, sem pagar por clique.",
+ "problem_h":"Tráfego pago para. SEO acumula.",
+ "problem":[
+   "Anúncio é aluguel: no dia em que você corta o orçamento, o telefone para. SEO é obra — leva mais tempo, custa esforço no começo e **continua rendendo depois que o investimento cessa**.",
+   "O que trava a maioria dos sites não é falta de conteúdo. É base técnica quebrada: páginas que o Google não consegue rastrear, títulos duplicados, carregamento lento no celular, conteúdo bom enterrado atrás de JavaScript. Escrever mais artigos sobre uma fundação assim é jogar dinheiro fora.",
+   "Por isso sempre começamos pela auditoria. **Consertar o que já existe costuma render mais rápido do que produzir coisa nova.**"],
+ "deliver_h":"As quatro frentes.",
+ "deliver":[
+   ("Técnico","Auditoria e correção","Rastreamento, indexação, velocidade, Core Web Vitals, dados estruturados, canônicas e arquitetura de links internos."),
+   ("Conteúdo","Pauta baseada em busca real","Pesquisa de palavras-chave e intenção, com prioridade para termos de cauda longa que trazem visitante pronto para comprar."),
+   ("Autoridade","Link building sem atalho","Conquista de menções em fontes relevantes. Nada de compra de rede de sites, que hoje é passivo e não ativo."),
+   ("Local","Presença no mapa","Perfil da Empresa no Google, avaliações, categorias e sinais locais para quem depende de busca com cidade."),
+   ("Medição","Relatório que você entende","Posições, tráfego orgânico, conversões e o que foi feito no mês. Sem gráfico bonito que não explica decisão."),
+   ("Rotina","Ajuste contínuo","O Google muda, os concorrentes reagem. A revisão de estratégia é mensal, não anual.")],
+ "how_h":"Como o trabalho anda.",
+ "how":[
+   ("Auditoria","Diagnóstico técnico completo do site e análise dos concorrentes que hoje ocupam as posições que você quer."),
+   ("Prioridade","Lista ordenada por impacto e esforço. Começa pelo que rende mais rápido, não pelo que é mais fácil de cobrar."),
+   ("Correção","Implementação técnica no site, com validação no Search Console."),
+   ("Conteúdo","Produção e otimização das páginas que atacam os termos escolhidos."),
+   ("Acompanhamento","Monitoramento de posições e relatório mensal, com replanejamento a cada ciclo.")],
+ "tech":["Search Console","GA4","Schema.org","Core Web Vitals","Screaming Frog","Ahrefs","Perfil da Empresa"],
+ "faq":[
+  ("Em quanto tempo o SEO dá resultado?","Os primeiros sinais — indexação, ganho em termos de cauda longa e aumento de impressões — costumam aparecer entre 60 e 90 dias. Resultado consolidado em termos competitivos leva de 6 a 12 meses. Quem promete primeira página em 30 dias está vendendo outra coisa."),
+  ("Vocês garantem a primeira posição no Google?","Não, e desconfie de quem garante. Ninguém controla o algoritmo. O que garantimos é método, transparência do que foi feito e medição honesta. Na prática, nossos clientes ficam entre a primeira e a terceira posição nos primeiros seis meses."),
+  ("SEO substitui o Google Ads?","Não substitui, complementa. Anúncio traz resultado imediato e serve para testar mensagem e demanda; SEO constrói um ativo que segue rendendo. O arranjo mais eficiente costuma usar os dois, com o pago sustentando o caixa enquanto o orgânico amadurece."),
+  ("Preciso trocar de site para fazer SEO?","Nem sempre. Muitos sites só precisam de correção técnica e reestruturação de conteúdo. A troca só entra na conversa quando a base atual impede o resultado — e nesse caso mostramos por quê, com dados.")],
+ "related":["servicos/marketing-digital/","servicos/criacao-de-sites/","servicos/ecommerce/"],
+},
+
+{
+ "slug":"servicos/marketing-digital/", "c":"violet",
+ "title":"Marketing Digital e Tráfego Pago | Google e Meta Ads | Digify",
+ "desc":"Gestão de Google Ads e Meta Ads com foco em ROI. Campanhas, funis e mensuração para atrair cliente qualificado, não só clique.",
+ "eyebrow":"Marketing digital",
+ "h1":"Clique não paga conta. Cliente paga.",
+ "lede":"Google Ads, Meta Ads e crescimento orgânico operando juntos, com a medição certa para você saber quanto custa cada cliente — e não só quantas pessoas viram o anúncio.",
+ "problem_h":"Métrica bonita esconde prejuízo.",
+ "problem":[
+   "Alcance, impressões e curtidas são fáceis de subir e não significam quase nada. **A única pergunta que importa é quanto custa trazer um cliente e quanto esse cliente deixa.** Se o relatório não responde isso, ele está decorando o problema.",
+   "O segundo erro comum é mandar tráfego pago para uma página que não converte. Você paga por cada visita e a página desperdiça oito em cada dez. Melhorar a página costuma render mais que aumentar o orçamento.",
+   "Trabalhamos com a conta aberta, no seu nome, com o rastreamento configurado corretamente antes de a primeira campanha subir."],
+ "deliver_h":"O que fazemos.",
+ "deliver":[
+   ("Google Ads","Busca, Display, Shopping","Campanhas estruturadas por intenção, com termos negativos, extensões e lances ajustados ao que realmente converte."),
+   ("Meta Ads","Facebook e Instagram","Públicos, criativos e testes para descoberta e remarketing, com verba protegida por regra de corte."),
+   ("Medição","Rastreamento que fecha","GA4, tags de conversão, eventos e integração com o seu CRM. Sem isso, otimizar campanha é chute."),
+   ("Página","Destino que converte","Ajuste ou criação da landing page que recebe o tráfego. Anúncio bom em página ruim é dinheiro queimado."),
+   ("Funil","Do primeiro contato à venda","Sequência de mensagens, remarketing e automação para quem não comprou na primeira visita."),
+   ("Conta própria","Tudo no seu nome","Contas de anúncio, pixels e históricos ficam com você. Se a parceria acabar, o aprendizado não vai embora.")],
+ "how_h":"Como conduzimos.",
+ "how":[
+   ("Diagnóstico","Números atuais, ticket médio, margem e meta. Sem isso não dá para dizer quanto vale um clique."),
+   ("Rastreamento","Configuração e teste de conversões antes de qualquer verba subir."),
+   ("Estruturação","Montagem das campanhas, públicos e criativos, com orçamento de teste controlado."),
+   ("Otimização","Ajuste semanal com base em custo por resultado, não em impressão."),
+   ("Escala","Aumento de verba só no que provou retorno, com acompanhamento de saturação.")],
+ "tech":["Google Ads","Meta Ads","GA4","Tag Manager","Looker Studio","Pixel","API de Conversões"],
+ "faq":[
+  ("Qual o investimento mínimo em anúncios?","Depende do setor e da concorrência pelo clique, mas verba muito baixa gera dados insuficientes para otimizar — a campanha nunca sai da fase de aprendizado. No diagnóstico calculamos o mínimo viável para o seu caso e dizemos se vale a pena começar agora."),
+  ("Vocês cobram por resultado?","Trabalhamos com valor fixo de gestão, separado da verba de mídia. Modelo por percentual de venda cria incentivo para inflar faturamento com desconto, e por percentual da verba cria incentivo para gastar mais. Preferimos alinhar pelo resultado combinado no início."),
+  ("Em quanto tempo vejo retorno do tráfego pago?","Os primeiros resultados aparecem em dias, mas as duas ou três primeiras semanas são de calibragem: a plataforma precisa de volume de conversão para aprender. É comum o custo por resultado cair bastante depois desse período."),
+  ("Posso fazer anúncio sem ter site?","Tecnicamente sim, mandando para WhatsApp ou perfil, mas você perde rastreamento, remarketing e credibilidade — e paga mais caro por cada clique. Na prática, uma landing page bem feita se paga rápido.")],
+ "related":["servicos/seo/","servicos/criacao-de-sites/","servicos/ecommerce/"],
+},
+
+{
+ "slug":"servicos/ecommerce/", "c":"pink",
+ "title":"Criação de Loja Virtual e E-commerce | Digify",
+ "desc":"Criação de e-commerce de alta performance com UX otimizada para conversão, integração com marketplaces e meios de pagamento.",
+ "eyebrow":"E-commerce",
+ "h1":"Cada segundo de espera é um carrinho a menos.",
+ "lede":"Lojas virtuais rápidas, com checkout curto, integração com marketplaces e todos os meios de pagamento que o seu cliente já usa — inclusive Pix.",
+ "problem_h":"O funil vaza onde ninguém olha.",
+ "problem":[
+   "A conversa sobre e-commerce costuma girar em torno de tráfego, mas o buraco quase sempre está depois da visita. **Busca interna que não acha o produto, frete calculado tarde demais, checkout com passos demais** — cada um desses tira uma fatia do carrinho.",
+   "Loja lenta é o caso mais caro. No celular, cada segundo a mais derruba a conversão de forma mensurável, e a maior parte do seu tráfego é celular.",
+   "Nós tratamos a loja como operação, não como vitrine: o que importa é o caminho completo, do primeiro clique ao pedido pago e à nota emitida."],
+ "deliver_h":"O que a loja precisa ter.",
+ "deliver":[
+   ("Velocidade","Catálogo que responde","Imagens otimizadas, cache e consultas eficientes mesmo com milhares de produtos."),
+   ("Checkout","Menos passos, mais pedidos","Fluxo curto, cálculo de frete cedo, compra sem cadastro obrigatório e recuperação de carrinho."),
+   ("Pagamento","Cartão, boleto e Pix","Integração com os principais gateways, parcelamento e antifraude configurado."),
+   ("Logística","Frete e prazo corretos","Cálculo por CEP, integração com transportadoras e regras de frete grátis por faixa."),
+   ("Marketplaces","Estoque sincronizado","Integração com marketplaces e ERP para não vender o que já acabou."),
+   ("SEO de produto","Página que rankeia sozinha","Dados estruturados de produto, avaliações, URLs limpas e categorias com texto próprio.")],
+ "how_h":"Como montamos.",
+ "how":[
+   ("Diagnóstico","Catálogo, margem, logística e o que trava a operação hoje."),
+   ("Arquitetura","Categorias, filtros e caminho de compra desenhados antes do layout."),
+   ("Construção","Loja, integrações de pagamento e frete, testes de pedido ponta a ponta."),
+   ("Carga","Importação de produtos, imagens e redirecionamentos se houver loja antiga."),
+   ("Pós-lançamento","Acompanhamento das primeiras vendas, ajuste de checkout e recuperação de carrinho.")],
+ "tech":["WooCommerce","WordPress","Pix","Mercado Pago","PagSeguro","Correios","Melhor Envio","ERP","Schema Produto"],
+ "faq":[
+  ("Qual plataforma vocês recomendam para loja virtual?","Depende do catálogo e da operação. WooCommerce quando você quer controle total, integrações próprias e nenhum percentual sobre venda. Plataformas fechadas quando a prioridade é simplicidade e a operação é pequena. No diagnóstico mostramos o custo real de cada caminho em três anos, não só a mensalidade."),
+  ("Vocês migram minha loja atual sem perder o SEO?","Sim, e essa é a parte mais delicada da migração. Mapeamos todas as URLs antigas e criamos redirecionamentos um a um para as novas. Sem isso, a loja perde as posições que levou anos para conquistar."),
+  ("A loja integra com marketplace e ERP?","Integra. Sincronizamos estoque e pedidos com marketplaces e com o seu ERP, que é o que evita vender item esgotado e digitar pedido duas vezes."),
+  ("Aceita Pix?","Sim, junto com cartão, boleto e carteiras digitais. O Pix costuma ter a menor taxa e a maior aprovação, e vale destacá-lo no checkout.")],
+ "related":["servicos/criacao-de-sites/","servicos/marketing-digital/","servicos/sistemas/"],
+},
+
+{
+ "slug":"servicos/sistemas/", "c":"cyan",
+ "title":"Desenvolvimento de Sistemas Web e Integrações | Digify",
+ "desc":"Sistemas web sob medida, APIs e automações que eliminam trabalho manual. Do levantamento ao deploy, com entregas semanais.",
+ "eyebrow":"Sistemas e integrações",
+ "h1":"Se alguém digita duas vezes, tem software faltando.",
+ "lede":"Sistemas web sob medida, APIs e automações que tiram da mão o que já deveria estar automático — e conectam as ferramentas que hoje não conversam entre si.",
+ "problem_h":"A planilha que virou sistema.",
+ "problem":[
+   "Quase toda empresa tem uma: a planilha que começou pequena, virou o coração da operação e hoje só uma pessoa sabe mexer. Ela **não tem histórico, não tem controle de acesso e quebra em silêncio** — e o custo disso só aparece quando já é caro.",
+   "O outro sintoma é o retrabalho de digitação: o pedido entra num lugar, é redigitado no financeiro e digitado de novo para emitir nota. Cada passagem é uma chance de erro e horas que ninguém contabiliza.",
+   "Nem sempre a resposta é um sistema novo. Às vezes é **uma integração entre o que você já paga**. Dizemos isso no diagnóstico, mesmo quando dá menos projeto para nós."],
+ "deliver_h":"O que construímos.",
+ "deliver":[
+   ("Sob medida","Sistema com a sua regra","Software desenhado para o processo que a sua empresa realmente usa, e não o contrário."),
+   ("Integração","Ferramentas conversando","APIs ligando ERP, e-commerce, financeiro, emissor de nota e o que mais estiver na operação."),
+   ("Automação","Rotina sem gente no meio","Importações, conciliações, disparos e relatórios que rodam sozinhos no horário certo."),
+   ("Acesso","Cada um vê o que deve","Perfis, permissões e trilha de auditoria de quem alterou o quê e quando."),
+   ("Relatório","Número na hora da decisão","Painéis com os indicadores que a diretoria pede, atualizados sem ninguém montar planilha."),
+   ("Propriedade","Código e documentação seus","Repositório no seu nome, com documentação. Você não fica refém de fornecedor.")],
+ "how_h":"Do processo ao sistema.",
+ "how":[
+   ("Levantamento","Acompanhamos o processo como ele é hoje, com quem executa. É aqui que aparecem as regras que ninguém documentou."),
+   ("Arquitetura","Desenho técnico, escolha de tecnologia e definição do que entra na primeira entrega."),
+   ("Construção","Ciclos semanais com algo utilizável ao fim de cada um."),
+   ("Homologação","A equipe usa em ambiente de teste com dados reais antes de valer."),
+   ("Implantação","Migração, treinamento e acompanhamento próximo nas primeiras semanas.")],
+ "tech":["PHP","Python","JavaScript","MySQL","PostgreSQL","REST","Webhooks","Docker","Cloudways"],
+ "faq":[
+  ("Vale mais a pena comprar um sistema pronto ou desenvolver?","Sistema pronto ganha quando o seu processo é comum e o custo mensal cabe. Desenvolver ganha quando a regra do negócio é o seu diferencial, quando você já paga várias assinaturas que não conversam, ou quando a adaptação ao software vira um custo maior que o próprio software. Comparamos os dois cenários no diagnóstico."),
+  ("Vocês integram com o ERP que eu já uso?","Se ele tem API ou permite exportação, integramos. Quando não tem, existem caminhos alternativos, e nesse caso avaliamos se o esforço compensa ou se é hora de repensar a ferramenta."),
+  ("Quanto tempo até o sistema entrar em uso?","A primeira versão utilizável costuma sair em torno de seis semanas. Ela não faz tudo — faz a parte que mais dói. O resto entra em ciclos, com a equipe já usando e opinando com base em uso real."),
+  ("O código fica comigo?","Fica. Repositório no seu nome, documentado, com as credenciais de infraestrutura sob seu controle. Trocar de fornecedor deve ser uma decisão sua, não uma sentença.")],
+ "related":["servicos/desenvolvimento-de-apps/","servicos/ecommerce/","servicos/criacao-de-sites/"],
+},
+]
+
+SVC_INDEX = {s["slug"]: (s["eyebrow"], s["h1"], s["c"]) for s in SERVICES}

@@ -1,0 +1,39 @@
+# Digify
+
+> Agência web brasileira full-stack com mais de 10 anos e 300 projetos entregues. Criação de sites, desenvolvimento de apps, SEO, marketing digital, e-commerce e sistemas sob medida. Atendimento remoto no Brasil e no exterior, em português, inglês e espanhol.
+
+Contato: WhatsApp (11) 98991-1000 | https://digify.live/contato/
+
+## Serviços
+- [Criação de sites](https://digify.live/servicos/criacao-de-sites/): Sites institucionais, landing pages e e-commerces ultrarrápidos, responsivos e desenhados para transformar visita em cliente.
+- [Desenvolvimento de apps](https://digify.live/servicos/desenvolvimento-de-apps/): Aplicativos iOS e Android com design intuitivo e integração com APIs. Do MVP ao produto final, com entregas semanais.
+- [Agência de SEO](https://digify.live/servicos/seo/): Auditoria técnica, conteúdo, link building e monitoramento de posições. SEO que coloca você na frente de quem já procura.
+- [Marketing digital](https://digify.live/servicos/marketing-digital/): Google Ads, Meta Ads e crescimento orgânico trabalhando juntos para atrair cliente qualificado e defender o ROI.
+- [Lojas virtuais](https://digify.live/servicos/ecommerce/): Alta performance, UX otimizada para conversão, integração com marketplaces e todos os principais meios de pagamento.
+- [Sistemas e integrações](https://digify.live/servicos/sistemas/): Sistemas web sob medida, APIs e automações que eliminam trabalho manual e fazem o negócio escalar sem inchar o time.
+
+## Páginas
+- [Home](https://digify.live/): visão geral da agência
+- [Sobre](https://digify.live/sobre/): quem é a Digify, princípios e método
+- [Contato](https://digify.live/contato/): diagnóstico gratuito e proposta
+- [English](https://digify.live/en/) | [Español](https://digify.live/es/)
+
+## Conteúdo recente
+- [Google Ads: Crie Anúncios que Convertem e Impulsionam Vendas](https://digify.live/blog/google-ads-crie-anuncios-que-convertem-e-impulsionam-vendas/): Aprenda a criar anúncios no Google Ads que realmente funcionam! Descubra estratégias eficazes para converter cliques em clientes e otimizar suas campanhas para o sucesso.
+- [Velocidade do Site e SEO: Cada Segundo Impulsiona Seu Rank](https://digify.live/blog/velocidade-do-site-e-seo-cada-segundo-impulsiona-seu-rank/): Descubra como a velocidade do site impacta diretamente seu SEO e a experiência do usuário. Aprenda por que cada segundo é crucial para ranquear melhor no Google e converter mais visitantes. Otimize já!
+- [MVP de Aplicativo: Valide Sua Ideia Antes de Investir](https://digify.live/blog/mvp-de-aplicativo-valide-sua-ideia-antes-de-investir/): Descubra como o MVP de aplicativo pode validar sua ideia de app antes de grandes investimentos. Minimize riscos, economize recursos e lance um produto de sucesso com a Digify.
+- [Auditoria SEO Completa: Guia Essencial para Otimizar Seu Site](https://digify.live/blog/auditoria-seo-completa-guia-essencial-para-otimizar-seu-site/): Aprenda a fazer uma auditoria de SEO completa no seu site e impulsione seu ranqueamento. Identifique oportunidades, corrija falhas e garanta mais visibilidade online para sua marca.
+- [App Store Optimization: Como Rankear seu App na App Store](https://digify.live/blog/app-store-optimization-como-rankear-seu-app-na-app-store/): Aprenda as melhores estratégias de App Store Optimization (ASO) para aumentar a visibilidade do seu aplicativo e disparar os downloads na App Store. Conquiste o topo!
+- [Guia Essencial: Briefing do App Perfeito para Agências](https://digify.live/blog/guia-essencial-briefing-do-app-perfeito-para-agencias/): Crie o briefing do app perfeito para sua agência e garanta um desenvolvimento sem falhas. Descubra os elementos essenciais para alinhar expectativas e otimizar seu projeto.
+- [Aplicativo Nativo vs PWA: Qual Escolher para Seu Negócio?](https://digify.live/blog/aplicativo-nativo-vs-pwa-qual-escolher-para-seu-negocio/): Qual o ideal para seu negócio: Aplicativo Nativo ou PWA? Compare custos, desempenho e funcionalidades para tomar a decisão estratégica no desenvolvimento do seu app.
+- [React Native vs Flutter: A Escolha Certa para Seu App 2025](https://digify.live/blog/react-native-vs-flutter-a-escolha-certa-para-seu-app-2025/): React Native vs Flutter: qual a melhor opção para seu app em 2025? Compare tecnologias, desempenho e custos para tomar a decisão ideal para o seu projeto mobile com a Digify.
+- [Link Building White Hat: Ganhe Autoridade SEO Segura](https://digify.live/blog/link-building-white-hat-ganhe-autoridade-seo-segura/): Descubra estratégias de link building white hat e construa autoridade para seu site. Aprenda métodos seguros e éticos para um SEO duradouro e destaque-se no Google.
+- [Landing Page que Converte: 10 Elementos Indispensáveis](https://digify.live/blog/landing-page-que-converte-10-elementos-indispensaveis/): Quer uma landing page que converte visitantes em clientes? Descubra os 10 elementos indispensáveis para criar páginas de alta performance e impulsionar seus resultados online.
+- [ROI Digital: Meça Campanhas com Precisão e Impulsione Lucros](https://digify.live/blog/roi-digital-meca-campanhas-com-precisao-e-impulsione-lucros/): Aprenda a medir o ROI de campanhas digitais com precisão! Descubra métricas, ferramentas e estratégias eficazes para otimizar seus investimentos e maximizar resultados.
+- [Tráfego Pago: Como Começar do Zero e Ter Resultados](https://digify.live/blog/trafego-pago-como-comecar-do-zero-e-ter-resultados/): Descubra o que é tráfego pago e aprenda a começar do zero suas campanhas de anúncios online. Atraia clientes qualificados e gere resultados eficazes para seu negócio.
+- [Estratégia de Conteúdo: Como Gerar Leads Qualificados](https://digify.live/blog/estrategia-de-conteudo-como-gerar-leads-qualificados/): Aprenda a criar uma estratégia de conteúdo que gera leads qualificados. Descubra como planejar, produzir e distribuir conteúdo que converte visitantes em oportunidades reais.
+- [Hospedagem de Sites: Guia para Escolher a Melhor Opção](https://digify.live/blog/hospedagem-de-sites-guia-para-escolher-a-melhor-opcao/): A **hospedagem de sites** certa é vital. Aprenda a escolher a melhor opção para seu projeto, considerando performance, segurança e custo-benefício, e garanta o sucesso online.
+- [Google Ads vs Meta Ads: Qual Plataforma Escolher em 2025?](https://digify.live/blog/google-ads-vs-meta-ads-qual-plataforma-escolher-em-2025/): Decida onde investir em 2025! Compare Google Ads vs Meta Ads para sua empresa. Analisamos prós e contras de cada plataforma, otimizando seu orçamento de marketing.
+
+## Observação
+Todo o conteúdo é original e produzido pela Digify. Citações são bem-vindas com atribuição e link para a página de origem.

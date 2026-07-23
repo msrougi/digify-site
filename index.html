@@ -1,437 +1,623 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Digify | Agência de Criação de Sites, Apps e SEO | Brasil</title>
-  <meta name="description" content="Agência web especialista em criação de sites, desenvolvimento de apps e SEO. +10 anos e +300 projetos. Seu negócio no topo do Google.">
-  <meta name="keywords" content="criação de sites, desenvolvimento de sites, desenvolvimento de apps, criação de apps, agência de SEO, agência web, marketing digital">
-  <link rel="canonical" href="https://digify.live/">
-  <meta property="og:title" content="Digify | Criação de Sites, Apps e SEO">
-  <meta property="og:description" content="Agência web com +10 anos levando empresas ao topo do Google. Criação de sites, apps e SEO.">
-  <meta property="og:url" content="https://digify.live/">
-  <meta property="og:type" content="website">
-  <link rel="stylesheet" href="/css/style.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Digify Marketing Digital","url":"https://digify.live","description":"Agência web especialista em criação de sites, desenvolvimento de apps e SEO","areaServed":"Brasil","telephone":"+5511990002065","email":"ola@digify.live"}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Digify | Criação de Sites, Sistemas e SEO | Agência Web no Brasil</title>
+<meta name="description" content="Agência web full-stack: criação de sites, sistemas sob medida e SEO. Mais de 10 anos e 300 projetos levando empresas ao topo do Google.">
+<link rel="canonical" href="https://digify.live/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="theme-color" content="#FFFFFF" id="tc">
+
+<link rel="alternate" hreflang="pt-BR" href="https://digify.live/">
+<link rel="alternate" hreflang="en" href="https://digify.live/en/">
+<link rel="alternate" hreflang="es" href="https://digify.live/es/">
+<link rel="alternate" hreflang="x-default" href="https://digify.live/">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:site_name" content="Digify">
+<meta property="og:url" content="https://digify.live/">
+<meta property="og:title" content="Digify | Criação de Sites, Sistemas e SEO | Agência Web no Brasil">
+<meta property="og:description" content="Agência web full-stack: criação de sites, sistemas sob medida e SEO. Mais de 10 anos e 300 projetos levando empresas ao topo do Google.">
+<meta property="og:image" content="https://digify.live/assets/og-digify.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Digify — sites, sistemas e SEO">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Digify | Criação de Sites, Sistemas e SEO | Agência Web no Brasil">
+<meta name="twitter:description" content="Agência web full-stack: criação de sites, sistemas sob medida e SEO. Mais de 10 anos e 300 projetos levando empresas ao topo do Google.">
+<meta name="twitter:image" content="https://digify.live/assets/og-digify.png">
+
+<script>
+(function(){
+  var t; try{ t = localStorage.getItem('digify-theme'); }catch(e){}
+  if(!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', t);
+})();
+</script>
+
+<link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/digify.css">
 </head>
+
 <body>
+<a href="#main" class="skip">Pular para o conteúdo</a>
 
-
-<!-- NAV -->
-<nav class="site-nav" id="nav">
-  <div class="nav-inner">
-    <a href="/" class="nav-logo">DIGIFY<span class="dot">.</span></a>
-    <div class="nav-links">
-      <a href="#servicos">Serviços</a>
-      <a href="#processo">Processo</a>
-      <a href="/blog/">Blog</a>
-      <a href="/sobre/">Sobre</a>
-    </div>
-    <div class="nav-cta">
-      <a href="https://wa.me/5511990002065" target="_blank" class="btn btn-electric" rel="noopener"><span>Falar agora →</span></a>
-    </div>
-    <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+<header class="hdr" id="hdr">
+  <div class="wrap hdr__in">
+    <a href="/" class="logo" aria-label="Digify">digify<i>.</i></a>
+    <nav class="nav"><a href="#servicos">Serviços</a><a href="/portfolio/">Portfólio</a><a href="/blog/">Blog</a><a href="/sobre/">Sobre</a></nav>
+    <div class="lang" role="group" aria-label="Idioma do site"><a href="/" hreflang="pt-BR" lang="pt-BR" aria-current="true">PT</a><a href="/en/" hreflang="en" lang="en">EN</a><a href="/es/" hreflang="es" lang="es">ES</a></div>
+    <button class="sw" id="sw" role="switch" aria-checked="true" aria-label="Acender ou apagar a luz do site" title="Acender / apagar">
+      <span class="sw__screw sw__screw--l"></span>
+      <span class="sw__screw sw__screw--r"></span>
+      <span class="sw__rock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 18.5h5M10.5 21.5h3M12 2.5a6.2 6.2 0 0 0-3.6 11.2c.5.4.9 1 .9 1.7v.6h5.4v-.6c0-.7.4-1.3.9-1.7A6.2 6.2 0 0 0 12 2.5Z"/></svg></span>
+    </button>
+    <a href="#proposta" class="btn btn--primary">Solicitar proposta</a>
+    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mnav"><span></span><span></span><span></span></button>
   </div>
-</nav>
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#servicos">Serviços</a>
-  <a href="#processo">Processo</a>
-  <a href="/blog/">Blog</a>
-  <a href="/sobre/">Sobre</a>
-  <a href="https://wa.me/5511990002065" target="_blank" rel="noopener">WhatsApp →</a>
-</div>
+  <div class="mnav" id="mnav">
+    <a href="#servicos">Serviços</a><a href="/portfolio/">Portfólio</a><a href="/blog/">Blog</a><a href="/sobre/">Sobre</a>
+    <a href="#proposta" class="btn btn--primary">Solicitar proposta</a>
+    <div class="lang" role="group" aria-label="Idioma do site"><a href="/" hreflang="pt-BR" lang="pt-BR" aria-current="true">PT</a><a href="/en/" hreflang="en" lang="en">EN</a><a href="/es/" hreflang="es" lang="es">ES</a></div>
+  </div>
+</header>
 
-<!-- HERO -->
-<section class="hero" id="home">
-  <div class="hero-noise"></div>
-  <div class="container">
-    <div class="hero-eyebrow">Agência Web Full-Stack — Brasil</div>
+<main id="main">
 
-    <!-- TÍTULO + CARDS lado a lado -->
-    <div class="hero-top">
-      <h1 class="hero-title">
-        CRIAMOS<br>
-        <span class="line-electric">SITES</span><br>
-        <span class="line-indent">& APPS</span>
-      </h1>
-      <div class="hero-visual">
-        <div class="hero-card-stack">
-          <div class="hcard hcard-main">
-            <div class="hcard-label">Performance SEO</div>
-            <div class="hcard-metric">
-              <span>Posição Google</span>
-              <span class="hcard-val" style="color:var(--electric)">#1</span>
+<section class="hero" id="hero">
+  <div class="wrap">
+  <div class="hero__slides">
+    <article class="hslide is-live" style="--c:var(--flame);--c2:var(--ultra);--t:var(--flame-t)"
+             aria-hidden="false" aria-roledescription="slide"
+             aria-label="1/3">
+      <span class="hslide__aura" aria-hidden="true"></span>
+      <div class="hero__grid">
+        <div class="hcol">
+          <p class="eyebrow">Agência web full-stack · Brasil</p>
+          <h1>O <em class="hl">primeiro</em> resultado leva quase tudo.</h1>
+          <p class="lede">Enquanto você lê isso, alguém procura exatamente o que você vende. Fazemos SEO técnico, conteúdo e autoridade para que a resposta seja o seu site — e não o do concorrente.</p>
+          <div class="hero__cta">
+            <a href="#proposta" class="btn btn--flame">Solicitar proposta <span class="ar" aria-hidden="true">&rarr;</span></a>
+            <a href="/servicos/seo/" class="btn btn--ghost">Como fazemos SEO</a>
+          </div>
+          <div class="hero__facts"><div class="fact"><b>#1–3</b><span>posição orgânica</span></div><div class="fact"><b>+340%</b><span>tráfego em 12 meses</span></div><div class="fact"><b>300+</b><span>projetos entregues</span></div></div>
+        </div>
+        <div class="hero__panel"><div class="rank" id="rank" aria-hidden="true">
+            <div class="rank__top"><div class="rank__dots"><i></i><i></i><i></i></div>
+              <span class="rank__q">o que você vende + sua cidade</span></div>
+            <div class="rank__body">
+              <div class="rank__labels"><span>01</span><span>02</span><span>03</span><span>04</span><span>05</span></div>
+              <div class="rank__rows"><div class="rank__row" data-start="0" data-final="1"><i></i><div class="rank__bars"><b style="width:74%"></b><b style="width:100%"></b></div></div><div class="rank__row" data-start="1" data-final="2"><i></i><div class="rank__bars"><b style="width:61%"></b><b style="width:44%"></b></div></div><div class="rank__row" data-start="2" data-final="3"><i></i><div class="rank__bars"><b style="width:80%"></b><b style="width:50%"></b></div></div><div class="rank__row" data-start="3" data-final="4"><i></i><div class="rank__bars"><b style="width:56%"></b><b style="width:38%"></b></div></div>
+                <div class="rank__row rank__row--you" data-start="4" data-final="0"><i></i>
+                  <span class="rank__you">Sua empresa</span>
+                  <span class="rank__tag">posição 1</span></div>
+              </div>
             </div>
-            <div class="hcard-bar-wrap"><div class="hcard-bar" style="background:var(--electric);width:94%"></div></div>
-            <div class="hcard-metric" style="margin-top:14px">
-              <span>Tráfego orgânico</span>
-              <span class="hcard-val" style="color:#7EE8A2">+340%</span>
-            </div>
-            <div class="hcard-bar-wrap"><div class="hcard-bar" style="background:#7EE8A2;width:78%"></div></div>
-            <div class="hcard-metric" style="margin-top:14px">
-              <span>Velocidade do site</span>
-              <span class="hcard-val" style="color:#60A5FA">98/100</span>
-            </div>
-            <div class="hcard-bar-wrap"><div class="hcard-bar" style="background:#60A5FA;width:98%"></div></div>
-          </div>
-          <div class="hcard hcard-float-top">
-            <div style="font-size:1.3rem;margin-bottom:5px">🚀</div>
-            <div class="hcard-float-text">Site no ar<br>em 10 dias</div>
-          </div>
-          <div class="hcard hcard-float-bottom">
-            <div class="hcard-label" style="color:rgba(255,255,255,0.4)">Conversão</div>
-            <div class="hcard-big">+187%</div>
-            <div style="font-size:0.7rem;color:rgba(255,255,255,0.35)">vs. site anterior</div>
-          </div>
-        </div>
+            <p class="rank__cap">Posição orgânica média dos clientes Digify entre #1 e #3 nos primeiros 6 meses de projeto.</p>
+          </div></div>
       </div>
-    </div>
-
-    <!-- DESC + BOTÕES + STATS embaixo -->
-    <div class="hero-bottom">
-      <p class="hero-desc">Da criação de sites ao desenvolvimento de apps — levamos empresas ao topo do Google com estratégia, tecnologia e mais de 10 anos de experiência real.</p>
-      <div class="hero-bottom-right">
-        <div class="hero-actions">
-          <a href="https://wa.me/5511990002065?text=Quero+um+orçamento" target="_blank" class="btn btn-electric" rel="noopener"><span>Solicitar orçamento →</span></a>
-          <a href="#servicos" class="btn btn-outline-cream"><span>Ver serviços</span></a>
+    </article>
+    <article class="hslide" style="--c:var(--cyan);--c2:var(--jade);--t:var(--cyan-t)"
+             aria-hidden="true" aria-roledescription="slide"
+             aria-label="2/3">
+      <span class="hslide__aura" aria-hidden="true"></span>
+      <div class="hero__grid">
+        <div class="hcol">
+          <p class="eyebrow">Sistemas sob medida · APIs · Automação</p>
+          <h2>Traga a ideia. Devolvemos o <em class="hl">sistema inteiro</em>.</h2>
+          <p class="lede">Você descreve o problema em português, não em requisito técnico. A gente desenha a arquitetura, escreve o código, integra com o que já existe e coloca no ar — com entrega toda semana para você acompanhar.</p>
+          <div class="hero__cta">
+            <a href="#proposta" class="btn btn--flame">Quero meu sistema <span class="ar" aria-hidden="true">&rarr;</span></a>
+            <a href="/servicos/sistemas/" class="btn btn--ghost">Ver como funciona</a>
+          </div>
+          <div class="hero__facts"><div class="fact"><b>6 sem.</b><span>até o primeiro MVP</span></div><div class="fact"><b>Semanal</b><span>ciclo de entrega</span></div><div class="fact"><b>100%</b><span>do código é seu</span></div></div>
         </div>
-        <div class="hero-stats">
-          <div>
-            <div class="hero-stat-num" data-target="10" data-suffix="+">10+</div>
-            <div class="hero-stat-label">Anos</div>
-          </div>
-          <div>
-            <div class="hero-stat-num" data-target="300" data-suffix="+">300+</div>
-            <div class="hero-stat-label">Projetos</div>
-          </div>
-          <div>
-            <div class="hero-stat-num" data-target="98" data-suffix="%">98%</div>
-            <div class="hero-stat-label">Satisfação</div>
-          </div>
-        </div>
+        <div class="hero__panel"><div class="build" aria-hidden="true">
+            <div class="build__top"><i></i> briefing recebido</div>
+            <p class="build__idea">“Preciso controlar pedidos e estoque num lugar só, e emitir nota sem redigitar nada.”</p>
+            <div class="build__mods"><span style="--d:0.30s">Pedidos</span><span style="--d:0.48s">Estoque</span><span style="--d:0.66s">Emissão fiscal</span><span style="--d:0.84s">Relatórios</span><span style="--d:1.02s">Integração ERP</span><span style="--d:1.20s">Acessos e perfis</span></div>
+            <div class="build__bar"><i></i></div>
+            <p class="build__cap">Arquitetura, código, testes e deploy. Você acompanha o progresso em tempo real.</p>
+          </div></div>
       </div>
-    </div>
+    </article>
+    <article class="hslide" style="--c:var(--violet);--c2:var(--pink);--t:var(--violet-t)"
+             aria-hidden="true" aria-roledescription="slide"
+             aria-label="3/3">
+      <span class="hslide__aura" aria-hidden="true"></span>
+      <div class="hero__grid">
+        <div class="hcol">
+          <p class="eyebrow">Criação de sites · Design sob medida</p>
+          <h2>Seu site, do seu jeitinho. No ar em <em class="hl">tempo recorde</em>.</h2>
+          <p class="lede">Nada de template pronto com o logo trocado. Desenhamos do zero, no tom da sua marca e com a estrutura que o seu negócio pede. Rápido porque o processo já rodou mais de 300 vezes — não porque cortamos caminho.</p>
+          <div class="hero__cta">
+            <a href="#proposta" class="btn btn--flame">Quero meu site <span class="ar" aria-hidden="true">&rarr;</span></a>
+            <a href="/servicos/criacao-de-sites/" class="btn btn--ghost">Ver o processo</a>
+          </div>
+          <div class="hero__facts"><div class="fact"><b>10 dias</b><span>para uma landing no ar</span></div><div class="fact"><b>98/100</b><span>nota média no PageSpeed</span></div><div class="fact"><b>Zero</b><span>tema pronto reaproveitado</span></div></div>
+        </div>
+        <div class="hero__panel"><div class="site" aria-hidden="true">
+        <div class="site__bar"><i></i><i></i><i></i><span class="site__url">seudominio.com.br</span></div>
+        <div class="site__page">
+          <div class="site__nav" style="--d:.30s"><b></b><u></u><u></u><u></u></div>
+          <div class="site__band" style="--d:.48s"><s></s><s></s><em></em><b></b></div>
+          <div class="site__cards" style="--d:.66s"><div></div><div></div><div></div></div>
+        </div>
+        <div class="site__foot"><div class="site__sw"><i></i><i></i><i></i><i></i></div>
+          <span class="site__cap">sua identidade, não a nossa</span></div>
+      </div></div>
+      </div>
+    </article>
+  </div>
+  <div class="htabs" role="tablist" aria-label="Destaques da Digify"><button class="htab is-live" role="tab" aria-selected="true" tabindex="0" data-i="0" style="--c:var(--flame)"><b>01 · SEO</b><span>Aparecer antes do concorrente</span><i></i></button><button class="htab" role="tab" aria-selected="false" tabindex="-1" data-i="1" style="--c:var(--cyan)"><b>02 · Sistemas</b><span>Da ideia ao sistema completo</span><i></i></button><button class="htab" role="tab" aria-selected="false" tabindex="-1" data-i="2" style="--c:var(--violet)"><b>03 · Sites</b><span>Do seu jeito, em tempo recorde</span><i></i></button></div>
   </div>
 </section>
 
-<!-- TICKER -->
-<div class="ticker-wrap" aria-hidden="true">
-  <div class="ticker-inner">
-    <span class="ticker-item">Criação de Sites</span>
-    <span class="ticker-item">Desenvolvimento de Apps</span>
-    <span class="ticker-item">Agência de SEO</span>
-    <span class="ticker-item">Marketing Digital</span>
-    <span class="ticker-item">E-commerce</span>
-    <span class="ticker-item">Sistemas Web</span>
-    <span class="ticker-item">Criação de Sites</span>
-    <span class="ticker-item">Desenvolvimento de Apps</span>
-    <span class="ticker-item">Agência de SEO</span>
-    <span class="ticker-item">Marketing Digital</span>
-    <span class="ticker-item">E-commerce</span>
-    <span class="ticker-item">Sistemas Web</span>
-  </div>
-</div>
+<section class="marq" aria-label="Empresas que confiam na Digify">
+  <div class="marq__track"><span>Vai-Vai</span><span>Dailus</span><span>TMiranda</span><span>HiperSkin</span><span>Rache Aqui</span><span>Avalone Studio Imóveis</span><span>Imóveis VIP</span><span>FullSale</span><span>Squad Shop</span><span>Repórter Hoje</span><span>Vai-Vai</span><span>Dailus</span><span>TMiranda</span><span>HiperSkin</span><span>Rache Aqui</span><span>Avalone Studio Imóveis</span><span>Imóveis VIP</span><span>FullSale</span><span>Squad Shop</span><span>Repórter Hoje</span></div>
+</section>
 
-<!-- MANIFESTO -->
-<section class="manifesto">
-  <div class="container">
-    <div class="manifesto-grid">
-      <div class="manifesto-text reveal">
-        <h2>O MUNDO<br>DIGITAL NÃO<br><em>Espera.</em></h2>
-        <p>Enquanto você lê isso, um concorrente está aparecendo na frente do seu cliente no Google. Nosso trabalho é garantir que isso não aconteça — e que seja você quem aparece primeiro.</p>
-        <p>Desenvolvemos sites que carregam em menos de 2 segundos, apps que retêm usuários e estratégias de SEO que geram resultado real, não só relatório bonito.</p>
-        <a href="https://wa.me/5511990002065" target="_blank" class="btn btn-black" rel="noopener" style="margin-top:16px"><span>Diagnóstico gratuito →</span></a>
-      </div>
-      <div class="manifesto-right reveal">
-        <div class="manifesto-card-stack">
-          <div class="m-card">
-            <div class="m-card-label">Posição orgânica média</div>
-            <div class="m-card-val">#1–3</div>
-            <div class="m-card-sub">nos 6 primeiros meses de SEO</div>
-          </div>
-          <div class="m-card">
-            <div class="m-card-label">Aumento de tráfego</div>
-            <div class="m-card-val">+340%</div>
-            <div class="m-card-sub">média nos projetos de SEO em 12 meses</div>
-          </div>
-          <div class="m-card">
-            <div class="m-card-label">Velocidade dos sites</div>
-            <div class="m-card-val">98/100</div>
-            <div class="m-card-sub">nota média no Google PageSpeed</div>
-          </div>
-        </div>
-      </div>
-    </div>
+<section class="section section--tight">
+  <div class="wrap">
+    <p class="eyebrow rv">Resultado</p>
+    <h2 class="rv rv-1">Número, não adjetivo.</h2>
+    <div class="nums"><div class="num rv rv-1" style="--c:var(--flame);--t:var(--flame-t)"><b>#1–3</b><strong>Posição orgânica média</strong><span>Nos primeiros 6 meses de projeto de SEO.</span></div><div class="num rv rv-2" style="--c:var(--ultra);--t:var(--ultra-t)"><b>+340%</b><strong>Crescimento de tráfego</strong><span>Média dos projetos de SEO em 12 meses.</span></div><div class="num rv rv-3" style="--c:var(--jade);--t:var(--jade-t)"><b>98/100</b><strong>Nota no PageSpeed</strong><span>Média dos sites que entregamos.</span></div></div>
   </div>
 </section>
 
-<!-- SERVIÇOS -->
-<section class="services-sec" id="servicos">
-  <div class="container">
-    <div class="services-header">
-      <h2>O QUE<br><span>FAZEMOS</span></h2>
-      <p>Soluções digitais completas para empresas que querem crescer de verdade na internet.</p>
-    </div>
-    <div class="services-list">
-      <a href="/servicos/criacao-de-sites/" class="svc-row reveal">
-        <div class="svc-num">01</div>
-        <div class="svc-body">
-          <div class="svc-name">Criação de Sites</div>
-          <div class="svc-desc">Sites institucionais, landing pages e e-commerces ultra-rápidos, responsivos e otimizados para converter visitantes em clientes.</div>
-        </div>
-        <div class="svc-arrow">→</div>
-      </a>
-      <a href="/servicos/desenvolvimento-de-apps/" class="svc-row reveal">
-        <div class="svc-num">02</div>
-        <div class="svc-body">
-          <div class="svc-name">Desenvolvimento de Apps</div>
-          <div class="svc-desc">Aplicativos iOS e Android com design intuitivo, integrações com APIs e desenvolvimento ágil do MVP ao produto final.</div>
-        </div>
-        <div class="svc-arrow">→</div>
-      </a>
-      <a href="/servicos/seo/" class="svc-row reveal">
-        <div class="svc-num">03</div>
-        <div class="svc-body">
-          <div class="svc-name">Agência de SEO</div>
-          <div class="svc-desc">Auditoria técnica, produção de conteúdo, link building e monitoramento de rankings. SEO que coloca você na frente de quem procura o que você vende.</div>
-        </div>
-        <div class="svc-arrow">→</div>
-      </a>
-      <a href="/servicos/marketing-digital/" class="svc-row reveal">
-        <div class="svc-num">04</div>
-        <div class="svc-body">
-          <div class="svc-name">Marketing Digital</div>
-          <div class="svc-desc">Google Ads, Meta Ads e crescimento orgânico integrados para atrair clientes qualificados e maximizar o ROI das suas campanhas.</div>
-        </div>
-        <div class="svc-arrow">→</div>
-      </a>
-      <a href="/servicos/ecommerce/" class="svc-row reveal">
-        <div class="svc-num">05</div>
-        <div class="svc-body">
-          <div class="svc-name">E-commerce</div>
-          <div class="svc-desc">Lojas virtuais de alta performance com UX otimizada para conversão, integração com marketplaces e todos os principais meios de pagamento.</div>
-        </div>
-        <div class="svc-arrow">→</div>
-      </a>
-      <a href="/servicos/sistemas/" class="svc-row reveal">
-        <div class="svc-num">06</div>
-        <div class="svc-body">
-          <div class="svc-name">Sistemas e Integrações</div>
-          <div class="svc-desc">Sistemas web customizados, APIs e automações que eliminam trabalho manual e escalam seu negócio sem aumentar a equipe.</div>
-        </div>
-        <div class="svc-arrow">→</div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- CLIENTES -->
-<section class="clients-sec">
-  <div class="container">
-    <h2>Empresas que confiam na Digify</h2>
-    <div class="clients-logos">
-      <span class="client-tag">Vai-Vai</span>
-      <span class="client-tag">Dailus</span>
-      <span class="client-tag">TMiranda</span>
-      <span class="client-tag">HiperSkin</span>
-      <span class="client-tag">Rache Aqui</span>
-      <span class="client-tag">Avalone Studio</span>
-      <span class="client-tag">Imóveis VIP</span>
-      <span class="client-tag">FullSale</span>
-      <span class="client-tag">Squad Shop</span>
-      <span class="client-tag">Repórter Hoje</span>
-    </div>
-  </div>
-</section>
-
-<!-- PROCESSO -->
-<section class="process-sec" id="processo">
-  <div class="container">
-    <div class="process-header reveal">
-      <h2>COMO<br>TRABALHAMOS</h2>
-    </div>
-    <div class="process-grid">
-      <div class="process-card reveal">
-        <span class="process-step-num">01</span>
-        <div class="process-step-title">Diagnóstico</div>
-        <p class="process-step-desc">Entendemos seu negócio, mercado e concorrentes antes de propor qualquer solução. Sem fórmula pronta.</p>
-      </div>
-      <div class="process-card reveal">
-        <span class="process-step-num">02</span>
-        <div class="process-step-title">Planejamento</div>
-        <p class="process-step-desc">Definimos escopo, tecnologia, cronograma e KPIs mensuráveis. Você sabe exatamente o que esperar e quando.</p>
-      </div>
-      <div class="process-card reveal">
-        <span class="process-step-num">03</span>
-        <div class="process-step-title">Execução</div>
-        <p class="process-step-desc">Desenvolvemos com agilidade e qualidade. Atualizações semanais e acesso ao progresso em tempo real.</p>
-      </div>
-      <div class="process-card reveal">
-        <span class="process-step-num">04</span>
-        <div class="process-step-title">Crescimento</div>
-        <p class="process-step-desc">Lançamos, monitoramos e otimizamos continuamente. O projeto não termina no deploy — começa.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- DEPOIMENTOS -->
-<section class="testi-sec">
-  <div class="container">
-    <div class="testi-header">
-      <h2>O QUE<br>DIZEM</h2>
-      <p>Clientes reais, resultados reais. Sem depoimento fabricado.</p>
-    </div>
-    <div class="testi-grid">
-      <div class="testi-card reveal">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-quote">"Há anos o Vai-Vai atua em parceria com a Digify. Fizemos diversos projetos, de sites a ações pontuais e gerenciamento de mídias sociais. Temos muito a agradecer pelos serviços prestados."</p>
-        <div class="testi-author">
-          <div class="testi-avatar">LC</div>
-          <div><div class="testi-name">Lucas C.</div><div class="testi-role">Comunicação — Vai-Vai</div></div>
-        </div>
-      </div>
-      <div class="testi-card reveal">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-quote">"Conheci a Digify em um momento crítico do meu e-commerce. O time não só resolveu os problemas como melhorou demais a performance do site. Recomendo sem hesitar."</p>
-        <div class="testi-author">
-          <div class="testi-avatar">TM</div>
-          <div><div class="testi-name">Távio M.</div><div class="testi-role">CEO — TMiranda</div></div>
-        </div>
-      </div>
-      <div class="testi-card reveal">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-quote">"Utilizamos a Digify para criação de sites, integrações, SEO e tráfego pago. Um parceiro que entende de negócios digitais de verdade. Recomendo a qualquer empresa."</p>
-        <div class="testi-author">
-          <div class="testi-avatar">LF</div>
-          <div><div class="testi-name">Lucas F.</div><div class="testi-role">CEO — Rache Aqui</div></div>
-        </div>
-      </div>
-      <div class="testi-card reveal">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-quote">"Como iniciante no marketing digital, foi fundamental o trabalho da Digify para estruturar meu site, funis de venda e anúncios no Google. Profissionais incríveis!"</p>
-        <div class="testi-author">
-          <div class="testi-avatar">VZ</div>
-          <div><div class="testi-name">Vinícius Z.</div><div class="testi-role">Dir. de Vendas — HiperSkin</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BLOG -->
-<section class="blog-sec">
-  <div class="container">
-    <div class="blog-header">
-      <h2>BLOG &<br>CONTEÚDO</h2>
-      <a href="/blog/" class="btn btn-outline"><span>Ver todos →</span></a>
-    </div>
-    <!-- BLOG_POSTS_START -->
-    <div class="blog-grid">
-      <div class="blog-card reveal">
-        <div class="blog-thumb-placeholder">📣</div>
-        <div class="blog-card-body">
-          <span class="blog-cat">Marketing Digital</span>
-          <h3>Google Ads: Crie Anúncios que Convertem e Impulsionam Vendas</h3>
-          <p>Aprenda a criar anúncios no Google Ads que realmente funcionam! Descubra estratégias eficazes para converter cliques em clientes e otimizar suas campanhas para o sucesso.</p>
-          <div class="blog-meta-row">
-            <span>23 de julho de 2026</span>
-            <a href="/blog/google-ads-crie-anuncios-que-convertem-e-impulsionam-vendas/" class="blog-arrow">Ler →</a>
-          </div>
-        </div>
-      </div>
-      <div class="blog-card reveal">
-        <div class="blog-thumb-placeholder">🔍</div>
-        <div class="blog-card-body">
-          <span class="blog-cat">SEO</span>
-          <h3>Descubra o Poder das Palavras-chave de Cauda Longa em SEO</h3>
-          <p>Aprenda a encontrar e usar palavras-chave de cauda longa para impulsionar seu SEO. Maximize o tráfego orgânico e atraia visitantes mais qualificados para seu site com este guia Digify.</p>
-          <div class="blog-meta-row">
-            <span>21 de julho de 2026</span>
-            <a href="/blog/descubra-o-poder-das-palavras-chave-de-cauda-longa-em-seo/" class="blog-arrow">Ler →</a>
-          </div>
-        </div>
-      </div>
-      <div class="blog-card reveal">
-        <div class="blog-thumb-placeholder">📣</div>
-        <div class="blog-card-body">
-          <span class="blog-cat">Marketing Digital</span>
-          <h3>Estratégia de Conteúdo: Gere Leads Qualificados para seu Negócio</h3>
-          <p>Aprenda a criar uma estratégia de conteúdo poderosa que realmente gera leads para sua empresa. Descubra táticas comprovadas para atrair, engajar e converter visitantes em clientes.</p>
-          <div class="blog-meta-row">
-            <span>20 de julho de 2026</span>
-            <a href="/blog/estrategia-de-conteudo-gere-leads-qualificados-para-seu-negocio/" class="blog-arrow">Ler →</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- BLOG_POSTS_END -->
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta-sec">
-  <div class="container">
-    <div class="cta-inner">
-      <h2>VAMOS<br>CRIAR<br><em>Algo?</em></h2>
-      <div class="cta-actions">
-        <a href="https://wa.me/5511990002065?text=Quero+um+diagnóstico+gratuito" target="_blank" class="btn btn-black" rel="noopener"><span>💬 WhatsApp</span></a>
-        <a href="/contato/" class="btn btn-outline"><span>Enviar mensagem</span></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-top">
+<section class="section" id="servicos">
+  <div class="wrap">
+    <div class="head">
       <div>
-        <a href="/" class="footer-logo">DIGIFY<span class="dot">.</span></a>
-        <p class="footer-tagline">Agência web especialista em criação de sites, desenvolvimento de apps e SEO. Mais de 10 anos levando empresas ao topo do Google.</p>
+        <p class="eyebrow rv">O que fazemos</p>
+        <h2 class="rv rv-1">Seis frentes, um objetivo.</h2>
+        <p class="lede rv rv-2">Cada projeto começa pelo problema do negócio — não pelo catálogo de serviços.</p>
       </div>
-      <div class="footer-col">
-        <h4>Serviços</h4>
-        <ul>
-          <li><a href="/servicos/criacao-de-sites/">Criação de Sites</a></li>
-          <li><a href="/servicos/desenvolvimento-de-apps/">Dev. de Apps</a></li>
-          <li><a href="/servicos/seo/">Agência de SEO</a></li>
-          <li><a href="/servicos/marketing-digital/">Marketing Digital</a></li>
-          <li><a href="/servicos/ecommerce/">E-commerce</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Empresa</h4>
-        <ul>
-          <li><a href="/sobre/">Sobre a Digify</a></li>
-          <li><a href="/blog/">Blog</a></li>
-          <li><a href="/contato/">Contato</a></li>
-          <li><a href="/politica-de-privacidade/">Privacidade</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contato</h4>
-        <ul>
-          <li><a href="https://wa.me/5511990002065" target="_blank" rel="noopener">(11) 99000-2065</a></li>
-          <li><a href="mailto:ola@digify.live">ola@digify.live</a></li>
-          <li><a href="https://instagram.com/digify.live" target="_blank" rel="noopener">@digify.live</a></li>
-        </ul>
+      <a href="#proposta" class="btn btn--ghost rv rv-2">Falar sobre o meu caso</a>
+    </div>
+    <div class="svcs"><a class="svc rv rv-1" href="/servicos/criacao-de-sites/" style="--c:var(--flame);--t:var(--flame-t)"><span class="svc__tag">Sites</span><h3>Criação de sites</h3><p>Sites institucionais, landing pages e e-commerces ultrarrápidos, responsivos e desenhados para transformar visita em cliente.</p><span class="svc__go">Ver serviço <span class="ar" aria-hidden="true">&rarr;</span></span></a><a class="svc rv rv-2" href="/servicos/desenvolvimento-de-apps/" style="--c:var(--ultra);--t:var(--ultra-t)"><span class="svc__tag">Apps</span><h3>Desenvolvimento de apps</h3><p>Aplicativos iOS e Android com design intuitivo e integração com APIs. Do MVP ao produto final, com entregas semanais.</p><span class="svc__go">Ver serviço <span class="ar" aria-hidden="true">&rarr;</span></span></a><a class="svc rv rv-3" href="/servicos/seo/" style="--c:var(--jade);--t:var(--jade-t)"><span class="svc__tag">SEO</span><h3>Agência de SEO</h3><p>Auditoria técnica, conteúdo, link building e monitoramento de posições. SEO que coloca você na frente de quem já procura.</p><span class="svc__go">Ver serviço <span class="ar" aria-hidden="true">&rarr;</span></span></a><a class="svc rv rv-1" href="/servicos/marketing-digital/" style="--c:var(--violet);--t:var(--violet-t)"><span class="svc__tag">Mídia paga</span><h3>Marketing digital</h3><p>Google Ads, Meta Ads e crescimento orgânico trabalhando juntos para atrair cliente qualificado e defender o ROI.</p><span class="svc__go">Ver serviço <span class="ar" aria-hidden="true">&rarr;</span></span></a><a class="svc rv rv-2" href="/servicos/ecommerce/" style="--c:var(--pink);--t:var(--pink-t)"><span class="svc__tag">E-commerce</span><h3>Lojas virtuais</h3><p>Alta performance, UX otimizada para conversão, integração com marketplaces e todos os principais meios de pagamento.</p><span class="svc__go">Ver serviço <span class="ar" aria-hidden="true">&rarr;</span></span></a><a class="svc rv rv-3" href="/servicos/sistemas/" style="--c:var(--cyan);--t:var(--cyan-t)"><span class="svc__tag">Sistemas</span><h3>Sistemas e integrações</h3><p>Sistemas web sob medida, APIs e automações que eliminam trabalho manual e fazem o negócio escalar sem inchar o time.</p><span class="svc__go">Ver serviço <span class="ar" aria-hidden="true">&rarr;</span></span></a></div>
+  </div>
+</section>
+
+<section class="section section--mist" id="portfolio"><div class="wrap"><div class="head"><div><p class="eyebrow rv">Portfólio</p><h2 class="rv rv-1">Não é promessa. É o que já foi entregue.</h2><p class="lede rv rv-2">Três dos últimos projetos que saíram daqui. Tem mais 300 atrás deles.</p></div><a href="/portfolio/" class="btn btn--ghost rv rv-2">Ver o portfólio completo <span class="ar" aria-hidden="true">&rarr;</span></a></div><div class="cases"><article class="case rv rv-1" style="--c:var(--ultra);--t:var(--ultra-t)"><div><div class="case__meta"><span>Srougé &amp; Reis Advogados</span><span>Advocacia</span><span>2026</span></div><h3>SERLaw</h3><p class="case__tag">Um site que precisa transmitir confiança antes da primeira palavra.</p><p class="case__prob">Escritório de advocacia vende credibilidade. O site precisava parecer sólido em três segundos, carregar rápido e ser encontrado por quem procura advogado societário, tributário ou cível em São Paulo.</p><ul><li>Site institucional estático, sem WordPress, para performance e segurança máximas</li><li>Identidade em navy e dourado, com Cormorant Garamond e Jost</li><li>Ilustração vetorial autoral em SVG, sem banco de imagem</li><li>Schema.org, Open Graph e estrutura de títulos para busca local</li><li>Formulário de contato sem servidor, via FormSubmit</li></ul><div class="case__foot"><a href="https://www.serlaw.com.br" class="btn btn--ghost" target="_blank" rel="noopener">Ver o site <span class="ar" aria-hidden="true">&rarr;</span></a><a href="/contato/" class="btn btn--flame">Quero algo assim</a></div><div class="chips" style="--c:var(--ultra)"><span>HTML</span><span>CSS</span><span>SVG</span><span>Schema.org</span><span>FormSubmit</span></div></div><div class="case__shot"><div class="case__bar"><i></i><i></i><i></i><u>www.serlaw.com.br</u></div><img src="/assets/cases/serlaw.jpg" alt="Site SERLaw desenvolvido pela Digify" width="1600" height="1000" loading="lazy" decoding="async"></div></article><article class="case rv rv-2" style="--c:var(--jade);--t:var(--jade-t)"><div><div class="case__meta"><span>Escola de parapente · Curitiba</span><span>Esporte e turismo</span><span>2026</span></div><h3>Vento Norte Paraglider</h3><p class="case__tag">Loja virtual para um esporte que se vende pela emoção.</p><p class="case__prob">Vender voo duplo e equipamento exige duas coisas ao mesmo tempo: imagem que emociona e checkout que não atrapalha. E precisava ser achado por quem busca parapente em Curitiba, um termo local e disputado.</p><ul><li>Loja WooCommerce completa, com catálogo de voos e equipamentos</li><li>Tema Astra com Elementor, customizado para a identidade da escola</li><li>Página de arquivo replicando o hero da home para consistência visual</li><li>Seleção e configuração dos widgets de exibição de produto</li><li>Meios de pagamento e regras de frete configurados</li></ul><div class="case__foot"><a href="https://voeventonorte.com.br" class="btn btn--ghost" target="_blank" rel="noopener">Ver o site <span class="ar" aria-hidden="true">&rarr;</span></a><a href="/contato/" class="btn btn--flame">Quero algo assim</a></div><div class="chips" style="--c:var(--jade)"><span>WordPress</span><span>WooCommerce</span><span>Elementor</span><span>Astra</span></div></div><div class="case__shot"><div class="case__bar"><i></i><i></i><i></i><u>voeventonorte.com.br</u></div><img src="/assets/cases/voe-vento-norte.jpg" alt="Site Vento Norte Paraglider desenvolvido pela Digify" width="1600" height="1000" loading="lazy" decoding="async"></div></article><article class="case rv rv-3" style="--c:var(--flame);--t:var(--flame-t)"><div><div class="case__meta"><span>Fernando Marrey Ferreira</span><span>Gestão condominial e advocacia</span><span>2025</span></div><h3>Síndico FMF</h3><p class="case__tag">Síndico profissional que também é advogado — dois públicos, um site.</p><p class="case__prob">O desafio era comunicar duas competências sem confundir: gestão condominial para o condomínio e formação jurídica como diferencial, sem parecer escritório de advocacia.</p><ul><li>Site institucional em WordPress com Elementor</li><li>Grade de certificações destacando a formação e os registros profissionais</li><li>Página de contato com caminho direto para orçamento</li><li>CSS customizado e correções de responsividade em todos os breakpoints</li></ul><div class="case__foot"><a href="https://sindicofmf.com.br" class="btn btn--ghost" target="_blank" rel="noopener">Ver o site <span class="ar" aria-hidden="true">&rarr;</span></a><a href="/contato/" class="btn btn--flame">Quero algo assim</a></div><div class="chips" style="--c:var(--flame)"><span>WordPress</span><span>Elementor</span><span>CSS</span></div></div><div class="case__shot"><div class="case__bar"><i></i><i></i><i></i><u>sindicofmf.com.br</u></div><img src="/assets/cases/sindico-fmf.jpg" alt="Site Síndico FMF desenvolvido pela Digify" width="1600" height="1000" loading="lazy" decoding="async"></div></article></div></div></section>
+<section class="section section--deep" id="processo">
+  <div class="wrap">
+    <p class="eyebrow rv">Como trabalhamos</p>
+    <h2 class="rv rv-1">Diagnóstico. Plano. Código. Crescimento.</h2>
+    <div class="steps"><div class="step rv rv-1" style="--c:var(--flame)"><b>01</b><h3>Diagnóstico</h3><p>Entendemos o negócio, o mercado e os concorrentes antes de propor qualquer solução. Sem fórmula pronta.</p></div><div class="step rv rv-2" style="--c:#5B72FF"><b>02</b><h3>Planejamento</h3><p>Escopo, tecnologia, cronograma e indicadores definidos. Você sabe exatamente o que esperar e quando.</p></div><div class="step rv rv-3" style="--c:#A57BFF"><b>03</b><h3>Execução</h3><p>Desenvolvimento com atualizações semanais e acesso ao progresso em tempo real, sem caixa-preta.</p></div><div class="step rv rv-4" style="--c:#25C08A"><b>04</b><h3>Crescimento</h3><p>Lançamos, medimos e otimizamos. O projeto não acaba no deploy — é ali que ele começa.</p></div></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="head"><div>
+      <p class="eyebrow rv">Clientes</p>
+      <h2 class="rv rv-1">Quem já passou por aqui.</h2>
+    </div></div>
+    <div class="quotes"><blockquote class="quote rv rv-1" style="--c:var(--flame);--t:var(--flame-t)"><div class="quote__stars" aria-label="5 de 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>Há anos o Vai-Vai atua em parceria com a Digify. Fizemos diversos projetos, de sites a ações pontuais e gerenciamento de mídias sociais. Temos muito a agradecer pelos serviços prestados.</p><footer><span class="quote__av">LC</span><span class="quote__who"><b>Lucas C.</b><span>Comunicação — Vai-Vai</span></span></footer></blockquote><blockquote class="quote rv rv-2" style="--c:var(--ultra);--t:var(--ultra-t)"><div class="quote__stars" aria-label="5 de 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>Conheci a Digify em um momento crítico do meu e-commerce. O time não só resolveu os problemas como melhorou demais a performance do site. Recomendo sem hesitar.</p><footer><span class="quote__av">TM</span><span class="quote__who"><b>Távio M.</b><span>CEO — TMiranda</span></span></footer></blockquote><blockquote class="quote rv rv-1" style="--c:var(--cyan);--t:var(--cyan-t)"><div class="quote__stars" aria-label="5 de 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>Utilizamos a Digify para criação de sites, integrações, SEO e tráfego pago. Um parceiro que entende de negócios digitais de verdade. Recomendo a qualquer empresa.</p><footer><span class="quote__av">LF</span><span class="quote__who"><b>Lucas F.</b><span>CEO — Rache Aqui</span></span></footer></blockquote><blockquote class="quote rv rv-2" style="--c:var(--violet);--t:var(--violet-t)"><div class="quote__stars" aria-label="5 de 5">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>Como iniciante no marketing digital, foi fundamental o trabalho da Digify para estruturar meu site, funis de venda e anúncios no Google. Profissionais incríveis!</p><footer><span class="quote__av">VZ</span><span class="quote__who"><b>Vinícius Z.</b><span>Dir. de Vendas — HiperSkin</span></span></footer></blockquote></div>
+  </div>
+</section>
+
+<section class="section section--mist">
+  <div class="wrap">
+    <div class="head">
+      <div><p class="eyebrow rv">Conteúdo</p><h2 class="rv rv-1">O que está acontecendo.</h2></div>
+      <a href="/blog/" class="btn btn--ghost rv rv-1">Ver todos os artigos <span class="ar" aria-hidden="true">&rarr;</span></a>
+    </div>
+    <div class="posts"><a class="post rv rv-1" style="--c:var(--violet);--t:var(--violet-t)" href="/blog/google-ads-crie-anuncios-que-convertem-e-impulsionam-vendas/"><span class="post__cat">Marketing Digital</span><h3>Google Ads: Crie Anúncios que Convertem e Impulsionam Vendas</h3><p>Aprenda a criar anúncios no Google Ads que realmente funcionam! Descubra estratégias eficazes para converter cliques em clientes e otimizar suas campanhas para o sucesso.</p><time datetime="2026-07-23">23 de julho de 2026</time></a><a class="post rv rv-2" style="--c:var(--jade);--t:var(--jade-t)" href="/blog/velocidade-do-site-e-seo-cada-segundo-impulsiona-seu-rank/"><span class="post__cat">SEO</span><h3>Velocidade do Site e SEO: Cada Segundo Impulsiona Seu Rank</h3><p>Descubra como a velocidade do site impacta diretamente seu SEO e a experiência do usuário. Aprenda por que cada segundo é crucial para ranquear melhor no Google e converter mais visitantes. Otimize já!</p><time datetime="2026-07-19">19 de julho de 2026</time></a><a class="post rv rv-3" style="--c:var(--ultra);--t:var(--ultra-t)" href="/blog/mvp-de-aplicativo-valide-sua-ideia-antes-de-investir/"><span class="post__cat">Desenvolvimento de Apps</span><h3>MVP de Aplicativo: Valide Sua Ideia Antes de Investir</h3><p>Descubra como o MVP de aplicativo pode validar sua ideia de app antes de grandes investimentos. Minimize riscos, economize recursos e lance um produto de sucesso com a Digify.</p><time datetime="2026-07-18">18 de julho de 2026</time></a></div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:clamp(36px,4vw,56px)">
+      <p class="eyebrow rv" style="justify-content:center">Dúvidas frequentes</p>
+      <h2 class="rv rv-1">Sem letra miúda.</h2>
+    </div>
+    <div class="faq rv rv-1"><details><summary>Quanto tempo leva para criar um site?</summary><div class="ans">Uma landing page fica pronta em cerca de 10 dias úteis. Um site institucional completo costuma levar de 3 a 5 semanas, e um e-commerce ou sistema, de 6 a 10 semanas. O prazo exato sai no planejamento, depois do diagnóstico — e a partir daí ele vira compromisso, com cronograma visível para você acompanhar.</div></details><details><summary>Quanto custa um projeto com a Digify?</summary><div class="ans">O valor depende do escopo, e por isso não trabalhamos com tabela fixa. Fazemos um diagnóstico gratuito, entendemos o objetivo do projeto e enviamos uma proposta com escopo fechado, prazo e valor. Se o orçamento não fizer sentido para o momento da empresa, dizemos isso antes de você investir tempo.</div></details><details><summary>Em quanto tempo o SEO começa a dar resultado?</summary><div class="ans">Os primeiros sinais — indexação, ganho de posição em termos de cauda longa e aumento de impressões — costumam aparecer entre 60 e 90 dias. Resultado consolidado em termos competitivos leva de 6 a 12 meses. SEO é ativo, não anúncio: o retorno é cumulativo e continua rendendo depois que o investimento para.</div></details><details><summary>Vocês dão manutenção depois da entrega?</summary><div class="ans">Sim. Todo projeto inclui um período de acompanhamento pós-lançamento, e oferecemos planos mensais de manutenção que cobrem atualizações, backup, monitoramento de performance e pequenos ajustes de conteúdo. Você não fica com um site parado seis meses depois do deploy.</div></details><details><summary>Com quais tecnologias vocês trabalham?</summary><div class="ans">Escolhemos a stack pelo problema, não por preferência. Usamos WordPress e WooCommerce quando o cliente precisa de autonomia editorial, sites estáticos quando performance e SEO são prioridade absoluta, e desenvolvimento sob medida em PHP, Python e JavaScript quando o projeto envolve integrações e regras de negócio próprias.</div></details><details><summary>Vocês atendem empresas de fora de São Paulo?</summary><div class="ans">Sim. Trabalhamos de forma remota com clientes em todo o Brasil e também no exterior. Todo o processo — diagnóstico, alinhamentos, entregas e acompanhamento — funciona por videochamada, WhatsApp e acesso ao ambiente do projeto.</div></details></div>
+  </div>
+</section>
+
+<section class="section section--deep cta" id="proposta">
+  <div class="wrap cta__grid">
+    <div>
+      <p class="eyebrow rv">Próximo passo</p>
+      <h2 class="rv rv-1">Vamos começar pelo diagnóstico.</h2>
+      <p class="lede rv rv-2">Conte o que você precisa. Respondemos em até um dia útil com um diagnóstico do cenário atual e os caminhos possíveis — sem compromisso e sem apresentação de 40 slides.</p>
+      <div class="cta__side rv rv-3"><div class="cta__item" style="--c:var(--flame)"><b>01</b><span>Você envia o contexto do projeto.</span></div><div class="cta__item" style="--c:#5B72FF"><b>02</b><span>Analisamos o site, os concorrentes e o mercado.</span></div><div class="cta__item" style="--c:#25C08A"><b>03</b><span>Você recebe o diagnóstico e a proposta com escopo fechado.</span></div></div>
+      <div style="margin-top:36px" class="rv rv-4">
+        <a href="https://wa.me/5511989911000?text=Quero+um+diagn%C3%B3stico+gratuito" class="btn btn--outlineDeep">Prefiro falar no WhatsApp</a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>© 2025 Digify Marketing Digital. Todos os direitos reservados.</span>
-      <div style="display:flex;gap:20px">
-        <a href="/politica-de-privacidade/">Privacidade</a>
-        <a href="/sitemap.xml">Sitemap</a>
+    <form class="form rv rv-2" name="proposta-pt" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="proposta-pt">
+      <input type="hidden" name="lang" value="pt-BR">
+      <p class="hp"><label>Não preencha: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+      <div class="form__row">
+        <label class="field"><span>Nome</span><input type="text" name="name" required autocomplete="name" placeholder="Seu nome"></label>
+        <label class="field"><span>Empresa</span><input type="text" name="company" autocomplete="organization" placeholder="Nome da empresa"></label>
       </div>
+      <div class="form__row">
+        <label class="field"><span>E-mail</span><input type="email" name="email" required autocomplete="email" placeholder="voce@empresa.com.br"></label>
+        <label class="field"><span>WhatsApp</span><input type="tel" name="phone" required autocomplete="tel" placeholder="(11) 90000-0000"></label>
+      </div>
+      <label class="field"><span>O que você precisa</span><select name="service" required><option value="">Selecione um serviço</option><option>Criação de site</option><option>Desenvolvimento de app</option><option>SEO</option><option>Marketing digital / tráfego pago</option><option>E-commerce</option><option>Sistema ou integração</option><option>Ainda não sei</option></select></label>
+      <label class="field"><span>Investimento previsto</span><select name="budget"><option value="">Selecione uma faixa</option><option>Até R$ 5 mil</option><option>R$ 5 mil a R$ 15 mil</option><option>R$ 15 mil a R$ 40 mil</option><option>Acima de R$ 40 mil</option><option>Preciso de ajuda para definir</option></select></label>
+      <label class="field"><span>Contexto do projeto</span><textarea name="message" placeholder="Conte rapidamente o cenário atual e o que você quer alcançar."></textarea></label>
+      <button type="submit" class="btn btn--flame">Enviar e receber o diagnóstico <span class="ar" aria-hidden="true">&rarr;</span></button>
+      <p class="form__note">Resposta em até 1 dia útil. Seus dados não são compartilhados com terceiros.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft__grid">
+      <div class="ft__about">
+        <a href="/" class="logo">digify<i>.</i></a>
+        <p>Agência web especialista em criação de sites, sistemas sob medida e SEO. Mais de 10 anos levando empresas ao topo do Google.</p>
+      </div>
+      <div><h4>Serviços</h4><ul><li><a href="/servicos/criacao-de-sites/">Criação de sites</a></li><li><a href="/servicos/desenvolvimento-de-apps/">Desenvolvimento de apps</a></li><li><a href="/servicos/seo/">Agência de SEO</a></li><li><a href="/servicos/marketing-digital/">Marketing digital</a></li><li><a href="/servicos/ecommerce/">Lojas virtuais</a></li><li><a href="/servicos/sistemas/">Sistemas e integrações</a></li></ul></div>
+      <div><h4>Empresa</h4><ul><li><a href="/portfolio/">Portfólio</a></li><li><a href="/sobre/">Sobre a Digify</a></li><li><a href="/blog/">Blog</a></li><li><a href="/contato/">Contato</a></li><li><a href="https://plugins.digify.live/">Plugins WordPress</a></li><li><a href="/politica-de-privacidade/">Política de privacidade</a></li></ul></div>
+      <div><h4>Contato</h4><ul>
+        <li><a href="https://wa.me/5511989911000?text=Quero+um+diagn%C3%B3stico+gratuito">(11) 98991-1000</a></li>
+        <li><a href="https://instagram.com/digify.live">@digify.live</a></li>
+        <li><a href="#proposta">Solicitar proposta</a></li>
+      </ul></div>
+    </div>
+    <div class="ft__base">
+      <span>© 2026 Digify Marketing Digital. Todos os direitos reservados.</span>
+      <span><a href="/politica-de-privacidade/">Privacidade</a> &middot; <a href="/sitemap.xml">Sitemap</a></span>
     </div>
   </div>
 </footer>
 
-<a href="https://wa.me/5511990002065" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a13 13 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.122 1.526 5.858L.057 23.617a.5.5 0 0 0 .61.61l5.759-1.469A11.954 11.954 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.017-1.378l-.36-.214-3.727.951.968-3.638-.234-.374A9.818 9.818 0 1 1 12 21.818z"/></svg>
+<a class="wa" href="https://wa.me/5511989911000?text=Quero+um+diagn%C3%B3stico+gratuito" aria-label="Falar no WhatsApp">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.6.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5 0-.2-.6-1.6-.9-2.1-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.8c.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.2-.3-.2-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.1.8.8-3-.2-.3c-.9-1.4-1.3-3-1.3-4.6C3.5 7.3 7.3 3.5 12 3.5S20.5 7.3 20.5 12 16.7 20.2 12 20.2z"/></svg>
 </a>
 
-<script src="/js/main.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://digify.live/#org",
+      "name": "Digify",
+      "url": "https://digify.live/",
+      "description": "Agência web full-stack: criação de sites, sistemas sob medida e SEO. Mais de 10 anos e 300 projetos levando empresas ao topo do Google.",
+      "telephone": "+5511989911000",
+      "priceRange": "$$",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Brasil"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "SP",
+        "addressCountry": "BR"
+      },
+      "availableLanguage": [
+        {
+          "@type": "Language",
+          "name": "Portuguese",
+          "alternateName": "pt-BR"
+        },
+        {
+          "@type": "Language",
+          "name": "English",
+          "alternateName": "en"
+        },
+        {
+          "@type": "Language",
+          "name": "Spanish",
+          "alternateName": "es"
+        }
+      ],
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://digify.live/#logo",
+        "url": "https://digify.live/assets/logo-digify.png",
+        "width": 512,
+        "height": 512,
+        "caption": "Digify"
+      },
+      "image": {
+        "@id": "https://digify.live/#logo"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+5511989911000",
+          "contactType": "sales",
+          "availableLanguage": [
+            "Portuguese",
+            "English",
+            "Spanish"
+          ],
+          "areaServed": [
+            "BR",
+            "US",
+            "PT",
+            "ES"
+          ]
+        }
+      ],
+      "knowsLanguage": [
+        "pt-BR",
+        "en",
+        "es"
+      ],
+      "foundingDate": "2015",
+      "slogan": "O primeiro resultado leva quase tudo.",
+      "sameAs": [
+        "https://instagram.com/digify.live",
+        "https://plugins.digify.live/"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "4",
+        "bestRating": "5"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "O que fazemos",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Criação de sites",
+              "description": "Sites institucionais, landing pages e e-commerces ultrarrápidos, responsivos e desenhados para transformar visita em cliente.",
+              "provider": {
+                "@id": "https://digify.live/#org"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Desenvolvimento de apps",
+              "description": "Aplicativos iOS e Android com design intuitivo e integração com APIs. Do MVP ao produto final, com entregas semanais.",
+              "provider": {
+                "@id": "https://digify.live/#org"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Agência de SEO",
+              "description": "Auditoria técnica, conteúdo, link building e monitoramento de posições. SEO que coloca você na frente de quem já procura.",
+              "provider": {
+                "@id": "https://digify.live/#org"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Marketing digital",
+              "description": "Google Ads, Meta Ads e crescimento orgânico trabalhando juntos para atrair cliente qualificado e defender o ROI.",
+              "provider": {
+                "@id": "https://digify.live/#org"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Lojas virtuais",
+              "description": "Alta performance, UX otimizada para conversão, integração com marketplaces e todos os principais meios de pagamento.",
+              "provider": {
+                "@id": "https://digify.live/#org"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Sistemas e integrações",
+              "description": "Sistemas web sob medida, APIs e automações que eliminam trabalho manual e fazem o negócio escalar sem inchar o time.",
+              "provider": {
+                "@id": "https://digify.live/#org"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://digify.live/#site",
+      "url": "https://digify.live/",
+      "name": "Digify",
+      "publisher": {
+        "@id": "https://digify.live/#org"
+      },
+      "inLanguage": [
+        "pt-BR",
+        "en",
+        "es"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://digify.live/#webpage",
+      "url": "https://digify.live/",
+      "name": "Digify | Criação de Sites, Sistemas e SEO | Agência Web no Brasil",
+      "description": "Agência web full-stack: criação de sites, sistemas sob medida e SEO. Mais de 10 anos e 300 projetos levando empresas ao topo do Google.",
+      "inLanguage": "pt-BR",
+      "isPartOf": {
+        "@id": "https://digify.live/#site"
+      },
+      "about": {
+        "@id": "https://digify.live/#org"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://digify.live/#logo"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://digify.live/#faq",
+      "inLanguage": "pt-BR",
+      "isPartOf": {
+        "@id": "https://digify.live/#webpage"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Quanto tempo leva para criar um site?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Uma landing page fica pronta em cerca de 10 dias úteis. Um site institucional completo costuma levar de 3 a 5 semanas, e um e-commerce ou sistema, de 6 a 10 semanas. O prazo exato sai no planejamento, depois do diagnóstico — e a partir daí ele vira compromisso, com cronograma visível para você acompanhar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quanto custa um projeto com a Digify?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O valor depende do escopo, e por isso não trabalhamos com tabela fixa. Fazemos um diagnóstico gratuito, entendemos o objetivo do projeto e enviamos uma proposta com escopo fechado, prazo e valor. Se o orçamento não fizer sentido para o momento da empresa, dizemos isso antes de você investir tempo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Em quanto tempo o SEO começa a dar resultado?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Os primeiros sinais — indexação, ganho de posição em termos de cauda longa e aumento de impressões — costumam aparecer entre 60 e 90 dias. Resultado consolidado em termos competitivos leva de 6 a 12 meses. SEO é ativo, não anúncio: o retorno é cumulativo e continua rendendo depois que o investimento para."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Vocês dão manutenção depois da entrega?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. Todo projeto inclui um período de acompanhamento pós-lançamento, e oferecemos planos mensais de manutenção que cobrem atualizações, backup, monitoramento de performance e pequenos ajustes de conteúdo. Você não fica com um site parado seis meses depois do deploy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Com quais tecnologias vocês trabalham?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Escolhemos a stack pelo problema, não por preferência. Usamos WordPress e WooCommerce quando o cliente precisa de autonomia editorial, sites estáticos quando performance e SEO são prioridade absoluta, e desenvolvimento sob medida em PHP, Python e JavaScript quando o projeto envolve integrações e regras de negócio próprias."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Vocês atendem empresas de fora de São Paulo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. Trabalhamos de forma remota com clientes em todo o Brasil e também no exterior. Todo o processo — diagnóstico, alinhamentos, entregas e acompanhamento — funciona por videochamada, WhatsApp e acesso ao ambiente do projeto."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://digify.live/#reviews",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Review",
+            "reviewBody": "Há anos o Vai-Vai atua em parceria com a Digify. Fizemos diversos projetos, de sites a ações pontuais e gerenciamento de mídias sociais. Temos muito a agradecer pelos serviços prestados.",
+            "author": {
+              "@type": "Person",
+              "name": "Lucas C."
+            },
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "itemReviewed": {
+              "@id": "https://digify.live/#org"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Review",
+            "reviewBody": "Conheci a Digify em um momento crítico do meu e-commerce. O time não só resolveu os problemas como melhorou demais a performance do site. Recomendo sem hesitar.",
+            "author": {
+              "@type": "Person",
+              "name": "Távio M."
+            },
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "itemReviewed": {
+              "@id": "https://digify.live/#org"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Review",
+            "reviewBody": "Utilizamos a Digify para criação de sites, integrações, SEO e tráfego pago. Um parceiro que entende de negócios digitais de verdade. Recomendo a qualquer empresa.",
+            "author": {
+              "@type": "Person",
+              "name": "Lucas F."
+            },
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "itemReviewed": {
+              "@id": "https://digify.live/#org"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Review",
+            "reviewBody": "Como iniciante no marketing digital, foi fundamental o trabalho da Digify para estruturar meu site, funis de venda e anúncios no Google. Profissionais incríveis!",
+            "author": {
+              "@type": "Person",
+              "name": "Vinícius Z."
+            },
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "itemReviewed": {
+              "@id": "https://digify.live/#org"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script src="/assets/digify.js" defer></script>
 </body>
 </html>

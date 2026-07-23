@@ -1,260 +1,330 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog | Digify — Criação de Sites, SEO e Marketing Digital</title>
-  <meta name="description" content="Dicas e estratégias sobre criação de sites, desenvolvimento de apps, SEO e marketing digital. Conteúdo prático para crescer na internet.">
-  <link rel="canonical" href="https://digify.live/blog/">
-  <link rel="stylesheet" href="/css/style.css">
-  <style>
-    .blog-page-hero{
-      background:var(--black);
-      padding:80px 0 64px;
-      border-bottom:1px solid rgba(255,255,255,0.06);
-    }
-    .blog-page-hero .eyebrow{
-      display:inline-flex;align-items:center;gap:10px;
-      font-size:0.68rem;font-weight:700;text-transform:uppercase;
-      letter-spacing:3px;color:var(--electric);margin-bottom:20px;
-    }
-    .blog-page-hero .eyebrow::before{content:'';display:block;width:28px;height:1px;background:var(--electric);}
-    .blog-page-hero h1{
-      font-family:'Bebas Neue',sans-serif;
-      font-size:clamp(3.5rem,8vw,6rem);
-      color:var(--white);line-height:.92;margin-bottom:16px;
-    }
-    .blog-page-hero h1 span{color:var(--electric);}
-    .blog-page-hero p{color:rgba(255,255,255,.45);font-size:0.95rem;max-width:480px;}
-    .blog-breadcrumb{
-      display:flex;align-items:center;gap:8px;
-      font-size:0.72rem;color:rgba(255,255,255,.3);
-      margin-bottom:24px;
-    }
-    .blog-breadcrumb a{color:var(--electric);}
-    .blog-breadcrumb span{color:rgba(255,255,255,.2);}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blog | Criação de Sites, SEO e Marketing Digital | Digify</title>
+<meta name="description" content="Estratégias práticas sobre criação de sites, desenvolvimento de apps, SEO e marketing digital. Conteúdo prático para crescer na internet.">
+<link rel="canonical" href="https://digify.live/blog/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="theme-color" content="#FFFFFF" id="tc">
 
-    .filters-bar{
-      display:flex;gap:8px;flex-wrap:wrap;
-      padding:40px 0 48px;
-      border-bottom:1px solid var(--gray-light);
-    }
-    .filt-btn{
-      padding:8px 20px;
-      border:1.5px solid var(--black);
-      background:transparent;color:var(--black);
-      font-family:'DM Sans',sans-serif;font-size:0.75rem;
-      font-weight:700;text-transform:uppercase;letter-spacing:.5px;
-      cursor:pointer;transition:all .2s;
-    }
-    .filt-btn:hover,.filt-btn.active{background:var(--black);color:var(--cream);}
-    .filt-btn.active{border-color:var(--black);}
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Digify">
+<meta property="og:url" content="https://digify.live/blog/">
+<meta property="og:title" content="Blog | Criação de Sites, SEO e Marketing Digital | Digify">
+<meta property="og:description" content="Estratégias práticas sobre criação de sites, desenvolvimento de apps, SEO e marketing digital. Conteúdo prático para crescer na internet.">
+<meta property="og:image" content="https://digify.live/assets/og-digify.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Blog | Criação de Sites, SEO e Marketing Digital | Digify">
+<meta name="twitter:description" content="Estratégias práticas sobre criação de sites, desenvolvimento de apps, SEO e marketing digital. Conteúdo prático para crescer na internet.">
+<meta name="twitter:image" content="https://digify.live/assets/og-digify.png">
 
-    .posts-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
-      gap:2px;
-      margin-bottom:64px;
-    }
-    .post-card{background:var(--cream-dark);border:1px solid transparent;transition:all .22s;display:flex;flex-direction:column;}
-    .post-card:hover{border-color:var(--black);}
-
-    /* Imagem CSS por categoria */
-    .post-thumb{
-      height:200px;position:relative;overflow:hidden;
-      display:flex;align-items:flex-end;padding:20px;
-    }
-    .post-thumb-seo{background:linear-gradient(135deg,#0D0D0D 0%,#1a1a2e 100%);}
-    .post-thumb-sites{background:linear-gradient(135deg,#0D0D0D 0%,#1a2e1a 100%);}
-    .post-thumb-apps{background:linear-gradient(135deg,#0D0D0D 0%,#2e1a1a 100%);}
-    .post-thumb-marketing{background:linear-gradient(135deg,#0D0D0D 0%,#2e2a1a 100%);}
-    .post-thumb-ecommerce{background:linear-gradient(135deg,#0D0D0D 0%,#1a2a2e 100%);}
-    .post-thumb::before{
-      content:'';position:absolute;inset:0;
-      background:radial-gradient(ellipse 60% 60% at 80% 20%,rgba(0,255,135,.15) 0%,transparent 70%);
-    }
-    .post-thumb-icon{
-      font-size:2.8rem;position:absolute;top:20px;right:20px;
-      opacity:.6;z-index:1;
-    }
-    .post-thumb-cat{
-      font-family:'Bebas Neue',sans-serif;
-      font-size:0.75rem;letter-spacing:2px;
-      color:var(--electric);z-index:1;
-      text-transform:uppercase;
-    }
-    .post-body{padding:24px 20px;flex:1;display:flex;flex-direction:column;}
-    .post-body h3{
-      font-family:'Bebas Neue',sans-serif;
-      font-size:1.4rem;color:var(--black);
-      margin-bottom:10px;line-height:1.05;
-    }
-    .post-body p{font-size:0.82rem;color:var(--gray);line-height:1.65;flex:1;margin-bottom:16px;}
-    .post-meta{
-      display:flex;justify-content:space-between;align-items:center;
-      font-size:0.68rem;color:var(--gray-light);
-      border-top:1px solid var(--gray-light);padding-top:12px;
-    }
-    .post-arrow{color:var(--black);font-weight:700;font-size:0.8rem;transition:all .2s;}
-    .post-card:hover .post-arrow{color:var(--electric);}
-
-    .load-more-wrap{text-align:center;margin-bottom:80px;}
-    .btn-load{
-      background:transparent;color:var(--black);
-      border:1.5px solid var(--black);
-      padding:12px 36px;font-family:'DM Sans',sans-serif;
-      font-weight:700;font-size:0.8rem;text-transform:uppercase;
-      letter-spacing:.5px;cursor:pointer;transition:all .22s;
-    }
-    .btn-load:hover{background:var(--black);color:var(--cream);}
-
-    .empty-state{
-      grid-column:1/-1;text-align:center;
-      padding:80px 20px;color:var(--gray);
-    }
-    .empty-state h3{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--black);margin-bottom:8px;}
-
-    @media(max-width:640px){
-      .posts-grid{grid-template-columns:1fr;}
-      .filters-bar{gap:6px;}
-      .filt-btn{padding:7px 14px;font-size:0.7rem;}
-    }
-  </style>
+<script>
+(function(){
+  var t; try{ t = localStorage.getItem('digify-theme'); }catch(e){}
+  if(!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', t);
+})();
+</script>
+<link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/digify.css">
 </head>
 <body>
-
-<!-- NAV simples, não fixo -->
-<nav style="background:var(--black);padding:0 32px;border-bottom:1px solid rgba(255,255,255,.06);">
-  <div style="max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;">
-    <a href="/" style="font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:#fff;letter-spacing:2px;">DIGIFY<span style="color:#00FF87">.</span></a>
-    <div style="display:flex;align-items:center;gap:32px;">
-      <a href="/#servicos" style="color:rgba(255,255,255,.55);font-size:0.78rem;font-weight:500;text-transform:uppercase;letter-spacing:1px;">Serviços</a>
-      <a href="/blog/" style="color:#00FF87;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;">Blog</a>
-      <a href="https://wa.me/5511990002065" target="_blank" rel="noopener" style="background:#00FF87;color:#0D0D0D;padding:8px 18px;font-family:'DM Sans',sans-serif;font-weight:700;font-size:0.75rem;text-transform:uppercase;letter-spacing:.5px;">WhatsApp →</a>
-    </div>
+<a href="#main" class="skip">Pular para o conteúdo</a>
+<header class="hdr" id="hdr">
+  <div class="wrap hdr__in">
+    <a href="/" class="logo" aria-label="Digify">digify<i>.</i></a>
+    <nav class="nav"><a href="/servicos/">Serviços</a><a href="/portfolio/">Portfólio</a><a href="/blog/">Blog</a><a href="/contato/">Contato</a></nav>
+    <div class="lang" role="group" aria-label="Idioma do site"><a href="/" hreflang="pt-BR" lang="pt-BR" aria-current="true">PT</a><a href="/en/" hreflang="en" lang="en">EN</a><a href="/es/" hreflang="es" lang="es">ES</a></div>
+    <button class="sw" id="sw" role="switch" aria-checked="true" aria-label="Acender ou apagar a luz do site" title="Acender / apagar">
+      <span class="sw__screw sw__screw--l"></span><span class="sw__screw sw__screw--r"></span>
+      <span class="sw__rock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 18.5h5M10.5 21.5h3M12 2.5a6.2 6.2 0 0 0-3.6 11.2c.5.4.9 1 .9 1.7v.6h5.4v-.6c0-.7.4-1.3.9-1.7A6.2 6.2 0 0 0 12 2.5Z"/></svg></span>
+    </button>
+    <a href="/contato/" class="btn btn--primary">Solicitar proposta</a>
+    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mnav"><span></span><span></span><span></span></button>
   </div>
-</nav>
-
-<!-- HERO -->
-<div class="blog-page-hero">
-  <div class="container">
-    <div class="blog-breadcrumb">
-      <a href="/">Home</a>
-      <span>›</span>
-      <span>Blog</span>
-    </div>
-    <div class="eyebrow">Conteúdo que rankeia</div>
-    <h1>BLOG &<br><span>CONTEÚDO</span></h1>
-    <p>Estratégias práticas sobre criação de sites, SEO, desenvolvimento de apps e marketing digital para crescer na internet.</p>
+  <div class="mnav" id="mnav">
+    <a href="/servicos/">Serviços</a><a href="/portfolio/">Portfólio</a><a href="/blog/">Blog</a><a href="/contato/">Contato</a>
+    <a href="/contato/" class="btn btn--primary">Solicitar proposta</a>
+    <div class="lang" role="group" aria-label="Idioma do site"><a href="/" hreflang="pt-BR" lang="pt-BR" aria-current="true">PT</a><a href="/en/" hreflang="en" lang="en">EN</a><a href="/es/" hreflang="es" lang="es">ES</a></div>
   </div>
-</div>
-
-<!-- CONTEÚDO -->
-<section style="background:var(--cream);padding:0 0 40px;">
-  <div class="container">
-    <div class="filters-bar" id="filters">
-      <button class="filt-btn active" onclick="filter('todos',this)">Todos</button>
-      <button class="filt-btn" onclick="filter('SEO',this)">SEO</button>
-      <button class="filt-btn" onclick="filter('Criação de Sites',this)">Criação de Sites</button>
-      <button class="filt-btn" onclick="filter('Desenvolvimento de Apps',this)">Apps</button>
-      <button class="filt-btn" onclick="filter('Marketing Digital',this)">Marketing</button>
-    </div>
-    <div class="posts-grid" id="posts-grid">
-      <div class="empty-state"><h3>Carregando...</h3></div>
-    </div>
-    <div class="load-more-wrap" id="load-more" style="display:none">
-      <button class="btn-load" onclick="loadMore()">Carregar mais artigos</button>
-    </div>
+</header>
+<main id="main">
+<div class="wrap"><nav class="crumbs" style="--c:var(--flame)" aria-label="Trilha"><a href="/">Home</a><span>&rsaquo;</span><b>Blog</b></nav></div>
+<section class="phero" style="--c:var(--flame)">
+  <div class="wrap phero__in">
+    <p class="eyebrow rv">Conteúdo</p>
+    <h1 class="rv rv-1">O que está acontecendo.</h1>
+    <p class="lede rv rv-2">Estratégias práticas sobre criação de sites, SEO, desenvolvimento e marketing digital, publicadas com frequência e escritas para serem usadas.</p>
   </div>
 </section>
-
-<!-- CTA -->
-<div style="background:var(--electric);padding:80px 0;position:relative;overflow:hidden;">
-  <div style="position:absolute;right:-20px;top:50%;transform:translateY(-50%);font-family:'Bebas Neue',sans-serif;font-size:clamp(6rem,16vw,13rem);color:rgba(0,0,0,.06);line-height:1;pointer-events:none;white-space:nowrap;">DIGIFY</div>
-  <div class="container" style="position:relative;">
-    <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2.4rem,5vw,4rem);color:var(--black);margin-bottom:12px;">QUER CRESCER<br>NA INTERNET?</h2>
-    <p style="color:rgba(0,0,0,.55);font-size:0.95rem;margin-bottom:28px;">Fale com nossos especialistas em criação de sites e SEO.</p>
-    <a href="https://wa.me/5511990002065" target="_blank" rel="noopener" style="background:var(--black);color:var(--cream);padding:14px 32px;font-family:'DM Sans',sans-serif;font-weight:700;font-size:0.82rem;text-transform:uppercase;letter-spacing:.5px;display:inline-flex;align-items:center;gap:8px;">💬 Falar no WhatsApp</a>
-  </div>
-</div>
-
-<!-- FOOTER -->
-<footer style="background:var(--black);padding:36px 0;">
-  <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
-    <span style="font-family:'Bebas Neue',sans-serif;font-size:1.2rem;color:#fff;letter-spacing:2px;">DIGIFY<span style="color:#00FF87">.</span></span>
-    <span style="font-size:0.78rem;color:rgba(255,255,255,.25);">© 2026 Digify Marketing Digital</span>
-    <a href="/" style="font-size:0.78rem;color:rgba(255,255,255,.35);transition:.2s;">← Voltar ao site</a>
+<section class="section section--tight"><div class="wrap"><nav class="catnav" aria-label="Categorias do blog"><a href="/blog/" aria-current="page">Todos</a><a href="/blog/criacao-de-sites/">Criação de Sites</a><a href="/blog/desenvolvimento-de-apps/">Desenvolvimento de Apps</a><a href="/blog/marketing-digital/">Marketing Digital</a><a href="/blog/seo/">SEO</a></nav><div class="blist"><a class="bitem rv rv-1" href="/blog/google-ads-crie-anuncios-que-convertem-e-impulsionam-vendas/" style="--c:var(--violet);--t:var(--violet-t)"><div><span class="bitem__cat">Marketing Digital</span><h3>Google Ads: Crie Anúncios que Convertem e Impulsionam Vendas</h3><p>Aprenda a criar anúncios no Google Ads que realmente funcionam! Descubra estratégias eficazes para converter cliques em clientes e otimizar suas campanhas para o sucesso.</p></div><time datetime="2026-07-23">23 de julho de 2026</time></a><a class="bitem rv rv-2" href="/blog/velocidade-do-site-e-seo-cada-segundo-impulsiona-seu-rank/" style="--c:var(--jade);--t:var(--jade-t)"><div><span class="bitem__cat">SEO</span><h3>Velocidade do Site e SEO: Cada Segundo Impulsiona Seu Rank</h3><p>Descubra como a velocidade do site impacta diretamente seu SEO e a experiência do usuário. Aprenda por que cada segundo é crucial para ranquear melhor no Google e converter mais visitantes. Otimize já!</p></div><time datetime="2026-07-19">19 de julho de 2026</time></a><a class="bitem rv rv-3" href="/blog/mvp-de-aplicativo-valide-sua-ideia-antes-de-investir/" style="--c:var(--ultra);--t:var(--ultra-t)"><div><span class="bitem__cat">Desenvolvimento de Apps</span><h3>MVP de Aplicativo: Valide Sua Ideia Antes de Investir</h3><p>Descubra como o MVP de aplicativo pode validar sua ideia de app antes de grandes investimentos. Minimize riscos, economize recursos e lance um produto de sucesso com a Digify.</p></div><time datetime="2026-07-18">18 de julho de 2026</time></a><a class="bitem rv rv-1" href="/blog/auditoria-seo-completa-guia-essencial-para-otimizar-seu-site/" style="--c:var(--jade);--t:var(--jade-t)"><div><span class="bitem__cat">SEO</span><h3>Auditoria SEO Completa: Guia Essencial para Otimizar Seu Site</h3><p>Aprenda a fazer uma auditoria de SEO completa no seu site e impulsione seu ranqueamento. Identifique oportunidades, corrija falhas e garanta mais visibilidade online para sua marca.</p></div><time datetime="2026-07-17">17 de julho de 2026</time></a><a class="bitem rv rv-2" href="/blog/app-store-optimization-como-rankear-seu-app-na-app-store/" style="--c:var(--ultra);--t:var(--ultra-t)"><div><span class="bitem__cat">Desenvolvimento de Apps</span><h3>App Store Optimization: Como Rankear seu App na App Store</h3><p>Aprenda as melhores estratégias de App Store Optimization (ASO) para aumentar a visibilidade do seu aplicativo e disparar os downloads na App Store. Conquiste o topo!</p></div><time datetime="2026-07-15">15 de julho de 2026</time></a><a class="bitem rv rv-3" href="/blog/guia-essencial-briefing-do-app-perfeito-para-agencias/" style="--c:var(--ultra);--t:var(--ultra-t)"><div><span class="bitem__cat">Desenvolvimento de Apps</span><h3>Guia Essencial: Briefing do App Perfeito para Agências</h3><p>Crie o briefing do app perfeito para sua agência e garanta um desenvolvimento sem falhas. Descubra os elementos essenciais para alinhar expectativas e otimizar seu projeto.</p></div><time datetime="2026-07-14">14 de julho de 2026</time></a><a class="bitem rv rv-1" href="/blog/aplicativo-nativo-vs-pwa-qual-escolher-para-seu-negocio/" style="--c:var(--ultra);--t:var(--ultra-t)"><div><span class="bitem__cat">Desenvolvimento de Apps</span><h3>Aplicativo Nativo vs PWA: Qual Escolher para Seu Negócio?</h3><p>Qual o ideal para seu negócio: Aplicativo Nativo ou PWA? Compare custos, desempenho e funcionalidades para tomar a decisão estratégica no desenvolvimento do seu app.</p></div><time datetime="2026-07-11">11 de julho de 2026</time></a><a class="bitem rv rv-2" href="/blog/react-native-vs-flutter-a-escolha-certa-para-seu-app-2025/" style="--c:var(--ultra);--t:var(--ultra-t)"><div><span class="bitem__cat">Desenvolvimento de Apps</span><h3>React Native vs Flutter: A Escolha Certa para Seu App 2025</h3><p>React Native vs Flutter: qual a melhor opção para seu app em 2025? Compare tecnologias, desempenho e custos para tomar a decisão ideal para o seu projeto mobile com a Digify.</p></div><time datetime="2026-07-08">8 de julho de 2026</time></a><a class="bitem rv rv-3" href="/blog/link-building-white-hat-ganhe-autoridade-seo-segura/" style="--c:var(--jade);--t:var(--jade-t)"><div><span class="bitem__cat">SEO</span><h3>Link Building White Hat: Ganhe Autoridade SEO Segura</h3><p>Descubra estratégias de link building white hat e construa autoridade para seu site. Aprenda métodos seguros e éticos para um SEO duradouro e destaque-se no Google.</p></div><time datetime="2026-07-07">7 de julho de 2026</time></a><a class="bitem rv rv-1" href="/blog/landing-page-que-converte-10-elementos-indispensaveis/" style="--c:var(--flame);--t:var(--flame-t)"><div><span class="bitem__cat">Criação de Sites</span><h3>Landing Page que Converte: 10 Elementos Indispensáveis</h3><p>Quer uma landing page que converte visitantes em clientes? Descubra os 10 elementos indispensáveis para criar páginas de alta performance e impulsionar seus resultados online.</p></div><time datetime="2026-07-06">6 de julho de 2026</time></a><a class="bitem rv rv-2" href="/blog/roi-digital-meca-campanhas-com-precisao-e-impulsione-lucros/" style="--c:var(--violet);--t:var(--violet-t)"><div><span class="bitem__cat">Marketing Digital</span><h3>ROI Digital: Meça Campanhas com Precisão e Impulsione Lucros</h3><p>Aprenda a medir o ROI de campanhas digitais com precisão! Descubra métricas, ferramentas e estratégias eficazes para otimizar seus investimentos e maximizar resultados.</p></div><time datetime="2026-07-05">5 de julho de 2026</time></a><a class="bitem rv rv-3" href="/blog/trafego-pago-como-comecar-do-zero-e-ter-resultados/" style="--c:var(--violet);--t:var(--violet-t)"><div><span class="bitem__cat">Marketing Digital</span><h3>Tráfego Pago: Como Começar do Zero e Ter Resultados</h3><p>Descubra o que é tráfego pago e aprenda a começar do zero suas campanhas de anúncios online. Atraia clientes qualificados e gere resultados eficazes para seu negócio.</p></div><time datetime="2026-07-04">4 de julho de 2026</time></a><a class="bitem rv rv-1" href="/blog/estrategia-de-conteudo-como-gerar-leads-qualificados/" style="--c:var(--violet);--t:var(--violet-t)"><div><span class="bitem__cat">Marketing Digital</span><h3>Estratégia de Conteúdo: Como Gerar Leads Qualificados</h3><p>Aprenda a criar uma estratégia de conteúdo que gera leads qualificados. Descubra como planejar, produzir e distribuir conteúdo que converte visitantes em oportunidades reais.</p></div><time datetime="2026-07-03">3 de julho de 2026</time></a><a class="bitem rv rv-2" href="/blog/hospedagem-de-sites-guia-para-escolher-a-melhor-opcao/" style="--c:var(--flame);--t:var(--flame-t)"><div><span class="bitem__cat">Criação de Sites</span><h3>Hospedagem de Sites: Guia para Escolher a Melhor Opção</h3><p>A **hospedagem de sites** certa é vital. Aprenda a escolher a melhor opção para seu projeto, considerando performance, segurança e custo-benefício, e garanta o sucesso online.</p></div><time datetime="2026-07-01">1 de julho de 2026</time></a><a class="bitem rv rv-3" href="/blog/google-ads-vs-meta-ads-qual-plataforma-escolher-em-2025/" style="--c:var(--violet);--t:var(--violet-t)"><div><span class="bitem__cat">Marketing Digital</span><h3>Google Ads vs Meta Ads: Qual Plataforma Escolher em 2025?</h3><p>Decida onde investir em 2025! Compare Google Ads vs Meta Ads para sua empresa. Analisamos prós e contras de cada plataforma, otimizando seu orçamento de marketing.</p></div><time datetime="2026-06-29">29 de junho de 2026</time></a><a class="bitem rv rv-1" href="/blog/seguranca-em-apps-moveis-essencial-para-sua-empresa/" style="--c:var(--ultra);--t:var(--ultra-t)"><div><span class="bitem__cat">Desenvolvimento de Apps</span><h3>Segurança em Apps Móveis: Essencial para Sua Empresa</h3><p>Garanta a segurança em apps móveis da sua empresa. Entenda os riscos cibernéticos, as melhores práticas de proteção de dados e como manter a confiança dos usuários.</p></div><time datetime="2026-06-28">28 de junho de 2026</time></a><a class="bitem rv rv-2" href="/blog/seo-local-apareca-no-google-maps-da-sua-cidade/" style="--c:var(--jade);--t:var(--jade-t)"><div><span class="bitem__cat">SEO</span><h3>SEO Local: Apareça no Google Maps da Sua Cidade!</h3><p>Descubra as estratégias essenciais de SEO local para sua empresa se destacar no Google Maps e atrair clientes na sua cidade. Aumente sua visibilidade online agora!</p></div><time datetime="2026-06-27">27 de junho de 2026</time></a><a class="bitem rv rv-3" href="/blog/como-usar-google-search-console-do-zero-guia-pratico/" style="--c:var(--jade);--t:var(--jade-t)"><div><span class="bitem__cat">SEO</span><h3>Como Usar Google Search Console do Zero: Guia Prático</h3><p>Aprenda a usar o Google Search Console do zero e otimize seu site. Descubra como monitorar desempenho, corrigir erros e melhorar seu SEO com esta ferramenta essencial.</p></div><time datetime="2026-06-26">26 de junho de 2026</time></a><a class="bitem rv rv-1" href="/blog/seo-para-e-commerce-guia-completo-para-lojas-virtuais/" style="--c:var(--jade);--t:var(--jade-t)"><div><span class="bitem__cat">SEO</span><h3>SEO para E-commerce: Guia Completo para Lojas Virtuais</h3><p>Desvende o SEO para e-commerce com nosso guia completo! Aprenda a otimizar sua loja virtual, aumentar a visibilidade nos buscadores e impulsionar suas vendas online.</p></div><time datetime="2026-06-25">25 de junho de 2026</time></a><a class="bitem rv rv-2" href="/blog/como-monetizar-um-aplicativo-modelos-de-sucesso/" style="--c:var(--ultra);--t:var(--ultra-t)"><div><span class="bitem__cat">Desenvolvimento de Apps</span><h3>Como Monetizar um Aplicativo: Modelos de Sucesso</h3><p>Transforme seu app em fonte de receita! Aprenda como monetizar um aplicativo com as estratégias mais eficazes: assinaturas, publicidade, freemium e mais. Descubra qual se encaixa melhor no seu negócio.</p></div><time datetime="2026-06-23">23 de junho de 2026</time></a><a class="bitem rv rv-3" href="/blog/wordpress-vs-html-qual-o-melhor-para-seu-negocio/" style="--c:var(--flame);--t:var(--flame-t)"><div><span class="bitem__cat">Criação de Sites</span><h3>WordPress vs HTML: Qual o Melhor para Seu Negócio?</h3><p>Na dúvida entre WordPress vs HTML para seu site? Compare as vantagens e desvantagens de cada plataforma e descubra a melhor escolha para seu negócio digital.</p></div><time datetime="2026-06-21">21 de junho de 2026</time></a><a class="bitem rv rv-1" href="/blog/ga4-transforme-dados-em-decisoes-de-marketing-vencedoras/" style="--c:var(--violet);--t:var(--violet-t)"><div><span class="bitem__cat">Marketing Digital</span><h3>GA4: Transforme Dados em Decisões de Marketing Vencedoras</h3><p>Domine o Google Analytics 4 e transforme seus dados em decisões estratégicas. Aprenda a identificar tendências, otimizar campanhas e impulsionar o sucesso do seu marketing digital.</p></div><time datetime="2026-06-19">19 de junho de 2026</time></a><a class="bitem rv rv-2" href="/blog/como-escolher-a-melhor-agencia-para-criar-o-site-da-sua-empresa/" style="--c:var(--flame);--t:var(--flame-t)"><div><span class="bitem__cat">Criação de Sites</span><h3>Como Escolher a Melhor Agência para Criar o Site da Sua Empresa</h3><p>Não sabe como escolher a agência ideal para criar o site da sua empresa? Descubra dicas essenciais para tomar a decisão certa e garantir um site profissional e eficaz para o seu negócio.</p></div><time datetime="2026-06-18">18 de junho de 2026</time></a><a class="bitem rv rv-3" href="/blog/palavras-chave-de-cauda-longa-guia-para-seo-e-mais-trafego/" style="--c:var(--jade);--t:var(--jade-t)"><div><span class="bitem__cat">SEO</span><h3>Palavras-chave de Cauda Longa: Guia para SEO e Mais Tráfego</h3><p>Descubra como encontrar e usar palavras-chave de cauda longa para impulsionar seu SEO. Atraia tráfego qualificado, melhore seu ranqueamento e aumente vendas. Guia completo para seu sucesso!</p></div><time datetime="2026-06-16">16 de junho de 2026</time></a><a class="bitem rv rv-1" href="/blog/o-que-e-e-e-a-t-guia-completo-para-melhorar-seu-seo/" style="--c:var(--jade);--t:var(--jade-t)"><div><span class="bitem__cat">SEO</span><h3>O Que é E-E-A-T? Guia Completo para Melhorar seu SEO</h3><p>Descubra o que é E-E-A-T e por que ele é crucial para o SEO do seu site. Aprenda a aplicar os pilares de Experiência, Expertise, Autoridade e Confiabilidade para se destacar no Google.</p></div><time datetime="2026-06-15">15 de junho de 2026</time></a><a class="bitem rv rv-2" href="/blog/e-mail-marketing-ainda-funciona-dados-e-estrategias/" style="--c:var(--violet);--t:var(--violet-t)"><div><span class="bitem__cat">Marketing Digital</span><h3>E-mail Marketing: Ainda Funciona? Dados e Estratégias</h3><p>O e-mail marketing realmente funciona hoje? Explore dados atualizados e as estratégias mais eficientes para alavancar suas campanhas e gerar resultados concretos.</p></div><time datetime="2026-06-14">14 de junho de 2026</time></a><a class="bitem rv rv-3" href="/blog/integrar-apis-em-apps-mobile-guia-pratico-digify/" style="--c:var(--ultra);--t:var(--ultra-t)"><div><span class="bitem__cat">Desenvolvimento de Apps</span><h3>Integrar APIs em Apps Mobile: Guia Prático Digify</h3><p>Aprenda a integrar APIs no seu aplicativo mobile e desbloqueie funcionalidades essenciais. Este guia prático da Digify mostra como otimizar o desenvolvimento e melhorar a experiência do usuário.</p></div><time datetime="2026-06-12">12 de junho de 2026</time></a><a class="bitem rv rv-1" href="/blog/como-medir-o-roi-de-campanhas-digitais-com-precisao/" style="--c:var(--violet);--t:var(--violet-t)"><div><span class="bitem__cat">Marketing Digital</span><h3>Como Medir o ROI de Campanhas Digitais com Precisão</h3><p>Aprenda a medir o ROI de campanhas digitais com exatidão e otimize seus investimentos. Descubra métricas e ferramentas para provar o valor do seu marketing digital.</p></div><time datetime="2026-06-11">11 de junho de 2026</time></a><a class="bitem rv rv-2" href="/blog/funil-de-vendas-digital-da-atracao-ao-fechamento-de-clientes/" style="--c:var(--violet);--t:var(--violet-t)"><div><span class="bitem__cat">Marketing Digital</span><h3>Funil de Vendas Digital: Da Atração ao Fechamento de Clientes</h3><p>Domine o funil de vendas digital para converter visitantes em clientes! Explore estratégias da atração ao fechamento, otimizando cada etapa para o sucesso do seu negócio online.</p></div><time datetime="2026-06-08">8 de junho de 2026</time></a><a class="bitem rv rv-3" href="/blog/como-criar-um-site-rapido-guia-tecnico-para-iniciantes/" style="--c:var(--flame);--t:var(--flame-t)"><div><span class="bitem__cat">Criação de Sites</span><h3>Como Criar um Site Rápido: Guia Técnico para Iniciantes</h3><p>Descubra como criar um site rápido e com alta performance. Este guia técnico da Digify para iniciantes descomplica otimização de imagens, caching e SEO essencial. Clique e acelere!</p></div><time datetime="2026-06-06">6 de junho de 2026</time></a><a class="bitem rv rv-1" href="/blog/ux-design-para-sites-principios-que-aumentam-conversao/" style="--c:var(--flame);--t:var(--flame-t)"><div><span class="bitem__cat">Criação de Sites</span><h3>UX Design para Sites: Princípios que Aumentam Conversão</h3><p>Descubra como o UX design para sites pode transformar visitantes em clientes. Conheça os princípios essenciais para criar experiências digitais que impulsionam suas conversões.</p></div><time datetime="2026-06-05">5 de junho de 2026</time></a><a class="bitem rv rv-2" href="/blog/velocidade-do-site-e-seo-impacto-no-ranking-e-experiencia/" style="--c:var(--jade);--t:var(--jade-t)"><div><span class="bitem__cat">SEO</span><h3>Velocidade do Site e SEO: Impacto no Ranking e Experiência</h3><p>Descubra como a velocidade do site afeta diretamente seu SEO e a experiência do usuário. Aprenda por que otimizar cada segundo é crucial para seu ranking no Google.</p></div><time datetime="2026-06-04">4 de junho de 2026</time></a></div></div></section>
+<section class="section section--deep"><div class="wrap" style="text-align:center"><p class="eyebrow rv" style="justify-content:center">Próximo passo</p><h2 class="rv rv-1">Vamos começar pelo diagnóstico.</h2><p class="lede rv rv-2" style="margin:22px auto 0">Conte o que você precisa. Respondemos em até um dia útil com um diagnóstico do cenário atual e os caminhos possíveis, sem compromisso.</p><div class="hero__cta rv rv-3" style="justify-content:center;margin-top:34px"><a href="/contato/" class="btn btn--flame">Solicitar proposta <span class="ar" aria-hidden="true">&rarr;</span></a><a href="https://wa.me/5511989911000?text=Quero+um+diagn%C3%B3stico+gratuito" class="btn btn--outlineDeep">Falar no WhatsApp</a></div></div></section>
+</main>
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft__grid">
+      <div class="ft__about">
+        <a href="/" class="logo">digify<i>.</i></a>
+        <p>Agência web especialista em criação de sites, sistemas sob medida e SEO. Mais de 10 anos levando empresas ao topo do Google.</p>
+      </div>
+      <div><h4>Serviços</h4><ul><li><a href="/servicos/criacao-de-sites/">Criação de sites</a></li><li><a href="/servicos/desenvolvimento-de-apps/">Desenvolvimento de apps</a></li><li><a href="/servicos/seo/">Agência de SEO</a></li><li><a href="/servicos/marketing-digital/">Marketing digital</a></li><li><a href="/servicos/ecommerce/">Lojas virtuais</a></li><li><a href="/servicos/sistemas/">Sistemas e integrações</a></li></ul></div>
+      <div><h4>Empresa</h4><ul><li><a href="/servicos/">Todos os serviços</a></li><li><a href="/portfolio/">Portfólio</a></li><li><a href="/sobre/">Sobre a Digify</a></li><li><a href="/blog/">Blog</a></li><li><a href="/contato/">Contato</a></li><li><a href="https://plugins.digify.live/">Plugins WordPress</a></li><li><a href="/politica-de-privacidade/">Política de privacidade</a></li></ul></div>
+      <div><h4>Contato</h4><ul>
+        <li><a href="https://wa.me/5511989911000?text=Quero+um+diagn%C3%B3stico+gratuito">(11) 98991-1000</a></li>
+        <li><a href="https://instagram.com/digify.live">@digify.live</a></li>
+        <li><a href="/contato/">Solicitar proposta</a></li>
+      </ul></div>
+    </div>
+    <div class="ft__base">
+      <span>© 2026 Digify Marketing Digital. Todos os direitos reservados.</span>
+      <span><a href="/politica-de-privacidade/">Privacidade</a> &middot; <a href="/sitemap.xml">Sitemap</a></span>
+    </div>
   </div>
 </footer>
 
-<a href="https://wa.me/5511990002065" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a13 13 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.122 1.526 5.858L.057 23.617a.5.5 0 0 0 .61.61l5.759-1.469A11.954 11.954 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.017-1.378l-.36-.214-3.727.951.968-3.638-.234-.374A9.818 9.818 0 1 1 12 21.818z"/></svg>
+<a class="wa" href="https://wa.me/5511989911000?text=Quero+um+diagn%C3%B3stico+gratuito" aria-label="Falar no WhatsApp">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.6.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5 0-.2-.6-1.6-.9-2.1-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.8c.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.2-.3-.2-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.1.8.8-3-.2-.3c-.9-1.4-1.3-3-1.3-4.6C3.5 7.3 7.3 3.5 12 3.5S20.5 7.3 20.5 12 16.7 20.2 12 20.2z"/></svg>
 </a>
-
-<script>
-var allPosts = [];
-var showing = 9;
-var currentCat = 'todos';
-var thumbMap = {
-  'SEO': ['post-thumb-seo','🔍'],
-  'Criação de Sites': ['post-thumb-sites','🖥️'],
-  'Desenvolvimento de Apps': ['post-thumb-apps','📱'],
-  'Marketing Digital': ['post-thumb-marketing','📣'],
-  'E-commerce': ['post-thumb-ecommerce','🛒'],
-};
-
-fetch('/blog/index.json')
-  .then(function(r){ return r.json(); })
-  .then(function(posts){
-    allPosts = posts;
-    render(posts.slice(0, showing));
-    if(posts.length > showing) document.getElementById('load-more').style.display = 'block';
-  })
-  .catch(function(){
-    document.getElementById('posts-grid').innerHTML = '<div class="empty-state"><h3>Em breve</h3><p>Novos artigos chegando!</p></div>';
-  });
-
-function render(posts) {
-  var grid = document.getElementById('posts-grid');
-  if(!posts.length){
-    grid.innerHTML = '<div class="empty-state"><h3>Nenhum artigo</h3><p>Nesta categoria ainda não há conteúdo.</p></div>';
-    return;
-  }
-  grid.innerHTML = posts.map(function(p){
-    var t = thumbMap[p.category] || ['post-thumb-seo','📝'];
-    return '<a href="/blog/' + p.slug + '/" class="post-card">' +
-      '<div class="post-thumb ' + t[0] + '">' +
-        '<span class="post-thumb-icon">' + t[1] + '</span>' +
-        '<span class="post-thumb-cat">' + p.category + '</span>' +
-      '</div>' +
-      '<div class="post-body">' +
-        '<h3>' + p.title + '</h3>' +
-        '<p>' + p.excerpt + '</p>' +
-        '<div class="post-meta">' +
-          '<span>' + p.date + '</span>' +
-          '<span class="post-arrow">Ler →</span>' +
-        '</div>' +
-      '</div>' +
-    '</a>';
-  }).join('');
-}
-
-function filter(cat, btn) {
-  document.querySelectorAll('.filt-btn').forEach(function(b){ b.classList.remove('active'); });
-  btn.classList.add('active');
-  currentCat = cat;
-  showing = 9;
-  var filtered = cat === 'todos' ? allPosts : allPosts.filter(function(p){ return p.category === cat; });
-  render(filtered.slice(0, showing));
-  document.getElementById('load-more').style.display = filtered.length > showing ? 'block' : 'none';
-}
-
-function loadMore() {
-  showing += 9;
-  var filtered = currentCat === 'todos' ? allPosts : allPosts.filter(function(p){ return p.category === currentCat; });
-  render(filtered.slice(0, showing));
-  if(filtered.length <= showing) document.getElementById('load-more').style.display = 'none';
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://digify.live/blog/#webpage",
+      "url": "https://digify.live/blog/",
+      "name": "Blog | Digify",
+      "description": "Estratégias práticas sobre criação de sites, SEO, desenvolvimento e marketing digital.",
+      "inLanguage": "pt-BR",
+      "isPartOf": {
+        "@id": "https://digify.live/#site"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://digify.live/blog/#crumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://digify.live/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://digify.live/blog/"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://digify.live/blog/#list",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "url": "https://digify.live/blog/google-ads-crie-anuncios-que-convertem-e-impulsionam-vendas/",
+          "name": "Google Ads: Crie Anúncios que Convertem e Impulsionam Vendas"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "url": "https://digify.live/blog/velocidade-do-site-e-seo-cada-segundo-impulsiona-seu-rank/",
+          "name": "Velocidade do Site e SEO: Cada Segundo Impulsiona Seu Rank"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "url": "https://digify.live/blog/mvp-de-aplicativo-valide-sua-ideia-antes-de-investir/",
+          "name": "MVP de Aplicativo: Valide Sua Ideia Antes de Investir"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "url": "https://digify.live/blog/auditoria-seo-completa-guia-essencial-para-otimizar-seu-site/",
+          "name": "Auditoria SEO Completa: Guia Essencial para Otimizar Seu Site"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "url": "https://digify.live/blog/app-store-optimization-como-rankear-seu-app-na-app-store/",
+          "name": "App Store Optimization: Como Rankear seu App na App Store"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "url": "https://digify.live/blog/guia-essencial-briefing-do-app-perfeito-para-agencias/",
+          "name": "Guia Essencial: Briefing do App Perfeito para Agências"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "url": "https://digify.live/blog/aplicativo-nativo-vs-pwa-qual-escolher-para-seu-negocio/",
+          "name": "Aplicativo Nativo vs PWA: Qual Escolher para Seu Negócio?"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "url": "https://digify.live/blog/react-native-vs-flutter-a-escolha-certa-para-seu-app-2025/",
+          "name": "React Native vs Flutter: A Escolha Certa para Seu App 2025"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "url": "https://digify.live/blog/link-building-white-hat-ganhe-autoridade-seo-segura/",
+          "name": "Link Building White Hat: Ganhe Autoridade SEO Segura"
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "url": "https://digify.live/blog/landing-page-que-converte-10-elementos-indispensaveis/",
+          "name": "Landing Page que Converte: 10 Elementos Indispensáveis"
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "url": "https://digify.live/blog/roi-digital-meca-campanhas-com-precisao-e-impulsione-lucros/",
+          "name": "ROI Digital: Meça Campanhas com Precisão e Impulsione Lucros"
+        },
+        {
+          "@type": "ListItem",
+          "position": 12,
+          "url": "https://digify.live/blog/trafego-pago-como-comecar-do-zero-e-ter-resultados/",
+          "name": "Tráfego Pago: Como Começar do Zero e Ter Resultados"
+        },
+        {
+          "@type": "ListItem",
+          "position": 13,
+          "url": "https://digify.live/blog/estrategia-de-conteudo-como-gerar-leads-qualificados/",
+          "name": "Estratégia de Conteúdo: Como Gerar Leads Qualificados"
+        },
+        {
+          "@type": "ListItem",
+          "position": 14,
+          "url": "https://digify.live/blog/hospedagem-de-sites-guia-para-escolher-a-melhor-opcao/",
+          "name": "Hospedagem de Sites: Guia para Escolher a Melhor Opção"
+        },
+        {
+          "@type": "ListItem",
+          "position": 15,
+          "url": "https://digify.live/blog/google-ads-vs-meta-ads-qual-plataforma-escolher-em-2025/",
+          "name": "Google Ads vs Meta Ads: Qual Plataforma Escolher em 2025?"
+        },
+        {
+          "@type": "ListItem",
+          "position": 16,
+          "url": "https://digify.live/blog/seguranca-em-apps-moveis-essencial-para-sua-empresa/",
+          "name": "Segurança em Apps Móveis: Essencial para Sua Empresa"
+        },
+        {
+          "@type": "ListItem",
+          "position": 17,
+          "url": "https://digify.live/blog/seo-local-apareca-no-google-maps-da-sua-cidade/",
+          "name": "SEO Local: Apareça no Google Maps da Sua Cidade!"
+        },
+        {
+          "@type": "ListItem",
+          "position": 18,
+          "url": "https://digify.live/blog/como-usar-google-search-console-do-zero-guia-pratico/",
+          "name": "Como Usar Google Search Console do Zero: Guia Prático"
+        },
+        {
+          "@type": "ListItem",
+          "position": 19,
+          "url": "https://digify.live/blog/seo-para-e-commerce-guia-completo-para-lojas-virtuais/",
+          "name": "SEO para E-commerce: Guia Completo para Lojas Virtuais"
+        },
+        {
+          "@type": "ListItem",
+          "position": 20,
+          "url": "https://digify.live/blog/como-monetizar-um-aplicativo-modelos-de-sucesso/",
+          "name": "Como Monetizar um Aplicativo: Modelos de Sucesso"
+        },
+        {
+          "@type": "ListItem",
+          "position": 21,
+          "url": "https://digify.live/blog/wordpress-vs-html-qual-o-melhor-para-seu-negocio/",
+          "name": "WordPress vs HTML: Qual o Melhor para Seu Negócio?"
+        },
+        {
+          "@type": "ListItem",
+          "position": 22,
+          "url": "https://digify.live/blog/ga4-transforme-dados-em-decisoes-de-marketing-vencedoras/",
+          "name": "GA4: Transforme Dados em Decisões de Marketing Vencedoras"
+        },
+        {
+          "@type": "ListItem",
+          "position": 23,
+          "url": "https://digify.live/blog/como-escolher-a-melhor-agencia-para-criar-o-site-da-sua-empresa/",
+          "name": "Como Escolher a Melhor Agência para Criar o Site da Sua Empresa"
+        },
+        {
+          "@type": "ListItem",
+          "position": 24,
+          "url": "https://digify.live/blog/palavras-chave-de-cauda-longa-guia-para-seo-e-mais-trafego/",
+          "name": "Palavras-chave de Cauda Longa: Guia para SEO e Mais Tráfego"
+        },
+        {
+          "@type": "ListItem",
+          "position": 25,
+          "url": "https://digify.live/blog/o-que-e-e-e-a-t-guia-completo-para-melhorar-seu-seo/",
+          "name": "O Que é E-E-A-T? Guia Completo para Melhorar seu SEO"
+        },
+        {
+          "@type": "ListItem",
+          "position": 26,
+          "url": "https://digify.live/blog/e-mail-marketing-ainda-funciona-dados-e-estrategias/",
+          "name": "E-mail Marketing: Ainda Funciona? Dados e Estratégias"
+        },
+        {
+          "@type": "ListItem",
+          "position": 27,
+          "url": "https://digify.live/blog/integrar-apis-em-apps-mobile-guia-pratico-digify/",
+          "name": "Integrar APIs em Apps Mobile: Guia Prático Digify"
+        },
+        {
+          "@type": "ListItem",
+          "position": 28,
+          "url": "https://digify.live/blog/como-medir-o-roi-de-campanhas-digitais-com-precisao/",
+          "name": "Como Medir o ROI de Campanhas Digitais com Precisão"
+        },
+        {
+          "@type": "ListItem",
+          "position": 29,
+          "url": "https://digify.live/blog/funil-de-vendas-digital-da-atracao-ao-fechamento-de-clientes/",
+          "name": "Funil de Vendas Digital: Da Atração ao Fechamento de Clientes"
+        },
+        {
+          "@type": "ListItem",
+          "position": 30,
+          "url": "https://digify.live/blog/como-criar-um-site-rapido-guia-tecnico-para-iniciantes/",
+          "name": "Como Criar um Site Rápido: Guia Técnico para Iniciantes"
+        },
+        {
+          "@type": "ListItem",
+          "position": 31,
+          "url": "https://digify.live/blog/ux-design-para-sites-principios-que-aumentam-conversao/",
+          "name": "UX Design para Sites: Princípios que Aumentam Conversão"
+        },
+        {
+          "@type": "ListItem",
+          "position": 32,
+          "url": "https://digify.live/blog/velocidade-do-site-e-seo-impacto-no-ranking-e-experiencia/",
+          "name": "Velocidade do Site e SEO: Impacto no Ranking e Experiência"
+        }
+      ]
+    }
+  ]
 }
 </script>
+<script src="/assets/digify.js" defer></script>
 </body>
 </html>
