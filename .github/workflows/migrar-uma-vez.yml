@@ -1,0 +1,96 @@
+name: 🔧 Migração dos artigos (rodar UMA vez)
+
+# Sem cron: só roda quando você clicar em "Run workflow".
+# Depois que rodar com sucesso, APAGUE este arquivo — ele não serve mais.
+on:
+  workflow_dispatch:
+    inputs:
+      confirmar:
+        description: 'Digite MIGRAR para confirmar'
+        required: true
+        default: ''
+
+jobs:
+  migrar:
+    name: Extrair artigos antigos e renderizar o site
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Conferir confirmação
+        run: |
+          if [ "${{ github.event.inputs.confirmar }}" != "MIGRAR" ]; then
+            echo "::error::Digite MIGRAR no campo de confirmação para rodar."
+            exit 1
+          fi
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Simular a migração (só mostra o que será extraído)
+        run: python3 _build/migrate_posts.py
+
+      - name: Migrar de verdade
+        run: python3 _build/migrate_posts.py --write
+
+      - name: Renderizar o site inteiro
+        run: python3 _build/build.py
+
+      - name: Limpar o que ficou obsoleto
+        run: |
+          set -e
+          echo "=== Antes da limpeza ==="
+          ls -1
+
+          # 1. template antigo — não é mais usado E hoje está indexável
+          rm -f blog/post-template.html
+
+          # 2. amostra que o Claude deixou para você ver o layout do artigo
+          rm -rf blog/exemplo-do-novo-layout
+
+          # 3. pastas dos 12 artigos canibalizados (o 301! do _redirects cobre as URLs)
+          if [ -f _redirects ]; then
+            grep -oE '^/blog/[^/]+/' _redirects | sed 's|^/||; s|/$||' | while read -r p; do
+              [ -d "$p" ] && rm -rf "$p" && echo "removido duplicado: $p"
+            done
+          fi
+
+          # 4. CSS e JS do site antigo — só se NENHUM artigo ainda apontar para eles
+          if grep -rl "/css/style.css" blog/ --include=index.html 2>/dev/null | head -1; then
+            echo "ATENÇÃO: ainda há artigo apontando para /css/style.css — css/ e js/ mantidos."
+          else
+            rm -rf css js
+            echo "removidos: css/ e js/ (nenhum artigo depende mais deles)"
+          fi
+
+          # 5. sobras conhecidas do site antigo
+          rm -f seo-foda.html post-template.html
+
+          echo ""
+          echo "=== Depois da limpeza — confira se sobrou algo estranho ==="
+          ls -1
+          echo ""
+          echo "Arquivos na raiz que NÃO fazem parte da entrega nova:"
+          for f in *; do
+            case "$f" in
+              index.html|404.html|robots.txt|sitemap.xml|llms.txt|_redirects|_headers|\
+              LEIA-ME.md|generate-posts.js|assets|blog|en|es|servicos|sobre|contato|\
+              portfolio|politica-de-privacidade|_build|node_modules) ;;
+              *) echo "  ? $f" ;;
+            esac
+          done
+
+      - name: Commit e push
+        run: |
+          git config --local user.email "bot@digify.live"
+          git config --local user.name "Digify Migration"
+          git add -A
+          git diff --staged --quiet && echo "Nada mudou." && exit 0
+          git commit -m "🔧 Migração: artigos no design novo + site renderizado"
+          git push
