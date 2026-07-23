@@ -1,234 +1,91 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Velocidade do Site e SEO: Impacto no Ranking e Experiência | Blog Digify</title>
-  <meta name="description" content="Descubra como a velocidade do site afeta diretamente seu SEO e a experiência do usuário. Aprenda por que otimizar cada segundo é crucial para seu ranking no Google.">
-  <link rel="canonical" href="https://digify.live/blog/velocidade-do-site-e-seo-impacto-no-ranking-e-experiencia/">
-  <meta property="og:title" content="Velocidade do Site e SEO: Impacto no Ranking e Experiência">
-  <meta property="og:description" content="Descubra como a velocidade do site afeta diretamente seu SEO e a experiência do usuário. Aprenda por que otimizar cada segundo é crucial para seu ranking no Google.">
-  <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2026-06-04T13:12:52.773Z">
-  <link rel="stylesheet" href="/css/style.css">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "Velocidade do Site e SEO: Impacto no Ranking e Experiência",
-    "description": "Descubra como a velocidade do site afeta diretamente seu SEO e a experiência do usuário. Aprenda por que otimizar cada segundo é crucial para seu ranking no Google.",
-    "datePublished": "2026-06-04T13:12:52.773Z",
-    "author": {"@type": "Organization", "name": "Digify Marketing Digital"},
-    "publisher": {"@type": "Organization", "name": "Digify Marketing Digital", "url": "https://digify.live"},
-    "mainEntityOfPage": "https://digify.live/blog/velocidade-do-site-e-seo-impacto-no-ranking-e-experiencia/"
-  }
-  </script>
-  <style>
-    .post-nav{
-      background:var(--black);
-      padding:0 32px;
-      border-bottom:1px solid rgba(255,255,255,.06);
-    }
-    .post-nav-inner{
-      max-width:1240px;margin:0 auto;
-      display:flex;align-items:center;justify-content:space-between;height:64px;
-    }
-    .post-nav-logo{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:#fff;letter-spacing:2px;}
-    .post-nav-logo span{color:#00FF87;}
-    .post-nav-links{display:flex;align-items:center;gap:32px;}
-    .post-nav-links a{color:rgba(255,255,255,.5);font-size:0.78rem;font-weight:500;text-transform:uppercase;letter-spacing:1px;}
-    .post-nav-btn{background:#00FF87;color:#0D0D0D;padding:8px 18px;font-family:'DM Sans',sans-serif;font-weight:700;font-size:0.75rem;text-transform:uppercase;letter-spacing:.5px;}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Velocidade do Site e SEO: Impacto no Ranking e Experiência | Blog Digify</title>
+<meta name="description" content="Descubra como a velocidade do site afeta diretamente seu SEO e a experiência do usuário. Aprenda por que otimizar cada segundo é crucial para seu ranking no Google.">
+<link rel="canonical" href="https://digify.live/blog/velocidade-do-site-e-seo-impacto-no-ranking-e-experiencia/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="theme-color" content="#FFFFFF" id="tc">
 
-    /* HERO DO POST */
-    .post-hero{
-      background:var(--black);
-      padding:56px 0 0;
-    }
-    .post-hero-inner{max-width:860px;margin:0 auto;padding:0 32px;}
-    .post-breadcrumb{
-      display:flex;align-items:center;gap:8px;
-      font-size:0.7rem;color:rgba(255,255,255,.3);margin-bottom:20px;
-    }
-    .post-breadcrumb a{color:#00FF87;}
-    .post-cat-badge{
-      display:inline-flex;align-items:center;gap:8px;
-      font-size:0.68rem;font-weight:700;text-transform:uppercase;
-      letter-spacing:2px;color:#00FF87;margin-bottom:16px;
-    }
-    .post-cat-badge::before{content:'';display:block;width:24px;height:1px;background:#00FF87;}
-    .post-hero h1{
-      font-family:'Bebas Neue',sans-serif;
-      font-size:clamp(2.2rem,5vw,3.8rem);
-      color:#fff;line-height:.95;margin-bottom:20px;
-    }
-    .post-hero-meta{
-      display:flex;align-items:center;gap:20px;flex-wrap:wrap;
-      font-size:0.78rem;color:rgba(255,255,255,.35);
-      padding-bottom:0;
-    }
-    .post-hero-meta span{display:flex;align-items:center;gap:6px;}
-
-    /* IMAGEM HERO CSS */
-    .post-thumb-hero{
-      max-width:860px;margin:32px auto 0;padding:0 32px;
-    }
-    .post-thumb-img{
-      height:320px;position:relative;overflow:hidden;
-      display:flex;align-items:center;justify-content:center;
-    }
-    .post-thumb-seo{background:linear-gradient(135deg,#0D0D0D 0%,#0a0a1f 50%,#0d1a0d 100%);}
-    .post-thumb-sites{background:linear-gradient(135deg,#0D0D0D 0%,#0a1f0a 50%,#0a0f1f 100%);}
-    .post-thumb-apps{background:linear-gradient(135deg,#0D0D0D 0%,#1f0a0a 50%,#0a0a1f 100%);}
-    .post-thumb-marketing{background:linear-gradient(135deg,#0D0D0D 0%,#1f1a0a 50%,#0a1f1a 100%);}
-    .post-thumb-ecommerce{background:linear-gradient(135deg,#0D0D0D 0%,#0a1a1f 50%,#1f0a1a 100%);}
-    .post-thumb-img::before{
-      content:'';position:absolute;inset:0;
-      background:radial-gradient(ellipse 50% 70% at 60% 40%,rgba(0,255,135,.12) 0%,transparent 65%);
-    }
-    .post-thumb-img::after{
-      content:'';position:absolute;
-      bottom:0;left:0;right:0;height:80px;
-      background:linear-gradient(to top,var(--cream) 0%,transparent 100%);
-    }
-    .thumb-big-icon{font-size:5rem;opacity:.25;position:relative;z-index:1;}
-    .thumb-lines{
-      position:absolute;inset:0;z-index:1;
-      background-image:repeating-linear-gradient(
-        0deg,rgba(0,255,135,.04) 0px,rgba(0,255,135,.04) 1px,transparent 1px,transparent 40px
-      ),repeating-linear-gradient(
-        90deg,rgba(0,255,135,.04) 0px,rgba(0,255,135,.04) 1px,transparent 1px,transparent 40px
-      );
-    }
-
-    /* CONTEÚDO DO POST */
-    .post-content-wrap{
-      max-width:760px;margin:0 auto;
-      padding:48px 32px 64px;
-    }
-    .post-content-wrap h2{
-      font-family:'Bebas Neue',sans-serif;
-      font-size:1.9rem;color:var(--black);
-      margin:40px 0 14px;line-height:1;
-    }
-    .post-content-wrap h3{
-      font-family:'Bebas Neue',sans-serif;
-      font-size:1.4rem;color:var(--black);
-      margin:28px 0 10px;
-    }
-    .post-content-wrap p{
-      font-size:1rem;color:#444;
-      line-height:1.82;margin-bottom:20px;
-    }
-    .post-content-wrap ul,.post-content-wrap ol{
-      padding-left:20px;margin-bottom:20px;
-    }
-    .post-content-wrap li{
-      font-size:0.95rem;color:#444;
-      line-height:1.75;margin-bottom:8px;
-    }
-    .post-content-wrap strong{color:var(--black);font-weight:700;}
-    .post-content-wrap a{color:var(--black);border-bottom:1px solid #00FF87;transition:.2s;}
-    .post-content-wrap a:hover{color:#00CC6A;}
-
-    /* CTA INLINE */
-    .post-cta{
-      background:var(--black);
-      padding:40px;margin:0 32px 0;
-      max-width:760px;margin:0 auto 64px;
-      border-left:3px solid #00FF87;
-    }
-    .post-cta h3{
-      font-family:'Bebas Neue',sans-serif;
-      font-size:1.8rem;color:#fff;margin-bottom:8px;
-    }
-    .post-cta p{color:rgba(255,255,255,.5);font-size:0.88rem;margin-bottom:20px;}
-    .post-cta a{
-      background:#00FF87;color:#0D0D0D;
-      padding:12px 28px;font-family:'DM Sans',sans-serif;
-      font-weight:700;font-size:0.8rem;text-transform:uppercase;
-      letter-spacing:.5px;display:inline-block;transition:.2s;
-    }
-    .post-cta a:hover{background:#00CC6A;border:none;}
-
-    /* RELACIONADOS */
-    .related-sec{background:var(--cream-dark);padding:64px 0;}
-    .related-sec h2{
-      font-family:'Bebas Neue',sans-serif;
-      font-size:2.2rem;color:var(--black);margin-bottom:32px;
-    }
-    .related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:2px;}
-    .rel-card{background:var(--cream);border:1px solid transparent;transition:.22s;display:block;}
-    .rel-card:hover{border-color:var(--black);}
-    .rel-thumb{
-      height:140px;display:flex;align-items:center;justify-content:center;
-      font-size:2.2rem;position:relative;overflow:hidden;
-    }
-    .rel-body{padding:18px 16px;}
-    .rel-body h4{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:var(--black);margin-bottom:6px;line-height:1.1;}
-    .rel-body p{font-size:0.75rem;color:var(--gray);line-height:1.55;margin-bottom:10px;}
-    .rel-arrow{font-size:0.72rem;font-weight:700;color:var(--black);}
-    .rel-card:hover .rel-arrow{color:#00FF87;}
-
-    .post-photo-credit{
-      position:absolute;bottom:8px;right:10px;
-      font-size:0.6rem;color:rgba(255,255,255,.4);
-      z-index:2;
-    }
-    .post-photo-credit a{color:rgba(255,255,255,.5);border-bottom:none;}
-
-    @media(max-width:640px){
-      .post-nav-links,.post-nav-btn{display:none;}
-      .post-thumb-img{height:200px;}
-      .post-content-wrap{padding:32px 20px 48px;}
-      .post-cta{margin:0 20px 48px;}
-    }
-  </style>
+<meta property="og:type" content="article">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Digify">
+<meta property="og:url" content="https://digify.live/blog/velocidade-do-site-e-seo-impacto-no-ranking-e-experiencia/">
+<meta property="og:title" content="Velocidade do Site e SEO: Impacto no Ranking e Experiência | Blog Digify">
+<meta property="og:description" content="Descubra como a velocidade do site afeta diretamente seu SEO e a experiência do usuário. Aprenda por que otimizar cada segundo é crucial para seu ranking no Google.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1698512191563-d14881d80fd8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5Njc2ODF8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODA1Nzg3NzN8&ixlib=rb-4.1.0&q=80&w=1080">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Velocidade do Site e SEO: Impacto no Ranking e Experiência | Blog Digify">
+<meta name="twitter:description" content="Descubra como a velocidade do site afeta diretamente seu SEO e a experiência do usuário. Aprenda por que otimizar cada segundo é crucial para seu ranking no Google.">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1698512191563-d14881d80fd8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5Njc2ODF8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODA1Nzg3NzN8&ixlib=rb-4.1.0&q=80&w=1080">
+<meta property="article:published_time" content="2026-06-04T13:12:52.773Z">
+<meta property="article:section" content="SEO">
+<link rel="alternate" type="application/rss+xml" title="Blog Digify" href="/blog/rss.xml">
+<script>
+(function(){
+  var t; try{ t = localStorage.getItem('digify-theme'); }catch(e){}
+  if(!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', t);
+})();
+</script>
+<link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/digify.css">
 </head>
 <body>
-
-<!-- NAV -->
-<nav class="post-nav">
-  <div class="post-nav-inner">
-    <a href="/" class="post-nav-logo">DIGIFY<span>.</span></a>
-    <div class="post-nav-links">
-      <a href="/#servicos">Serviços</a>
-      <a href="/blog/">Blog</a>
-      <a href="/sobre/">Sobre</a>
-    </div>
-    <a href="https://wa.me/5511990002065" target="_blank" rel="noopener" class="post-nav-btn">WhatsApp →</a>
+<a href="#main" class="skip">Pular para o conteúdo</a>
+<header class="hdr" id="hdr">
+  <div class="wrap hdr__in">
+    <a href="/" class="logo" aria-label="Digify">digify<i>.</i></a>
+    <nav class="nav"><a href="/servicos/">Serviços</a><a href="/portfolio/">Portfólio</a><a href="/blog/">Blog</a><a href="/contato/">Contato</a></nav>
+    <div class="lang" role="group" aria-label="Idioma do site"><a href="/" hreflang="pt-BR" lang="pt-BR" aria-current="true">PT</a><a href="/en/" hreflang="en" lang="en">EN</a><a href="/es/" hreflang="es" lang="es">ES</a></div>
+    <button class="sw" id="sw" role="switch" aria-checked="true" aria-label="Acender ou apagar a luz do site" title="Acender / apagar">
+      <span class="sw__screw sw__screw--l"></span><span class="sw__screw sw__screw--r"></span>
+      <span class="sw__rock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 18.5h5M10.5 21.5h3M12 2.5a6.2 6.2 0 0 0-3.6 11.2c.5.4.9 1 .9 1.7v.6h5.4v-.6c0-.7.4-1.3.9-1.7A6.2 6.2 0 0 0 12 2.5Z"/></svg></span>
+    </button>
+    <a href="/contato/" class="btn btn--primary">Solicitar proposta</a>
+    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mnav"><span></span><span></span><span></span></button>
   </div>
-</nav>
-
-<!-- HERO DO POST -->
-<div class="post-hero">
-  <div class="post-hero-inner">
-    <div class="post-breadcrumb">
-      <a href="/">Home</a> › <a href="/blog/">Blog</a> › <span>SEO</span>
-    </div>
-    <div class="post-cat-badge">SEO</div>
-    <h1>Velocidade do Site e SEO: Impacto no Ranking e Experiência</h1>
-    <div class="post-hero-meta">
-      <span>📅 04 de junho de 2026</span>
-      <span>⏱️ 16 min de leitura</span>
-      <span>✍️ Digify</span>
-    </div>
+  <div class="mnav" id="mnav">
+    <a href="/servicos/">Serviços</a><a href="/portfolio/">Portfólio</a><a href="/blog/">Blog</a><a href="/contato/">Contato</a>
+    <a href="/contato/" class="btn btn--primary">Solicitar proposta</a>
+    <div class="lang" role="group" aria-label="Idioma do site"><a href="/" hreflang="pt-BR" lang="pt-BR" aria-current="true">PT</a><a href="/en/" hreflang="en" lang="en">EN</a><a href="/es/" hreflang="es" lang="es">ES</a></div>
   </div>
-<div class="post-thumb-hero">
-        <div class="post-thumb-img" style="background:#0D0D0D;">
-          <img src="https://images.unsplash.com/photo-1698512191563-d14881d80fd8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5Njc2ODF8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODA1Nzg3NzN8&ixlib=rb-4.1.0&q=80&w=1080" alt="a laptop computer sitting on top of a wooden desk" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.75;">
-          <div class="thumb-lines"></div>
-          <span class="post-photo-credit">Foto: <a href="https://unsplash.com/@proaffaires?utm_source=digify&utm_medium=referral" target="_blank" rel="noopener">Pro Affaires</a> / Unsplash</span>
-        </div>
+</header>
+<main id="main">
+<div class="wrap"><nav class="crumbs" style="--c:var(--jade)" aria-label="Trilha">
+  <a href="/">Home</a><span>&rsaquo;</span><a href="/blog/">Blog</a><span>&rsaquo;</span><b>SEO</b>
+</nav></div>
+
+<article>
+<header class="ahero" style="--c:var(--jade)">
+  <div class="wrap">
+    <div class="ahead">
+      <span class="acat" style="--c:var(--jade);--t:var(--jade-t)">SEO</span>
+      <h1>Velocidade do Site e SEO: Impacto no Ranking e Experiência</h1>
+      <p class="lede">Descubra como a velocidade do site afeta diretamente seu SEO e a experiência do usuário. Aprenda por que otimizar cada segundo é crucial para seu ranking no Google.</p>
+      <div class="ameta">
+        <span>Publicado em <b>4 de junho de 2026</b></span>
+        <span><b>16</b> min de leitura</span>
+        <span><b>3.155</b> palavras</span>
+        <span>Por <b>Digify</b></span>
       </div>
-</div>
+    </div>
+  </div>
+  <div class="wrap"><figure class="acover"><img src="https://images.unsplash.com/photo-1698512191563-d14881d80fd8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5Njc2ODF8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODA1Nzg3NzN8&ixlib=rb-4.1.0&q=80&w=1080" alt="a laptop computer sitting on top of a wooden desk" width="1200" height="525" loading="eager" fetchpriority="high"><figcaption>Foto: <a href="https://unsplash.com/@proaffaires?utm_source=digify&amp;utm_medium=referral" target="_blank" rel="noopener">Pro Affaires</a> / Unsplash</figcaption></figure></div>
+</header>
 
-<!-- CONTEÚDO -->
-<div class="post-content-wrap" style="background:var(--cream);">
-  <p>No universo digital de hoje, onde a atenção do usuário é um recurso escasso e a concorrência por visibilidade é feroz, a velocidade de carregamento de um site deixou de ser um mero diferencial para se tornar um pilar fundamental. Para empresas e profissionais que buscam excelência online, entender a intrínseca relação entre a velocidade do site, o SEO (Search Engine Optimization) e a experiência do usuário (UX) não é apenas importante; é essencial para a sobrevivência e o crescimento no mercado. Como especialista com mais de uma década de experiência em marketing digital e tecnologia web, posso afirmar que um site lento é um convite direto à perda de visitantes, clientes e, consequentemente, de faturamento.</p>
+<div class="section section--tight"><div class="wrap">
+  <div class="article rv"><details class="toc" open style="--c:var(--jade)"><summary>Neste artigo</summary><ol><li><a href="#por-que-a-velocidade-do-site-e-crucial-no-cenario-digital-at">Por Que a Velocidade do Site é Crucial no Cenário Digital Atual?</a></li><li><a href="#a-relacao-direta-entre-velocidade-do-site-e-seo">A Relação Direta entre Velocidade do Site e SEO</a></li><li><a href="#o-impacto-da-velocidade-na-experiencia-do-usuario-ux">O Impacto da Velocidade na Experiência do Usuário (UX)</a></li><li><a href="#como-avaliar-e-medir-a-velocidade-do-seu-site">Como Avaliar e Medir a Velocidade do Seu Site</a></li><li><a href="#estrategias-praticas-para-otimizar-a-velocidade-do-seu-site">Estratégias Práticas para Otimizar a Velocidade do Seu Site</a></li><li><a href="#conclusao-velocidade-e-a-chave-para-o-sucesso-digital-durado">Conclusão: Velocidade é a Chave para o Sucesso Digital Duradouro</a></li></ol></details>
+  <p>No universo digital de hoje, onde a atenção do usuário é um recurso escasso e a concorrência por visibilidade é feroz, a velocidade de carregamento de um site deixou de ser um mero diferencial para se tornar um pilar fundamental. Para empresas e profissionais que buscam excelência online, entender a intrínseca relação entre a velocidade do site, o SEO (Search Engine Optimization) e a experiência do usuário (UX) não é apenas importante; é essencial para a sobrevivência e o crescimento no mercado. Como especialista com mais de uma década de experiência em <a class="ilink" href="/servicos/marketing-digital/">marketing digital</a> e tecnologia web, posso afirmar que um site lento é um convite direto à perda de visitantes, clientes e, consequentemente, de faturamento.</p>
 
 <p>Neste artigo, vamos mergulhar fundo no impacto da velocidade do site, explorando como ela afeta seu posicionamento nos mecanismos de busca, a percepção da sua marca e, mais importante, a satisfação de quem navega por suas páginas. Prepare-se para desvendar os segredos por trás de um site rápido e as estratégias para otimizar o seu, garantindo que sua presença online seja não apenas atraente, mas também performática e eficaz.</p>
 
-<h2>Por Que a Velocidade do Site é Crucial no Cenário Digital Atual?</h2>
+<h2 id="por-que-a-velocidade-do-site-e-crucial-no-cenario-digital-at">Por Que a Velocidade do Site é Crucial no Cenário Digital Atual?</h2>
 
 <p>A paciência do usuário da internet é um bem cada vez mais raro. Estudos mostram que a maioria dos visitantes espera que uma página carregue em menos de 2 a 3 segundos. A cada segundo adicional de espera, a taxa de rejeição (bounce rate) aumenta exponencialmente, e a probabilidade de um usuário abandonar o site antes mesmo de ver o conteúdo cresce significativamente. Em um mundo onde a informação está a um clique de distância, ninguém tem tempo a perder com carregamentos lentos.</p>
 
@@ -236,7 +93,7 @@
 
 <p>Para e-commerces, blogs, portais de notícias ou qualquer negócio que dependa de tráfego online, a velocidade se traduz diretamente em resultados financeiros. Um site ágil melhora as taxas de conversão, reduz o abandono de carrinho, aumenta o tempo de permanência na página e fomenta uma percepção positiva da marca. Em suma, velocidade é sinônimo de eficiência, satisfação do cliente e, no final das contas, sucesso digital.</p>
 
-<h2>A Relação Direta entre Velocidade do Site e SEO</h2>
+<h2 id="a-relacao-direta-entre-velocidade-do-site-e-seo">A Relação Direta entre Velocidade do Site e SEO</h2>
 
 <p>Desde 2010, o Google formalmente reconheceu a velocidade do site como um fator de ranking. No entanto, com a evolução da web e o aumento do uso de dispositivos móveis, essa importância foi amplificada, culminando na introdução de métricas específicas que hoje são cruciais para o SEO. Entender essa relação é vital para qualquer estratégia de otimização.</p>
 
@@ -263,7 +120,7 @@
     <li><strong>Mobile-First Indexing:</strong> Com a maioria das pesquisas vindo de dispositivos móveis, o Google utiliza predominantemente a versão mobile do seu site para indexação e ranking. A velocidade é ainda mais crítica em dispositivos móveis, onde a conectividade pode ser mais instável e os recursos de hardware mais limitados. Um site otimizado para mobile e rápido é um imperativo para o SEO.</li>
 </ul>
 
-<h2>O Impacto da Velocidade na Experiência do Usuário (UX)</h2>
+<h2 id="o-impacto-da-velocidade-na-experiencia-do-usuario-ux">O Impacto da Velocidade na Experiência do Usuário (UX)</h2>
 
 <p>A velocidade do site é um dos pilares da experiência do usuário (UX). Antes mesmo de o usuário consumir qualquer conteúdo ou interagir com a interface, a velocidade de carregamento já está moldando sua percepção sobre o seu site e sua marca. Uma UX positiva é a chave para reter visitantes, construir lealdade e impulsionar conversões.</p>
 
@@ -281,7 +138,7 @@
 
 <p>Em suma, investir na velocidade do site é investir diretamente na satisfação do seu público e na construção de uma base sólida para o sucesso do seu negócio online.</p>
 
-<h2>Como Avaliar e Medir a Velocidade do Seu Site</h2>
+<aside class="abanner" style="--c:var(--jade)"><b>Digify · SEO</b><h3>Seu concorrente está na frente agora?</h3><p>A Digify faz auditoria técnica, conteúdo e autoridade para colocar seu site entre os primeiros resultados. Diagnóstico gratuito, sem compromisso.</p><div class="abtns"><a href="/contato/" class="btn btn--go">Solicitar proposta <span class="ar" aria-hidden="true">&rarr;</span></a><a href="https://wa.me/5511989911000?text=Quero+um+diagn%C3%B3stico+gratuito" class="btn btn--wa">Falar no WhatsApp</a></div></aside><h2 id="como-avaliar-e-medir-a-velocidade-do-seu-site">Como Avaliar e Medir a Velocidade do Seu Site</h2>
 
 <p>Para otimizar a velocidade do seu site, o primeiro passo é entender seu desempenho atual e identificar os gargalos. Existem diversas ferramentas e métricas que podem ajudar nessa análise, fornecendo insights valiosos sobre o que precisa ser melhorado.</p>
 
@@ -310,7 +167,7 @@
 
 <p>Com uma análise sistemática e o uso correto dessas ferramentas, você terá um mapa claro para otimizar a velocidade do seu site e colher os benefícios em SEO e UX.</p>
 
-<h2>Estratégias Práticas para Otimizar a Velocidade do Seu Site</h2>
+<h2 id="estrategias-praticas-para-otimizar-a-velocidade-do-seu-site">Estratégias Práticas para Otimizar a Velocidade do Seu Site</h2>
 
 <p>Com o diagnóstico em mãos, é hora de agir. A otimização da velocidade do site envolve uma série de técnicas e melhores práticas que, quando aplicadas corretamente, podem transformar um site lento em uma máquina de alta performance. As estratégias a seguir são fundamentais:</p>
 
@@ -371,7 +228,7 @@
 
 <p>A implementação dessas estratégias pode parecer complexa, mas o resultado é um site mais rápido, uma melhor experiência para o usuário e um posicionamento superior nos mecanismos de busca. É um investimento que se paga em visibilidade e conversões.</p>
 
-<h2>Conclusão: Velocidade é a Chave para o Sucesso Digital Duradouro</h2>
+<h2 id="conclusao-velocidade-e-a-chave-para-o-sucesso-digital-durado">Conclusão: Velocidade é a Chave para o Sucesso Digital Duradouro</h2>
 
 <p>Chegamos ao fim da nossa jornada sobre a importância vital da velocidade do site no cenário digital. Fica claro que a otimização da performance não é apenas uma recomendação técnica, mas uma estratégia de negócio fundamental que impacta diretamente o SEO, a experiência do usuário e, por fim, os resultados financeiros de qualquer empreendimento online. Em um mercado onde a agilidade é valorizada e a paciência é escassa, um site rápido é um diferencial competitivo inegável.</p>
 
@@ -379,66 +236,118 @@
 
 <p>A otimização da velocidade é um processo contínuo que exige monitoramento constante e a aplicação de melhores práticas, desde a escolha da hospedagem e o uso de CDNs até a otimização de imagens, minificação de código e gerenciamento eficiente de scripts. É uma tarefa multifacetada que, embora desafiadora, oferece recompensas significativas.</p>
 
-<p>Se você busca não apenas otimizar a velocidade e o SEO do seu site, mas também garantir que sua presença digital seja construída sobre uma base sólida de performance e excelência, a Digify possui a expertise e as soluções necessárias para transformar esses desafios em resultados tangíveis. Conte com especialistas para impulsionar a sua estratégia de SEO e oferecer uma experiência impecável aos seus usuários.</p>
-</div>
+<p>Se você busca não apenas otimizar a velocidade e o SEO do seu site, mas também garantir que sua presença digital seja construída sobre uma base sólida de performance e excelência, a Digify possui a expertise e as soluções necessárias para transformar esses desafios em resultados tangíveis. Conte com especialistas para impulsionar a sua estratégia de SEO e oferecer uma experiência impecável aos seus usuários.</p></div>
+  <div class="acta rv" style="--c:var(--jade);--t:var(--jade-t)"><h2>Precisa de ajuda com seo?</h2><p>A Digify trabalha com isso há mais de 10 anos. Conte o seu caso e receba um diagnóstico gratuito em até um dia útil.</p><a href="/contato/" class="btn">Solicitar proposta <span class="ar" aria-hidden="true">&rarr;</span></a> <a href="/servicos/seo/" class="btn btn--ghost" style="margin-left:8px">Ver o serviço</a></div>
+  <div class="abox" style="--c:var(--jade);--t:var(--jade-t)"><span class="abox__av" aria-hidden="true">D.</span><div><b>Equipe Digify</b><p>Agência web full-stack com mais de 10 anos e 300 projetos entregues em criação de sites, sistemas sob medida e SEO. <a href="/sobre/">Conheça a Digify</a>.</p></div></div>
+</div></div>
+</article>
 
-<!-- CTA -->
-<div style="max-width:760px;margin:0 auto;padding:0 32px 64px;background:var(--cream);">
-  <div class="post-cta">
-    <h3>Precisa de ajuda com SEO?</h3>
-    <p>Fale com nossos especialistas e receba uma análise gratuita do seu projeto digital.</p>
-    <a href="https://wa.me/5511990002065" target="_blank" rel="noopener">💬 Falar no WhatsApp</a>
-  </div>
-</div>
-
-<!-- RELACIONADOS -->
-<div class="related-sec">
-  <div class="container">
-    <h2>Artigos Relacionados</h2>
-    <div class="related-grid" id="related"></div>
-  </div>
-</div>
-
-<!-- FOOTER -->
-<footer style="background:var(--black);padding:36px 0;">
-  <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
-    <span style="font-family:'Bebas Neue',sans-serif;font-size:1.2rem;color:#fff;letter-spacing:2px;">DIGIFY<span style="color:#00FF87">.</span></span>
-    <span style="font-size:0.78rem;color:rgba(255,255,255,.25);">© 2026 Digify Marketing Digital</span>
-    <a href="/blog/" style="font-size:0.78rem;color:rgba(255,255,255,.35);">← Voltar ao Blog</a>
+<section class="section section--mist"><div class="wrap"><div class="head"><div><p class="eyebrow rv">Continue lendo</p><h2 class="rv rv-1">Sobre seo.</h2></div><a href="/blog/" class="btn btn--ghost rv rv-1">Ver todos os artigos <span class="ar" aria-hidden="true">&rarr;</span></a></div><div class="arel"><a class="post rv rv-1" style="--c:var(--jade);--t:var(--jade-t)" href="/blog/velocidade-do-site-e-seo-cada-segundo-impulsiona-seu-rank/"><span class="post__cat">SEO</span><h3>Velocidade do Site e SEO: Cada Segundo Impulsiona Seu Rank</h3><p>Descubra como a velocidade do site impacta diretamente seu SEO e a experiência do usuário. Aprenda por que cada segundo é crucial para ranquear melhor no Google e converter mais visitantes. Otimize já!</p><time datetime="2026-07-19">19 de julho de 2026</time></a><a class="post rv rv-2" style="--c:var(--jade);--t:var(--jade-t)" href="/blog/auditoria-seo-completa-guia-essencial-para-otimizar-seu-site/"><span class="post__cat">SEO</span><h3>Auditoria SEO Completa: Guia Essencial para Otimizar Seu Site</h3><p>Aprenda a fazer uma auditoria de SEO completa no seu site e impulsione seu ranqueamento. Identifique oportunidades, corrija falhas e garanta mais visibilidade online para sua marca.</p><time datetime="2026-07-17">17 de julho de 2026</time></a><a class="post rv rv-3" style="--c:var(--jade);--t:var(--jade-t)" href="/blog/link-building-white-hat-ganhe-autoridade-seo-segura/"><span class="post__cat">SEO</span><h3>Link Building White Hat: Ganhe Autoridade SEO Segura</h3><p>Descubra estratégias de link building white hat e construa autoridade para seu site. Aprenda métodos seguros e éticos para um SEO duradouro e destaque-se no Google.</p><time datetime="2026-07-07">7 de julho de 2026</time></a></div></div></section>
+</main>
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft__grid">
+      <div class="ft__about">
+        <a href="/" class="logo">digify<i>.</i></a>
+        <p>Agência web especialista em criação de sites, sistemas sob medida e SEO. Mais de 10 anos levando empresas ao topo do Google.</p>
+      </div>
+      <div><h4>Serviços</h4><ul><li><a href="/servicos/criacao-de-sites/">Criação de sites</a></li><li><a href="/servicos/desenvolvimento-de-apps/">Desenvolvimento de apps</a></li><li><a href="/servicos/seo/">Agência de SEO</a></li><li><a href="/servicos/marketing-digital/">Marketing digital</a></li><li><a href="/servicos/ecommerce/">Lojas virtuais</a></li><li><a href="/servicos/sistemas/">Sistemas e integrações</a></li></ul></div>
+      <div><h4>Empresa</h4><ul><li><a href="/servicos/">Todos os serviços</a></li><li><a href="/sobre/">Sobre a Digify</a></li><li><a href="/blog/">Blog</a></li><li><a href="/contato/">Contato</a></li><li><a href="https://plugins.digify.live/">Plugins WordPress</a></li><li><a href="/politica-de-privacidade/">Política de privacidade</a></li></ul></div>
+      <div><h4>Contato</h4><ul>
+        <li><a href="https://wa.me/5511989911000?text=Quero+um+diagn%C3%B3stico+gratuito">(11) 98991-1000</a></li>
+        <li><a href="https://instagram.com/digify.live">@digify.live</a></li>
+        <li><a href="/contato/">Solicitar proposta</a></li>
+      </ul></div>
+    </div>
+    <div class="ft__base">
+      <span>© 2026 Digify Marketing Digital. Todos os direitos reservados.</span>
+      <span><a href="/politica-de-privacidade/">Privacidade</a> &middot; <a href="/sitemap.xml">Sitemap</a></span>
+    </div>
   </div>
 </footer>
 
-<a href="https://wa.me/5511990002065" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a13 13 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.122 1.526 5.858L.057 23.617a.5.5 0 0 0 .61.61l5.759-1.469A11.954 11.954 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.017-1.378l-.36-.214-3.727.951.968-3.638-.234-.374A9.818 9.818 0 1 1 12 21.818z"/></svg>
+<a class="wa" href="https://wa.me/5511989911000?text=Quero+um+diagn%C3%B3stico+gratuito" aria-label="Falar no WhatsApp">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.6.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5 0-.2-.6-1.6-.9-2.1-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.8c.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.2-.3-.2-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.1.8.8-3-.2-.3c-.9-1.4-1.3-3-1.3-4.6C3.5 7.3 7.3 3.5 12 3.5S20.5 7.3 20.5 12 16.7 20.2 12 20.2z"/></svg>
 </a>
-
-<script>
-var thumbMap = {
-  'SEO':['post-thumb-seo','🔍'],
-  'Criação de Sites':['post-thumb-sites','🖥️'],
-  'Desenvolvimento de Apps':['post-thumb-apps','📱'],
-  'Marketing Digital':['post-thumb-marketing','📣'],
-  'E-commerce':['post-thumb-ecommerce','🛒'],
-};
-fetch('/blog/index.json')
-  .then(function(r){ return r.json(); })
-  .then(function(posts){
-    var currentSlug = window.location.pathname.replace(/\//g,'').replace('blog','');
-    var cat = 'SEO';
-    var related = posts.filter(function(p){ return p.slug !== currentSlug && p.category === cat; }).slice(0,3);
-    var el = document.getElementById('related');
-    if(!related.length){ el.closest('.related-sec').style.display='none'; return; }
-    el.innerHTML = related.map(function(p){
-      var t = thumbMap[p.category]||['post-thumb-seo','📝'];
-      return '<a href="/blog/'+p.slug+'/" class="rel-card">' +
-        '<div class="rel-thumb '+t[0]+'" style="background:linear-gradient(135deg,#0D0D0D,#1a1a2e)">'+t[1]+'</div>' +
-        '<div class="rel-body">' +
-          '<h4>'+p.title+'</h4>' +
-          '<p>'+p.excerpt+'</p>' +
-          '<span class="rel-arrow">Ler →</span>' +
-        '</div></a>';
-    }).join('');
-  });
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://digify.live/blog/velocidade-do-site-e-seo-impacto-no-ranking-e-experiencia/#article",
+      "headline": "Velocidade do Site e SEO: Impacto no Ranking e Experiência",
+      "description": "Descubra como a velocidade do site afeta diretamente seu SEO e a experiência do usuário. Aprenda por que otimizar cada segundo é crucial para seu ranking no Google.",
+      "url": "https://digify.live/blog/velocidade-do-site-e-seo-impacto-no-ranking-e-experiencia/",
+      "datePublished": "2026-06-04T13:12:52.773Z",
+      "dateModified": "2026-06-04T13:12:52.773Z",
+      "inLanguage": "pt-BR",
+      "articleSection": "SEO",
+      "wordCount": 3155,
+      "author": {
+        "@type": "Organization",
+        "name": "Digify Marketing Digital",
+        "url": "https://digify.live/sobre/"
+      },
+      "publisher": {
+        "@id": "https://digify.live/#org"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://digify.live/blog/velocidade-do-site-e-seo-impacto-no-ranking-e-experiencia/#webpage"
+      },
+      "isPartOf": {
+        "@id": "https://digify.live/blog/#webpage"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://images.unsplash.com/photo-1698512191563-d14881d80fd8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5Njc2ODF8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODA1Nzg3NzN8&ixlib=rb-4.1.0&q=80&w=1080",
+        "caption": "a laptop computer sitting on top of a wooden desk"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://digify.live/blog/velocidade-do-site-e-seo-impacto-no-ranking-e-experiencia/#webpage",
+      "url": "https://digify.live/blog/velocidade-do-site-e-seo-impacto-no-ranking-e-experiencia/",
+      "name": "Velocidade do Site e SEO: Impacto no Ranking e Experiência",
+      "description": "Descubra como a velocidade do site afeta diretamente seu SEO e a experiência do usuário. Aprenda por que otimizar cada segundo é crucial para seu ranking no Google.",
+      "inLanguage": "pt-BR",
+      "isPartOf": {
+        "@id": "https://digify.live/#site"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://digify.live/blog/velocidade-do-site-e-seo-impacto-no-ranking-e-experiencia/#crumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://digify.live/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://digify.live/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "SEO",
+          "item": "https://digify.live/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Velocidade do Site e SEO: Impacto no Ranking e Experiência",
+          "item": "https://digify.live/blog/velocidade-do-site-e-seo-impacto-no-ranking-e-experiencia/"
+        }
+      ]
+    }
+  ]
+}
 </script>
+<script src="/assets/digify.js" defer></script>
 </body>
 </html>
