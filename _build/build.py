@@ -256,7 +256,7 @@ def head(L, title, desc, url, alt=True, extra=""):
 </script>
 <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/digify.css?v=20260922b">
+<link rel="stylesheet" href="/assets/digify.css?v=20260922c">
 </head>
 '''
 
@@ -441,7 +441,7 @@ def build(L):
 
 <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/digify.css?v=20260922b">
+<link rel="stylesheet" href="/assets/digify.css?v=20260922c">
 </head>
 
 <body>

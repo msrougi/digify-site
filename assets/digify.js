@@ -54,6 +54,7 @@
   var tabs   = [].slice.call(hero.querySelectorAll('.htab'));
   var rank   = document.getElementById('rank');
   var rows   = rank ? [].slice.call(rank.querySelectorAll('.rank__row')) : [];
+  var slideBox = hero.querySelector('.hero__slides');
   var DUR = 8000, timer = null, rankT = null, cur = 0;
 
   function settle(){
@@ -72,6 +73,7 @@
 
   function activate(i){
     cur = i;
+    if (slideBox) slideBox.style.height = slides[i].scrollHeight + 'px';
     slides.forEach(function(sl, k){
       sl.classList.toggle('is-live', k === i);
       sl.setAttribute('aria-hidden', k === i ? 'false' : 'true');
@@ -112,5 +114,6 @@
   document.addEventListener('visibilitychange', function(){ document.hidden ? stop() : play(); });
 
   climb();
+  if (slideBox && slides[0]) slideBox.style.height = slides[0].scrollHeight + 'px';
   play();
 })();
