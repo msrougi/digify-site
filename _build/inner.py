@@ -176,7 +176,7 @@ def rich_page(P, kind="service"):
 <section class="section section--deep"><div class="wrap">
   <p class="eyebrow rv">Processo</p>
   <h2 class="rv rv-1">%s</h2>
-  <div class="steps">%s</div>
+  <div class="steps%s">%s</div>
 </div></section>
 
 <section class="section section--tight"><div class="wrap">
@@ -190,7 +190,7 @@ def rich_page(P, kind="service"):
 </main>
 """ % (crumbs(trail, c), c, E(P["eyebrow"]), E(P["h1"]), E(P["lede"]),
        E(P["problem_h"]), prose, E(P["deliver_h"]), feats, c, chips,
-       E(P["how_h"]), steps, rel, faq_block(P["faq"]),
+       E(P["how_h"]), " steps--five" if P["slug"] == "sobre/" else "", steps, rel, faq_block(P["faq"]),
        contact_form() if P.get("kind") == "contact" else cta_block())
 
     return (head(L0, P["title"], P["desc"], url, alt=False)

@@ -1033,3 +1033,14 @@ html[data-theme="dark"] .wa:hover{background:var(--flame);color:#fff;box-shadow:
   .case:nth-child(even) .case__shot{order:0}
   .case__shot{order:-1}
 }
+
+/* Five milestones on the About page. */
+@media (min-width:1041px){
+  .steps--five{grid-template-columns:repeat(5,minmax(0,1fr))}
+  .steps--five .step{min-width:0;padding-right:18px;overflow-wrap:break-word}
+  .steps--five .step+.step{padding-left:18px}
+}
+@media (min-width:761px) and (max-width:1040px){
+  .steps--five .step:last-child{grid-column:1/-1;padding-left:0}
+  .steps--five .step:last-child::before{display:none}
+}

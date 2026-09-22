@@ -256,14 +256,14 @@ def head(L, title, desc, url, alt=True, extra=""):
 </script>
 <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/digify.css">
+<link rel="stylesheet" href="/assets/digify.css?v=20260922">
 </head>
 '''
 
 
 def header(L, home_nav=True):
     p = "/" + L["dir"]
-    items = L["nav"] if home_nav else [("/servicos/", "Serviços"), ("/portfolio/", "Portfólio"),
+    items = L["nav"] if home_nav else [("/servicos/", "Serviços"), ("/sobre/", "Sobre"), ("/portfolio/", "Portfólio"),
                                        ("/blog/", "Blog"), ("/contato/", "Contato")]
     nav = "".join(f'<a href="{h}">{E(t)}</a>' for h, t in items)
     return f'''<body>
@@ -441,7 +441,7 @@ def build(L):
 
 <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/digify.css">
+<link rel="stylesheet" href="/assets/digify.css?v=20260922">
 </head>
 
 <body>
