@@ -331,3 +331,13 @@ ES = {
 }
 
 LANGS = [PT, EN, ES]
+
+# Frentes de IA e produtos próprios.
+PT["svc_h"] = 'Tecnologia para cada etapa do negócio.'
+PT["svcs"].extend([('cyan', 'IA', 'Agentes de IA e automação', '/servicos/agentes-de-ia/', 'Agentes de IA para WhatsApp, qualificação de contatos e rotinas comerciais, conectados ao CRM e à agenda do seu negócio.'), ('jade', 'WordPress', 'Plugins WordPress e open source', '/servicos/plugins-wordpress/', 'Desenvolvimento de plugins WordPress e WooCommerce para performance, integrações, migração de conteúdo e produtividade.')])
+EN["svc_h"] = 'Technology for every stage of your business.'
+EN["svcs"].extend([('cyan', 'AI', 'AI agents and automation', '#proposta', 'AI-assisted customer service, lead qualification and workflows connected to CRM, calendars and APIs.'), ('jade', 'WordPress', 'WordPress plugins and open source', 'https://plugins.digify.live/en/', 'Our own WordPress tools, including Digify Speed Engine, a free open-source plugin published on WordPress.org.')])
+ES["svc_h"] = 'Tecnología para cada etapa de tu negocio.'
+ES["svcs"].extend([('cyan', 'IA', 'Agentes de IA y automatización', '#proposta', 'Atención, calificación de contactos y procesos conectados al CRM, la agenda y las APIs de tu negocio.'), ('jade', 'WordPress', 'Plugins WordPress y código abierto', 'https://plugins.digify.live/es/', 'Herramientas propias como Digify Speed Engine, plugin gratuito de código abierto publicado en WordPress.org.')])
+PT["title"] = "Digify | Sites, Apps, Agentes de IA e Plugins WordPress"
+PT["desc"] = "Sites, aplicativos iOS e Android, agentes de IA, e-commerce, APIs, SEO e plugins WordPress. Desenvolvimento com experiência em negócios e pagamentos."

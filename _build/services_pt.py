@@ -220,4 +220,92 @@ SERVICES = [
 },
 ]
 
+SERVICES.extend([{'slug': 'servicos/agentes-de-ia/',
+  'c': 'cyan',
+  'title': 'Agentes de IA e automação | Digify',
+  'desc': 'Agentes de IA para WhatsApp, qualificação de contatos e rotinas comerciais, conectados ao CRM e à '
+          'agenda do seu negócio.',
+  'eyebrow': 'Agentes de IA e automação',
+  'h1': 'Atendimento com contexto. Automação com controle.',
+  'lede': 'Agentes de IA para WhatsApp, qualificação de contatos e rotinas comerciais, conectados ao CRM e à '
+          'agenda do seu negócio.',
+  'problem_h': 'Tecnologia conectada à operação.',
+  'problem': ['Partimos das tarefas, ferramentas e limitações do seu negócio para definir o que vale '
+              'implementar. Escopo, custos de terceiros e critérios de aceite ficam claros antes do '
+              'desenvolvimento.'],
+  'deliver_h': 'O que podemos desenvolver.',
+  'deliver': [('Atendimento',
+               'WhatsApp e base de conhecimento',
+               'Respostas orientadas pelas informações aprovadas pela empresa, com encaminhamento para a '
+               'equipe quando necessário.'),
+              ('Comercial',
+               'Qualificação e agendamento',
+               'Coleta de informações relevantes, classificação de oportunidades e consulta de horários '
+               'pelas integrações disponíveis.'),
+              ('Integração',
+               'CRM, APIs e automações',
+               'Registro de contatos, resumos e eventos para reduzir tarefas repetitivas e manter o '
+               'histórico organizado.'),
+              ('Qualidade',
+               'Avaliação de respostas e testes',
+               'Cenários normais, exceções e casos-limite para avaliar aderência às instruções, consistência '
+               'e utilidade das respostas.')],
+  'how_h': 'Do diagnóstico à operação.',
+  'how': [('Diagnóstico', 'Mapeamento do processo, dados e integrações disponíveis.'),
+          ('Planejamento', 'Escopo, prioridades, custos e critérios de validação.'),
+          ('Desenvolvimento', 'Implementação acompanhada de testes e revisões.'),
+          ('Entrega', 'Homologação, orientação de uso e acompanhamento conforme o escopo.')],
+  'tech': ['Python', 'JavaScript', 'PHP', 'APIs', 'Webhooks', 'WhatsApp', 'CRM', 'Testes de qualidade'],
+  'faq': [('A IA substitui o atendimento humano?',
+           'O agente pode assumir tarefas definidas no escopo. Exceções e decisões que exigem análise humana '
+           'são encaminhadas à equipe.'),
+          ('Quais custos precisam ser considerados?',
+           'Além da implantação, podem existir custos de WhatsApp/API, consumo do modelo, CRM e agenda. Eles '
+           'são identificados no planejamento.')],
+  'related': ['servicos/sistemas/', 'servicos/ecommerce/', 'servicos/desenvolvimento-de-apps/']},
+ {'slug': 'servicos/plugins-wordpress/',
+  'c': 'cyan',
+  'title': 'Plugins WordPress e open source | Digify',
+  'desc': 'Desenvolvimento de plugins WordPress e WooCommerce para performance, integrações, migração de '
+          'conteúdo e produtividade.',
+  'eyebrow': 'Plugins WordPress e open source',
+  'h1': 'Ferramentas próprias para problemas recorrentes.',
+  'lede': 'Desenvolvimento de plugins WordPress e WooCommerce para performance, integrações, migração de '
+          'conteúdo e produtividade.',
+  'problem_h': 'Tecnologia conectada à operação.',
+  'problem': ['Partimos das tarefas, ferramentas e limitações do seu negócio para definir o que vale '
+              'implementar. Escopo, custos de terceiros e critérios de aceite ficam claros antes do '
+              'desenvolvimento.',
+              'Conheça o <a href="https://wordpress.org/plugins/digify-speed-engine/">Digify Speed Engine no '
+              'WordPress.org</a> e o <a href="https://plugins.digify.live/">catálogo Digify Plugins</a>.'],
+  'deliver_h': 'O que podemos desenvolver.',
+  'deliver': [('Publicado',
+               'Digify Speed Engine',
+               'Plugin gratuito e open source publicado no WordPress.org. Otimiza imagens, carregamento de '
+               'scripts e recursos do WooCommerce.'),
+              ('Ecossistema',
+               'Digify Plugins',
+               'Catálogo com Builder Bridge, SignMe e Easy Hero Slider. Consulte a página de cada produto '
+               'para conhecer sua disponibilidade e recursos.'),
+              ('Sob medida',
+               'WordPress conectado ao negócio',
+               'Extensões, integrações com APIs e ajustes de fluxos que não são atendidos pela configuração '
+               'padrão.'),
+              ('Validação',
+               'Compatibilidade e testes',
+               'Revisão de cenários de uso, atualizações e comportamento das integrações antes da '
+               'publicação.')],
+  'how_h': 'Do diagnóstico à operação.',
+  'how': [('Diagnóstico', 'Mapeamento do processo, dados e integrações disponíveis.'),
+          ('Planejamento', 'Escopo, prioridades, custos e critérios de validação.'),
+          ('Desenvolvimento', 'Implementação acompanhada de testes e revisões.'),
+          ('Entrega', 'Homologação, orientação de uso e acompanhamento conforme o escopo.')],
+  'tech': ['WordPress', 'WooCommerce', 'PHP', 'JavaScript', 'WebP', 'APIs'],
+  'faq': [('Onde encontro o Digify Speed Engine?',
+           'No diretório oficial de plugins do WordPress, pesquisando por Digify Speed Engine.'),
+          ('Todos os produtos têm a mesma licença e disponibilidade?',
+           'Não. Confira os detalhes de cada produto no catálogo Digify Plugins. O Digify Speed Engine é '
+           'gratuito e open source.')],
+  'related': ['servicos/sistemas/', 'servicos/ecommerce/', 'servicos/desenvolvimento-de-apps/']}])
+
 SVC_INDEX = {s["slug"]: (s["eyebrow"], s["h1"], s["c"]) for s in SERVICES}

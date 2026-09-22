@@ -295,7 +295,7 @@ def services_hub():
 
 <section class="section section--mist"><div class="wrap">
   <p class="eyebrow rv">O que fazemos</p>
-  <h2 class="rv rv-1">Seis frentes, um objetivo.</h2>
+  <h2 class="rv rv-1">Tecnologia para cada etapa do negócio.</h2>
   <p class="lede rv rv-2" style="margin-top:18px">Cada projeto começa pelo problema do negócio, não pelo catálogo.</p>
   <div class="svcs" style="margin-top:clamp(36px,4vw,52px)">%s</div>
 </div></section>
@@ -316,7 +316,7 @@ def services_hub():
        faq_block(faq), cta_block())
 
     return (head(L0, "Serviços | Criação de Sites, Apps, SEO e Sistemas | Digify",
-                 "Criação de sites, desenvolvimento de apps, SEO, marketing digital, e-commerce e sistemas sob medida. Seis frentes executadas pelo mesmo time.",
+                 "Criação de sites, desenvolvimento de apps, SEO, marketing digital, e-commerce e sistemas sob medida. Agentes de IA, automação e plugins WordPress próprios.",
                  url, alt=False)
             + header(L0, home_nav=False) + body + footer(L0, INNER_FT) + tail(ld))
 

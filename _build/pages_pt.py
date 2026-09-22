@@ -112,3 +112,30 @@ PRIVACIDADE = {
 }
 
 PAGES = [SOBRE, CONTATO, PRIVACIDADE]
+
+# Trajetória do fundador e áreas de atuação.
+SOBRE.update({'title': 'Sobre a Digify | Tecnologia, IA e negócios digitais',
+ 'desc': 'Fundada por Marcelo Srougi em 2011, a Digify une desenvolvimento, automação, pagamentos e '
+         'experiência em operações de pequenas empresas.',
+ 'lede': 'Desde 2011, desenvolvimento e visão de negócio no mesmo projeto. A Digify é liderada por Marcelo '
+         'Srougi, empreendedor e desenvolvedor com mais de 20 anos de experiência em tecnologia.',
+ 'problem_h': 'Quem está por trás da Digify.',
+ 'problem': ['Marcelo Srougi fundou a Digify em abril de 2011 e participa do desenvolvimento e da operação '
+             'do negócio. Trabalha com Python, JavaScript, PHP, WordPress, WooCommerce, integrações e '
+             'soluções digitais.',
+             'Sua trajetória inclui infraestrutura corporativa na Levi Strauss &amp; Co., AT&amp;T, UOL e '
+             'TIVIT; cofundação e liderança técnica na Rubi Payments, de 2012 a 2026; e atuação como Head of '
+             'Payments na Fullsale, de agosto de 2022 a outubro de 2025.',
+             'Essa experiência orienta o trabalho atual com aplicações web e mobile, automações com IA, '
+             'integrações de pagamentos e testes de software. A contribuição open source inclui o Digify '
+             'Speed Engine, publicado no WordPress.org.'],
+ 'tech': ['Desde 2011',
+          'Python · JavaScript · PHP',
+          'WordPress · WooCommerce',
+          'IA e automação',
+          'Pagamentos e integrações'],
+ 'how': [('Experiência', 'Mais de 20 anos em tecnologia, infraestrutura e negócios digitais.'),
+         ('Digify', 'Fundada em abril de 2011 por Marcelo Srougi.'),
+         ('Pagamentos', 'Experiência em fintech, meios de pagamento e integrações comerciais.'),
+         ('Produtos', 'Desenvolvimento de plugins WordPress e contribuição open source.'),
+         ('Hoje', 'Sites, apps, IA, automação, e-commerce e sistemas sob medida.')]})

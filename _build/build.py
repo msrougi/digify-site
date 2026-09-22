@@ -56,7 +56,7 @@ def schema(L):
                            "availableLanguage": ["Portuguese", "English", "Spanish"],
                            "areaServed": ["BR", "US", "PT", "ES"]}],
          "knowsLanguage": ["pt-BR", "en", "es"],
-         "foundingDate": "2015",
+         "foundingDate": "2011-04",
          "slogan": "O primeiro resultado leva quase tudo.",
          "sameAs": ["https://instagram.com/digify.live", "https://plugins.digify.live/"],
          "aggregateRating": {"@type": "AggregateRating", "ratingValue": "5",

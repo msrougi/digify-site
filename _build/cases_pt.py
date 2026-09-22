@@ -116,3 +116,14 @@ PORTFOLIO = {
  "h1": "Os últimos projetos que saíram daqui.",
  "lede": "Mais de 300 projetos em 10 anos. Estes seis são os mais recentes e mostram bem a variedade — de site institucional que precisa transmitir confiança a ferramenta em Python que virou produto.",
 }
+
+CASES.append({
+ 'slug':'digify-speed-engine','c':'cyan','featured':False,
+ 'name':'Digify Speed Engine','client':'Digify · Produto próprio',
+ 'sector':'WordPress · Open source','year':'2026',
+ 'url':'https://wordpress.org/plugins/digify-speed-engine/',
+ 'tagline':'Performance para WordPress e WooCommerce, com código aberto.',
+ 'problem':'Ferramenta gratuita desenvolvida por Marcelo Srougi e publicada no diretório oficial do WordPress, com processamento local e sem dependência de APIs externas.',
+ 'escopo':['Conversão automática de imagens para WebP e redimensionamento','Carregamento adiado de scripts não críticos','Otimização de recursos do WooCommerce fora das páginas da loja','Controles de limpeza do WordPress e frequência do Heartbeat'],
+ 'stack':['WordPress','WooCommerce','PHP','WebP','Open source']
+})
