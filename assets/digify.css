@@ -320,13 +320,14 @@ html[data-theme="dark"] .sw__rock svg{color:#666D75}
 /* ============================================================
    HERO — SLIDER DE 3 ATOS
    ============================================================ */
-.hero__slides{position:relative;height:0;overflow:hidden;transition:height .55s var(--ease)}
+.hero__slides{position:relative;transition:height .55s var(--ease)}
+.hero__slides.is-sized{overflow:hidden}
 .hslide{
   position:absolute;inset:0;
   opacity:0;visibility:hidden;pointer-events:none;
   transition:opacity .55s var(--ease),visibility .55s
 }
-.hslide.is-live{opacity:1;visibility:visible;pointer-events:auto}
+.hslide.is-live{position:relative;inset:auto;opacity:1;visibility:visible;pointer-events:auto}
 
 /* aura cromática por ato */
 .hslide__aura{

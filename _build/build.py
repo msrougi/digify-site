@@ -256,7 +256,7 @@ def head(L, title, desc, url, alt=True, extra=""):
 </script>
 <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/digify.css?v=20260922c">
+<link rel="stylesheet" href="/assets/digify.css?v=20260922d">
 </head>
 '''
 
@@ -327,7 +327,7 @@ def tail(ld):
     return f'''<script type="application/ld+json">
 {ld}
 </script>
-<script src="/assets/digify.js" defer></script>
+<script src="/assets/digify.js?v=20260922d" defer></script>
 </body>
 </html>
 '''
@@ -441,7 +441,7 @@ def build(L):
 
 <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/digify.css?v=20260922c">
+<link rel="stylesheet" href="/assets/digify.css?v=20260922d">
 </head>
 
 <body>
@@ -595,7 +595,7 @@ def build(L):
 <script type="application/ld+json">
 {schema(L)}
 </script>
-<script src="/assets/digify.js" defer></script>
+<script src="/assets/digify.js?v=20260922d" defer></script>
 </body>
 </html>
 '''
