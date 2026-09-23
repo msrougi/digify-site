@@ -11,6 +11,17 @@ from content import LANGS, PT, SITE, PHONE, PHONE_LABEL, LOGOS
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 E = html.escape
 
+# Shared by homepages, inner pages, and automatically generated blog posts.
+GOOGLE_TAG = """<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VN18X5H6YC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VN18X5H6YC');
+</script>"""
+
 
 def url_of(L):
     return SITE + "/" + L["dir"]
@@ -226,6 +237,7 @@ def head(L, title, desc, url, alt=True, extra=""):
 <html lang="{L["code"]}">
 <head>
 <meta charset="utf-8">
+{GOOGLE_TAG}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{E(title)}</title>
 <meta name="description" content="{E(desc)}">
@@ -406,6 +418,7 @@ def build(L):
 <html lang="{L["code"]}">
 <head>
 <meta charset="utf-8">
+{GOOGLE_TAG}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{E(L["title"])}</title>
 <meta name="description" content="{E(L["desc"])}">
